@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/IE-NITK/NITK-Student-Council-Website.svg)](https://travis-ci.org/IE-NITK/NITK-Student-Council-Website)
 
 # Student Council Website
 
