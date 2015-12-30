@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(accounts.urls, namespace='accounts')),
+    url(r'^markdown/', include('django_markdown.urls'))
 ]
 
 # User-uploaded files like profile pics need to be served in development
