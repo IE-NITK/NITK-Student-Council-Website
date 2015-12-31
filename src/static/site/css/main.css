@@ -177,3 +177,28 @@ body>.navbar-transparent {
 .form-box form .form-control:focus {
   z-index: 2;
 }
+
+.jumbotron {
+    background-image: url("http://lorempixel.com/580/250/nature/1");
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 0px;
+}
+.jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #EEE;
+}
+* {
+    margin: 0px;
+}
+* {
+    box-sizing: border-box;
+}
