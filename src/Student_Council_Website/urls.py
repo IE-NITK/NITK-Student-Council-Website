@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(accounts.urls, namespace='accounts')),
     url(r'^markdown/', include('django_markdown.urls'))
+    url(r'^clublife/', views.ClubLifePage.as_view(), name='club'),
 ]
 
 # User-uploaded files like profile pics need to be served in development
