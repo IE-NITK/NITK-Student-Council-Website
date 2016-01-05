@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.core.validators import RegexValidator
 from django_markdown.models import MarkdownField
+from profiles.models import Profile
 
 class News(models.Model):
     CHOICE = [('C', 'Campus News'),
@@ -18,8 +19,16 @@ class News(models.Model):
     def __str__(self):
         return self.title
 
+class Club(models.Model):
+    user = models.ForeignKey(Profile)
+    convenor = models.CharField(max_length=100)
+    strength = models.IntegerField()
+
+    def __str__(self):
+        return self.user.user.get_full_name
+
 class Member(models.Model):
-    name = models.CharField(max_length=100)
+    user = models.ForeignKey(Profile)
     BRANCH_LIST = [('CH', 'Chemical Engineering'),
                    ('CO', 'Computer Engineering'),
                    ('CV', 'Civil Engineering'),
@@ -36,11 +45,17 @@ class Member(models.Model):
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
     phone_number = models.CharField(max_length=15, validators=[phone_regex], blank=True)
 
+    def __str__(self):
+        return self.user.user.get_full_name
+
 
 class Events(models.Model):
     title = models.CharField(max_length=200)
+    organizer = models.ForeignKey(Club)
     details = models.CharField(max_length=2000)
     date = models.DateTimeField()
+    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
+    contact = models.CharField(max_length=15, validators=[phone_regex], blank=True)
 
     def __str__(self):
         return self.title
