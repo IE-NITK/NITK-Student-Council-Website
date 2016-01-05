@@ -5,13 +5,13 @@ from django.core.validators import RegexValidator
 from django_markdown.models import MarkdownField
 
 class News(models.Model):
-    choice = [('C', 'Campus News'),
+    CHOICE = [('C', 'Campus News'),
             ('N', 'In the News'),
             ('S', 'Spotlight'),
             ]
     title = models.CharField(max_length=300)
     details = models.CharField(max_length=2000)
-    category = models.CharField(max_length=1, choices=choice)
+    category = models.CharField(max_length=1, choices=CHOICE)
     timestamp = models.DateTimeField(auto_now_add=True)
     pinned = models.BooleanField(default=False)
 
@@ -19,7 +19,7 @@ class News(models.Model):
         return self.title
 
 class Member(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
     BRANCH_LIST = [('CH', 'Chemical Engineering'),
                    ('CO', 'Computer Engineering'),
                    ('CV', 'Civil Engineering'),
@@ -32,7 +32,7 @@ class Member(models.Model):
                    ]
     branch = models.CharField(max_length=2, choices=BRANCH_LIST)
     email = models.EmailField()
-    address = models.CharField(max_length=100)
+    address = models.CharField(max_length=1000)
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
     phone_number = models.CharField(max_length=15, validators=[phone_regex], blank=True)
 
@@ -48,6 +48,7 @@ class Events(models.Model):
 class Author(models.Model):
     name = models.CharField(max_length=50)
     prof_pic = models.ImageField(upload_to='author_profile_pics/%Y-%m-%d/',null=True,blank=True)
+    blurb = MarkdownField()
 
     def __str__(self):
         return self.name
@@ -55,7 +56,7 @@ class Author(models.Model):
 class Articles(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(Author)
-    details = MarkdownField()
+    content = MarkdownField()
     published = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
