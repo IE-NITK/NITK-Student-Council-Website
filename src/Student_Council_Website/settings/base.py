@@ -77,6 +77,8 @@ INSTALLED_APPS = (
 
     'profiles',
     'accounts',
+    'website',
+    'django_markdown',
 
 )
 
