@@ -7,3 +7,9 @@ class HomePage(generic.TemplateView):
 
 class AboutPage(generic.TemplateView):
     template_name = "about.html"
+
+class clublife(generic.TemplateView):
+    template_name = "clublife.html"
+
+class represent(generic.TemplateView):
+    template_name = "represent.html"

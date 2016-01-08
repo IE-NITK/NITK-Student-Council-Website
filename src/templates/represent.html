@@ -1,0 +1,297 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+		var flag=0;
+		$("#btech").hide();
+		$("#mtech").hide();
+
+		$("#showbtech").click(function(){
+			$("#btech").show();
+			flag=1;
+		});
+
+		$("#showmtech").click(function(){
+			$("#mtech").show();
+		});
+	})	
+</script>
+	<nav>
+		<div class="top-nav red darken-3">
+			<div class="valign-wrapper">
+				<div class="container">
+					<h2 class="center-align">MEET THE REPRESENTATIVES</h2>
+				</div>	
+			</div>
+		</div>
+	</nav>
+		
+	<div>
+		<br></br>
+	 	<h3 class="center-align">POSITION HOLDERS</h3>
+	 </div>
+ 
+	 <div class="row center-align">
+	 	<div class="col s3 ">
+			<div class="card-panel teal lighten-2 small">
+					<div class="card-image">
+						<img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
+						<span class="card-title">ENGI-CON</span>	 
+ 					</div>
+ 					<div class="card-content">
+ 					<p>NAME OF PRESIDENT</p>
+ 					<p><i class="tiny material-icons">contact_phone</i> 9876543210</p>
+					</div>
+			</div>
+	 	</div>
+
+	 	<div class="col s3 push-s1">
+			<div class="card-panel teal lighten-2 small">
+					<div class="card-image">
+						<img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
+						<span class="card-title">PRESIDENT</span>	 
+ 					</div>
+ 					
+ 					<div class="card-content" align="center">
+ 					<p>NAME OF PRESIDENT</p>
+ 					<p><i class="tiny material-icons">contact_phone</i> 9876543210</p>
+					</div>
+			</div>
+	 	</div>
+
+	 	<div class="col s3 push-s2">
+			<div class="card-panel teal lighten-2 small">
+					<div class="card-image">
+						<img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
+						<span class="card-title">INCI-CON</span>	 
+ 					</div>
+ 					
+ 					<div class="card-content">
+ 					<p>NAME OF PRESIDENT</p>
+ 					<p><i class="tiny material-icons">contact_phone</i> 9876543210</p>
+					</div>
+			</div>
+	 	</div>
+ 	</div>
+
+ 	<div class="row center-align">
+	 	<div class="col s3 push-s2">
+			<div class="card-panel teal lighten-2 small">
+					<div class="card-image">
+						<img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
+						<span class="card-title">GIRLS-REP</span>	 
+ 					</div>
+ 					
+ 					<div class="card-content">
+ 					<p>NAME OF PRESIDENT</p>
+ 					<p><i class="tiny material-icons">contact_phone</i> 9876543210</p>
+					</div>
+			</div>
+	 	</div>
+
+	 	<div class="col s3 push-s3">
+			<div class="card-panel teal lighten-2 small">
+					<div class="card-image">
+						<img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
+						<span class="card-title">SECRETARY</span>	 
+ 					</div>
+ 					
+ 					<div class="card-content">
+ 					<p>NAME OF PRESIDENT</p>
+ 					<p><i class="tiny material-icons">contact_phone</i> 9876543210</p>
+					</div>
+			</div>
+	 	</div>
+
+ 	</div>
+
+ 	<h3 class="center-align">CLASS REPESENTATIVES</h3>
+	 <div class="row">
+	 	<button class="col s5 m5 l5 push-s1 push-m1 push-l1 
+	 	btn-large waves-effect waves-light red darken-1" id="showbtech">B TECH
+	 	</button> 
+
+	 	<button class="col s5 m5 l5 push-s1 push-m1 push-l1 btn-large waves-effect waves-light red darken-1" id="showmtech">M TECH
+	 	</button> 
+	 </div>
+
+	<div class="row">
+		<div class="col s5 m5 l5 push-s1 push-m1 push-l1" id="btech">
+	 	<ul class="collapsible" data-collapsible="accordion">
+    		<li>
+      			<div class="collapsible-header"><i class=" material-icons">list</i>Final Years
+      			</div>
+      			<div class="collapsible-body">
+      				<table class="striped centered responsive-table" "centered">
+        				<thead>
+          					<tr>
+              					<th data-field="id">NAME</th>
+              					<th data-field="name">BRANCH</th>
+              					<th data-field="price">CONTACT</th>
+          					</tr>
+        				</thead>
+
+        				<tbody>
+      						<tr>
+       				 			<td>Alvin</td>
+            					<td>Eclair</td>
+            					<td>$0.87</td>
+          					</tr>
+          					<tr>
+            					<td>Alan</td>
+            					<td>Jellybean</td>
+            					<td>$3.76</td>
+          					</tr>
+          					<tr>
+           						<td>Jonathan</td>
+            					<td>Lollipop</td>
+            					<td>$7.00</td>
+          					</tr>
+        				</tbody>
+      				</table>
+				</div>
+   			</li>
+    		<li>
+      			<div class="collapsible-header"><i class="material-icons">list</i>Third Years
+      			</div>
+      			<div class="collapsible-body">
+      				<table class="striped centered responsive-table" "centered">
+        				<thead>
+          					<tr>
+              					<th data-field="id">NAME</th>
+              					<th data-field="name">BRANCH</th>
+              					<th data-field="price">CONTACT</th>
+          					</tr>
+        				</thead>
+
+        				<tbody>
+      						<tr>
+       				 			<td>Alvin</td>
+            					<td>Eclair</td>
+            					<td>$0.87</td>
+          					</tr>
+          					<tr>
+            					<td>Alan</td>
+            					<td>Jellybean</td>
+            					<td>$3.76</td>
+          					</tr>
+          					<tr>
+           						<td>Jonathan</td>
+            					<td>Lollipop</td>
+            					<td>$7.00</td>
+          					</tr>
+        				</tbody>
+      				</table>
+      			</div>
+      		</li>
+      		<li>
+      			<div class="collapsible-header"><i class="material-icons">list</i>Second Years</div>
+      			<div class="collapsible-body">
+  					<table class="striped centered responsive-table" "centered">
+        				<thead>
+          					<tr>
+              					<th data-field="id">NAME</th>
+              					<th data-field="name">BRANCH</th>
+              					<th data-field="price">CONTACT</th>
+          					</tr>
+        				</thead>
+
+        				<tbody>
+      						<tr>
+       				 			<td>Chinmay Koparkar</td>
+            					<td>Mechanical</td>
+            					<td>9876543210</td>
+          					</tr>
+          					<tr>
+            					<td>Alan</td>
+            					<td>Jellybean</td>
+            					<td>$3.76</td>
+          					</tr>
+          					<tr>
+           						<td>Jonathan</td>
+            					<td>Lollipop</td>
+            					<td>$7.00</td>
+          					</tr>
+        				</tbody>
+      				</table>
+      			</div>
+    		</li>
+ 		</ul>
+ 		</div>
+
+ 		<div class="col s5 m5 l5 push-s1 push-m1 push-l1" id="mtech">
+	 	<ul class="collapsible" data-collapsible="accordion">
+    		<li>
+      			<div class="collapsible-header"><i class="material-icons">list</i>Second Years
+      			</div>
+      			<div class="collapsible-body">
+      				<table class="striped centered responsive-table" "centered">
+        				<thead>
+          					<tr>
+              					<th data-field="id">NAME</th>
+              					<th data-field="name">BRANCH</th>
+              					<th data-field="price">CONTACT</th>
+          					</tr>
+        				</thead>
+
+        				<tbody>
+      						<tr>
+       				 			<td>Alvin</td>
+            					<td>Eclair</td>
+            					<td>$0.87</td>
+          					</tr>
+          					<tr>
+            					<td>Alan</td>
+            					<td>Jellybean</td>
+            					<td>$3.76</td>
+          					</tr>
+          					<tr>
+           						<td>Jonathan</td>
+            					<td>Lollipop</td>
+            					<td>$7.00</td>
+          					</tr>
+        				</tbody>
+      				</table>
+				</div>
+   			</li>
+    		<li>
+      			<div class="collapsible-header"><i class="material-icons">list</i>First Years
+      			</div>
+      			<div class="collapsible-body">
+      				<table class="striped centered responsive-table" "centered">
+        				<thead>
+          					<tr>
+              					<th data-field="id">NAME</th>
+              					<th data-field="name">BRANCH</th>
+              					<th data-field="price">CONTACT</th>
+          					</tr>
+        				</thead>
+
+        				<tbody>
+      						<tr>
+       				 			<td>Alvin</td>
+            					<td>Eclair</td>
+            					<td>$0.87</td>
+          					</tr>
+          					<tr>
+            					<td>Alan</td>
+            					<td>Jellybean</td>
+            					<td>$3.76</td>
+          					</tr>
+          					<tr>
+           						<td>Jonathan</td>
+            					<td>Lollipop</td>
+            					<td>9876543210</td>
+          					</tr>
+        				</tbody>
+      				</table>
+      			</div>
+      		</li>
+ 		</ul>
+ 		</div>
+	 </div>
+
+{% endblock %}
