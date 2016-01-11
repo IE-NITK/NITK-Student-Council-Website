@@ -1,9 +1,10 @@
 {% extends "base.html" %} {% block content %}
-<link href="/static/site/css/message.css" rel="stylesheet">
+{% load static %}
+<link href="{% static 'site/css/message.css' %}" rel="stylesheet">
 
 <div class="row">
     <div class="col s2 card-image small presi-image-div">
-              <img class="presi-image" src="/static/site/img/presi.jpg">
+              <img class="presi-image" src="{% static 'site/img/presi.jpg' %}">
               <span class="card-title">Presi Name</span>
     </div>
     <h2 class="red-text col s8 center-align message-heading">Message from the President</h2>
