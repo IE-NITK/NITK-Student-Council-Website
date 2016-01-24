@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^message/$', views.MessagePage.as_view(), name='message'),
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^calendar/$', views.CalendarPage.as_view(), name='calendar'),
     url(r'^', include(accounts.urls, namespace='accounts')),
     url(r'^markdown/', include('django_markdown.urls'))
 ]
