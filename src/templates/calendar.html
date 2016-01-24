@@ -1,0 +1,28 @@
+<html>
+{% load staticfiles %}
+<head>
+
+  <link href="{% static 'site/css/fullcalendar.min.css' %}" rel="stylesheet">
+  <link href="{% static 'materialize/css/materialize.min.css' %}" rel="stylesheet">
+  <script src="{% static 'site/js/jquery.min.js' %}"></script>
+  <script src="{% static 'site/js/moment.min.js' %}"></script>
+  <script src="{% static 'site/js/fullcalendar.min.js' %}"></script>
+  <script>
+  $(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+      $('#calendar').fullCalendar({
+          // put your options and callbacks here
+      })
+
+  });
+  </script>
+</head>
+
+<body>
+
+    <div id='calendar'></div>
+
+</body>
+</html>
