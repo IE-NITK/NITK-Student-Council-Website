@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 import profiles.urls
 import accounts.urls
 from . import views
+from website.views import *
 
 urlpatterns = [
     url(r'^$', views.HomePage.as_view(), name='home'),
@@ -12,7 +13,7 @@ urlpatterns = [
     url(r'^represent/', views.represent.as_view(), name='represent'),
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^calendar/$', views.CalendarPage.as_view(), name='calendar'),
+    url(r'^calendar/$', calendar, name='calendar'),
     url(r'^', include(accounts.urls, namespace='accounts')),
     url(r'^markdown/', include('django_markdown.urls')),
     url(r'^clublife/', views.ClubLifePage.as_view(), name='club'),
