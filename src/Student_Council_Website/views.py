@@ -10,6 +10,3 @@ class AboutPage(generic.TemplateView):
 
 class MessagePage(generic.TemplateView):
 	template_name = "message.html"
-
-class CalendarPage(generic.TemplateView):
-	template_name = "calendar.html"

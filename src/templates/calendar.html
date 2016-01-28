@@ -23,6 +23,8 @@
 <body>
 
     <div id='calendar'></div>
-
+    {% for event in events %}
+    <h1>{{ event.title }}</h1>
+    {% endfor %}
 </body>
 </html>
