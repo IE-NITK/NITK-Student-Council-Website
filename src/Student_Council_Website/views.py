@@ -13,3 +13,6 @@ class clublife(generic.TemplateView):
 
 class represent(generic.TemplateView):
     template_name = "represent.html"
+
+class events(generic.TemplateView):
+	template_name= "events.html"
