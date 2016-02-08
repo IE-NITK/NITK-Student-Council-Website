@@ -16,15 +16,14 @@
   <script src="{% static 'site/js/moment.min.js' %}"></script>
   <script src="{% static 'site/js/fullcalendar.min.js' %}"></script>
   <script type="text/javascript">
+    var event = {{eventlist|safe}};
     $(document).ready(function() {
 
       // page is now ready, initialize the calendar...
 
       $('#calendar').fullCalendar({
-          events: "/calEvents"
-          editable: false,
+          events: event
       })
     });
-    $(".button-collapse").sideNav();
   </script>
 {% endblock %}

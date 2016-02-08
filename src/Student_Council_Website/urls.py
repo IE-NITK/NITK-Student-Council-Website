@@ -13,7 +13,7 @@ urlpatterns = [
     url(r'^represent/', views.represent.as_view(), name='represent'),
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^calendar/$', websiteviews.calendar, name='calendar'),
+    url(r'^calendar/$', websiteviews.calEvents),
     url(r'^', include(accounts.urls, namespace='accounts')),
     url(r'^markdown/', include('django_markdown.urls')),
     url(r'^clublife/', views.ClubLifePage.as_view(), name='club'),
