@@ -1,0 +1,355 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+		var flag=0;
+		$("#btech").show();
+		$("#mtech").show();
+
+		$("#showbtech").click(function(){
+			$("#btech").show();
+			flag=1;
+		});
+
+		$("#showmtech").click(function(){
+			$("#mtech").show();
+		});
+	})	
+</script>
+	<nav>
+		<div class="top-nav red darken-3">
+			<div class="valign-wrapper">
+				<div class="container">
+					<h2 class="center-align">MEET THE REPRESENTATIVES</h2>
+				</div>	
+			</div>
+		</div>
+	</nav>
+		
+	<div>
+		<br></br>
+	 	<h3 class="center-align">POSITION HOLDERS</h3>
+	</div>
+
+ 	<div class="container">
+	 <div class="row center-align">
+	 	<div class="col s12 m4">
+			<div class="card-panel teal lighten-2 small">
+					<div class="card-image">
+            <span class="card-title">ENGI-CON</span>  
+						<img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
+ 					</div>
+ 					<div class="card-content">
+ 					<p>NAME OF PRESIDENT</p>
+ 					<p><i class="tiny material-icons">contact_phone</i> 9876543210</p>
+          <p><i class="tiny material-icons">email</i> xyzexample@gmail.com</p>
+					</div>
+			</div>
+	 	</div>
+
+	 	<div class="col s12 m4">
+			<div class="card-panel teal lighten-2 small">
+					<div class="card-image">
+            <span class="card-title">PRESIDENT</span>  
+            <img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
+          </div>
+          <div class="card-content">
+          <p>NAME OF PRESIDENT</p>
+          <p><i class="tiny material-icons">contact_phone</i> 9876543210</p>
+          <p><i class="tiny material-icons">email</i> xyzexample@gmail.com</p>
+          </div>
+			</div>
+	 	</div>
+
+	 	<div class="col s12 m4">
+			<div class="card-panel teal lighten-2 small">
+					<div class="card-image">
+            <span class="card-title">INCI-CON</span>  
+            <img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
+          </div>
+          <div class="card-content">
+          <p>NAME OF PRESIDENT</p>
+          <p><i class="tiny material-icons">contact_phone</i> 9876543210</p>
+          <p><i class="tiny material-icons">email</i> xyzexaghghmple@gmail.com</p>
+          </div>
+			</div>
+	 	</div>
+
+ 	
+	 	<div class="col s12 m4 ">
+			<div class="card-panel teal lighten-2 small">
+					<div class="card-image">
+            <span class="card-title">GIRLS REP</span>  
+            <img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
+          </div>
+          <div class="card-content">
+          <p>NAME OF PRESIDENT</p>
+          <p><i class="tiny material-icons">contact_phone</i> 9876543210</p>
+          <p><i class="tiny material-icons">email</i> xyzexample@gmail.com</p>
+          </div>
+			</div>
+	 	</div>
+
+	 	<div class="col s12 m4">
+			<div class="card-panel teal lighten-2 small">
+					<div class="card-image">
+            <span class="card-title">SECRETARY</span>  
+            <img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
+          </div>
+          <div class="card-content">
+          <p>NAME OF PRESIDENT</p>
+          <p><i class="tiny material-icons">contact_phone</i> 9876543210</p>
+          <p><i class="tiny material-icons">email</i> xyzexample@gmail.com</p>
+          </div>
+			</div>
+	 	</div>
+
+	 	<div class="col s12 m4">
+			<div class="card-panel teal lighten-2 small">
+					<div class="card-image">
+            <span class="card-title">PG GIRLS REP</span>  
+            <img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
+          </div>
+          <div class="card-content">
+          <p>NAME OF PRESIDENT</p>
+          <p><i class="tiny material-icons">contact_phone</i> 9876543210</p>
+          <p><i class="tiny material-icons">email</i> xyzexample@gmail.com</p>
+          </div>
+			</div>
+	 	</div>
+	 </div>
+	</div>
+
+ 	<h3 class="center-align">CLASS REPESENTATIVES</h3>
+  
+  <div class="row container">
+  <button class="col s12 m12 l12 btn-large waves-effect waves-light red darken-1" id="showbtech">B TECH</button> 
+  </div>
+
+	<div class="row container">
+	 	<div class="col s12 m12 l12" id="btech">
+	 	 <ul class="collapsible" data-collapsible="accordion">
+    		<li>
+      			<div class="collapsible-header"><i class=" material-icons">list</i>Final Years
+      			</div>
+      			<div class="collapsible-body">
+      				<table class="striped centered responsive-table">
+        				<thead>
+                    <tr>
+                        <th data-field="id">NAME</th>
+                        <th data-field="name">BRANCH</th>
+                        <th data-field="price">CONTACT</th>
+                        <th data-field="email">EMAIL-ID</th>
+                        <th data-field="address">ADDRESS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Alvin</td>
+                      <td>Eclair</td>
+                      <td>$0.87</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+                    </tr>
+                    <tr>
+                      <td>Alan</td>
+                      <td>Jellybean</td>
+                      <td>$3.76</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+                    </tr>
+                    <tr>
+                      <td>Jonathan vsdvsvdsvd</td>
+                      <td>Mechanical</td>
+                      <td>9876543210</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+                    </tr>
+                </tbody>
+      				</table>
+				</div>
+   			</li>
+    		<li>
+      			<div class="collapsible-header"><i class="material-icons">list</i>Third Years
+      			</div>
+      			<div class="collapsible-body">
+      				<table class="striped centered responsive-table">
+        				<thead>
+                    <tr>
+                        <th data-field="id">NAME</th>
+                        <th data-field="name">BRANCH</th>
+                        <th data-field="price">CONTACT</th>
+                        <th data-field="email">EMAIL-ID</th>
+                        <th data-field="address">ADDRESS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Alvin</td>
+                      <td>Eclair</td>
+                      <td>$0.87</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+                    </tr>
+                    <tr>
+                      <td>Alan</td>
+                      <td>Jellybean</td>
+                      <td>$3.76</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+                    </tr>
+                    <tr>
+                      <td>Jonathan vsdvsvdsvd</td>
+                      <td>Mechanical</td>
+                      <td>9876543210</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+                    </tr>
+                </tbody>
+      				</table>
+      			</div>
+      		</li>
+      		<li>
+      			<div class="collapsible-header"><i class="material-icons">list</i>Second Years</div>
+      			<div class="collapsible-body">
+  					<table class="striped centered responsive-table">
+        				<thead>
+                    <tr>
+                        <th data-field="id">NAME</th>
+                        <th data-field="name">BRANCH</th>
+                        <th data-field="price">CONTACT</th>
+                        <th data-field="email">EMAIL-ID</th>
+                        <th data-field="address">ADDRESS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Alvin</td>
+                      <td>Eclair</td>
+                      <td>$0.87</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+                    </tr>
+                    <tr>
+                      <td>Alan</td>
+                      <td>Jellybean</td>
+                      <td>$3.76</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+                    </tr>
+                    <tr>
+                      <td>Jonathan vsdvsvdsvd</td>
+                      <td>Mechanical</td>
+                      <td>9876543210</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+                    </tr>
+                </tbody>
+      				</table>
+      			</div>
+    		</li>
+ 		 </ul>
+ 		</div>
+  </div>
+
+  <div class="row container">
+    <button class="col s12 m12 l12 btn-large waves-effect waves-light red darken-1" id="showmtech">M TECH</button> 
+  </div>
+
+  <div class="row container">
+ 		<div class="col s12 m12 l12" id="mtech">
+	 	   <ul class="collapsible" data-collapsible="accordion">
+    		<li>
+      			<div class="collapsible-header"><i class="material-icons">list</i>Second Years
+            </div>
+      			<div class="collapsible-body">
+      				<table class="striped centered responsive-table">
+        				<thead>
+                    <tr>
+                        <th data-field="id">NAME</th>
+                        <th data-field="name">BRANCH</th>
+                        <th data-field="price">CONTACT</th>
+                        <th data-field="email">EMAIL-ID</th>
+                        <th data-field="address">ADDRESS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Alvin</td>
+                      <td>Eclair</td>
+                      <td>$0.87</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+                    </tr>
+                    <tr>
+                      <td>Alan</td>
+                      <td>Jellybean</td>
+                      <td>$3.76</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+                    </tr>
+                    <tr>
+                      <td>Jonathan vsdvsvdsvd</td>
+                      <td>Mechanical</td>
+                      <td>9876543210</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+                    </tr>
+                </tbody>
+      				</table>
+				    </div>
+   			</li>
+
+    		<li>
+      		<div class="collapsible-header"><i class="material-icons">list</i>First Years
+      		</div>
+      			<div class="collapsible-body">
+      				<table class="striped centered responsive-table">
+        				<thead>
+          					<tr>
+              					<th data-field="id">NAME</th>
+              					<th data-field="name">BRANCH</th>
+              					<th data-field="price">CONTACT</th>
+                        <th data-field="email">EMAIL-ID</th>
+                        <th data-field="address">ADDRESS</th>
+          					</tr>
+        				</thead>
+
+        				<tbody>
+      						<tr>
+       				 			<td>Alvin</td>
+            					<td>Eclair</td>
+            					<td>$0.87</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+          					</tr>
+          					<tr>
+            					<td>Alan</td>
+            					<td>Jellybean</td>
+            					<td>$3.76</td>
+                      <td>abcdefghijkllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+          					</tr>
+          					<tr>
+           						<td>Jonathan vsdvsvdsvd</td>
+            					<td>Mechanical</td>
+            					<td>9876543210</td>
+                      <td>abcdefghijkfllm@gmail.com</td>
+                      <td>PG Block,Room 74</td>
+          					</tr>
+        				</tbody>
+      				</table>
+      		</div>
+        </li>
+ 		</ul>
+ 		</div>
+	 </div>
+
+{% endblock %}
