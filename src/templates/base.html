@@ -13,6 +13,7 @@
 
   <!-- Custom styles for this site -->
   {% block styles %}
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
   <link href="{% static 'site/css/main.css' %}" rel="stylesheet">
   {% endblock styles %}
 
@@ -21,6 +22,7 @@
 </head>
 <body>
   {% block navbar %}
+  <div class="navbar-fixed">
   <nav class="black" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">NITK SC</a>
       <ul class="right hide-on-med-and-down">
@@ -41,6 +43,8 @@
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+</div>
+
   {% endblock %}
 {% block content %}
 {% endblock %}
