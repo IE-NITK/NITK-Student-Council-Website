@@ -1,0 +1,24 @@
+/* Custom CSS for message.html template */
+
+.presi-image-div {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.presi-image {
+    height: 170px;
+    width: 170px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.message-heading {
+    font-size: 40px;
+    margin: 40px auto;
+}
+
+.message {
+    width: 700px;
+    margin-top: -120px;
+    margin-bottom: 100px; 
+}

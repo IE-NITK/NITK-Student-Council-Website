@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+   $(document).ready(function(){
+   
+      $("#HOBBY").hide();
+      
+    $("#hobbyclubs").click(function(){
+      
+      $("#HOBBY").show();
+      $("#TECH").hide();
+      
+    });
+
+   $("#techclubs").click(function(){
+     
+      $("#HOBBY").hide();
+       $("#TECH").show();
+      
+   });
+   
+ 
+});
+  </script>
+    <nav >
+      <div class="top-nav grey darken-3" >
+        <div class="valign-wrapper">
+          <div class="container">
+            <h1 class="center-align">      CLUB LIFE! </h1> 
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="row" id="images">
+      <div class="col s12 m6 l6"></div>
+      <div class="col s12 m6 l6"></div>
+    </div>
+    <div class="container" style="margin-top:100px;">  
+      <div class="center-align">
+     
+      <div  id="clubs" class="row">
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s6" id="techclubs"><a href="">TECH CLUBS</a></li>
+            <li class="tab col s6" id="hobbyclubs"><a href="">HOBBY CLUBS</a></li>
+          </ul>
+        </div>
+
+      </div>  
+     
+
+        <div id="TECH" >
+          <div class="row">
+            <div class="col s12 m6 l6" id="column1">
+
+                <div id="ieee" class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4 left-align">IEEE<i class="material-icons right">more_vert</i></span>
+                    <p class="right-align"><a href="https://www.google.com">
+                            <i class="fa fa-youtube-play black white-text " style="font-size:1rem;margin-right:20px;" ></i></a>
+                            <a href="https://www.google.com">
+                              <i class="fa fa-facebook  black white-text" style="font-size:1rem;"></i></a> </p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4 ">IEEE<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                  </div>
+                </div>
+
+                 <div id="csi" class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4 ">CSI<i class="material-icons right">more_vert</i></span>
+                    <p class="right-align"><a href="https://www.google.com">
+                            <i class="fa fa-youtube-play black white-text " style="font-size:1rem;margin-right:20px;" ></i></a>
+                            <a href="https://www.google.com">
+                              <i class="fa fa-facebook  black white-text" style="font-size:1rem;"></i></a> </p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4 ">CSI<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                  </div>
+                </div>
+
+                <div id="iste" class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4  left-align">ISTE<i class="material-icons right">more_vert</i></span>
+                    <p class="right-align"><a href="https://www.google.com">
+                            <i class="fa fa-youtube-play black white-text " style="font-size:1rem;margin-right:20px;" ></i></a>
+                            <a href="https://www.google.com">
+                              <i class="fa fa-facebook  black white-text" style="font-size:1rem;"></i></a> </p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4 " >ISTE<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                  </div>
+                </div>
+
+            
+            </div>
+            <div class="col s12 m6 l6" id="column2">
+
+              <div id="ie" class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4 left-align">IE<i class="material-icons right">more_vert</i></span>
+                    <p class="right-align"><a href="https://www.google.com">
+                            <i class="fa fa-youtube-play black white-text " style="font-size:1rem;margin-right:20px;" ></i></a>
+                            <a href="https://www.google.com">
+                              <i class="fa fa-facebook  black white-text" style="font-size:1rem;"></i></a> </p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4 ">Card Title<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                  </div>
+                </div>
+
+                 <div id="iet" class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4 left-align">IET<i class="material-icons right">more_vert</i></span>
+                    <p class="right-align"><a href="https://www.google.com">
+                            <i class="fa fa-youtube-play black white-text " style="font-size:1rem;margin-right:20px;" ></i></a>
+                            <a href="https://www.google.com">
+                              <i class="fa fa-facebook  black white-text" style="font-size:1rem;"></i></a> </p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4 ">IET<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                  </div>
+                </div>
+
+                <div id="roto" class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4 left-align">ROTORACT<i class="material-icons right">more_vert</i></span>
+                    <p class="right-align"><a href="https://www.google.com">
+                            <i class="fa fa-youtube-play black white-text " style="font-size:1rem;margin-right:20px;" ></i></a>
+                            <a href="https://www.google.com">
+                              <i class="fa fa-facebook  black white-text" style="font-size:1rem;"></i></a> </p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4 ">ROTORACT<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                  </div>
+                </div>
+            </div>
+
+          </div> 
+        </div>
+
+      
+
+        <div id="HOBBY">
+          <div class="row">
+            <div class=" col s12 m4 l4"  >
+              <div id="music" class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4 left-align">MUSIC CLUB<i class="material-icons right">more_vert</i></span>
+                    <p class="right-align"><a href="https://www.google.com">
+                            <i class="fa fa-youtube-play black white-text " style="font-size:1rem;margin-right:20px;" ></i></a>
+                            <a href="https://www.google.com">
+                              <i class="fa fa-facebook  black white-text" style="font-size:1rem;"></i></a> </p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4 ">Card Title<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                  </div>
+              </div>
+            </div>
+            <div class=" col s12 m4 l4"  >  
+              <div id="artist" class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">ARTIST FORUM<i class="material-icons right">more_vert</i></span>
+                    <p class="right-align"><a href="https://www.google.com">
+                            <i class="fa fa-youtube-play black white-text " style="font-size:1rem;margin-right:20px;" ></i></a>
+                            <a href="https://www.google.com">
+                              <i class="fa fa-facebook  black white-text" style="font-size:1rem;"></i></a> </p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4 ">Card Title<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                  </div>
+              </div>
+            </div>
+            <div class=" col s12 m4 l4"  >  
+              <div id="astronomy" class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4 left-align">ASTRONOMY<i class="material-icons right">more_vert</i></span>
+                    <p class="right-align"><a href="https://www.google.com">
+                            <i class="fa fa-youtube-play black white-text " style="font-size:1rem;margin-right:20px;" ></i></a>
+                            <a href="https://www.google.com">
+                              <i class="fa fa-facebook  black white-text" style="font-size:1rem;"></i></a> </p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                  </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+       </div> 
+  </div>
+
+{% endblock %}

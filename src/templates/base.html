@@ -24,11 +24,19 @@
   <nav class="black" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">NITK SC</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="">News</a></li>
+        <li><a href="">Events</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Login</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="">News</a></li>
+        <li><a href="">Events</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Login</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -38,6 +46,23 @@
 {% endblock %}
 {% block footer %}
   <footer class="page-footer black lighten">
+    <div class="container">
+            <div class="row">
+              <div class="col s12 m6">
+                <h5 class="white-text">NITK Student Council</h5>
+                <p class="grey-text text-lighten-4">To know more about the Student Council</p>
+              </div>
+              <div class="col m4 offset-m2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
     <div class="footer-copyright">
       <div class="container center">
       Built with <3 at <a class="blue-text text-lighten-3" href="http://ienitk.in">IE-NITK</a>
@@ -46,10 +71,14 @@
   </footer>
 {% endblock %}
 
-  <!--  Scripts-->
+<!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="{% static 'materialize/js/materialize.min.js' %}"></script>
+
   {% block scripts %}
+    <script type="text/javascript">
+      $(".button-collapse").sideNav();
+    </script>
   {% endblock scripts %}
 
   </body>
