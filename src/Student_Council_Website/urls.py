@@ -5,14 +5,14 @@ from django.conf.urls.static import static
 import profiles.urls
 import accounts.urls
 from . import views
-from website.views import *
+import website.views as websiteviews
 
 urlpatterns = [
     url(r'^$', views.HomePage.as_view(), name='home'),
     url(r'^message/$', views.MessagePage.as_view(), name='message'),
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^calendar/$', calendar, name='calendar'),
+    url(r'^calendar/$', websiteviews.calendar, name='calendar'),
     url(r'^', include(accounts.urls, namespace='accounts')),
     url(r'^markdown/', include('django_markdown.urls'))
 ]
