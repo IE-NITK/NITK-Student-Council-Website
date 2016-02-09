@@ -204,3 +204,24 @@ body>.navbar-transparent {
 * {
     box-sizing: border-box;
 }
+
+.bg-nitk {
+    background: url(/static/site/img/beach.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.content { max-width: 1000px; margin: 50px auto; padding: 20px; margin-top: 0px; background: white;}
+
+.bg-white { background-color: white;}
+
+.page-info .container {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.page-info .title {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}

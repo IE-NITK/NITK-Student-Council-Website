@@ -49,8 +49,27 @@
 
   {% endblock %}
 
+<div class="page-info">
+{% block page-info %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <a href="/" class="breadcrumb">Home</a>
+            <a href="#!" class="breadcrumb">Page Info 1</a>
+            <a href="#!" class="breadcrumb">Page Info 2</a>
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="title">Page Header</h1>
+    </div>
+</div>
+{% endblock %}
+</div>
+
+<div class="content">
 {% block content %}
 {% endblock %}
+</div>
 
 {% block footer %}
   <footer class="page-footer black lighten">
