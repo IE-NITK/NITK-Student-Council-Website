@@ -1,4 +1,17 @@
-{% extends "base.html" %}
+{% extends "static.html" %}
+{% block page-info %}
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<a href="/" class="breadcrumb">Home</a>
+			<a href="#!" class="breadcrumb">Meet The Representatives</a>
+		</div>
+	</div>
+	<div class="row">
+		<h1 class="title">Meet The Representatives</h1>
+	</div>
+</div>
+{% endblock %}
   {% block content %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -14,27 +27,17 @@
       $("#showmtech").click(function(){
         $("#mtech").show();
       });
-    })  
+    })
   </script>
-    <nav>
-      <div class="top-nav red darken-3">
-        <div class="valign-wrapper">
-          <div class="container">
-            <h2 class="center-align">MEET THE REPRESENTATIVES</h2>
-          </div>  
-        </div>
-      </div>
-    </nav>    
     <div>
-      <br><br>
-      <h3 class="center-align">POSITION HOLDERS</h3>
+		<h3 class="center-align">POSITION HOLDERS</h3>
     </div>
     <div class="container">
      <div class="row center-align">
       <div class="col s12 m4">
         <div class="card-panel teal lighten-2 small">
             <div class="card-image">
-              <span class="card-title">ENGI-CON</span>  
+              <span class="card-title">ENGI-CON</span>
               <img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
             </div>
             <div class="card-content">
@@ -47,7 +50,7 @@
       <div class="col s12 m4">
         <div class="card-panel teal lighten-2 small">
             <div class="card-image">
-              <span class="card-title">PRESIDENT</span>  
+              <span class="card-title">PRESIDENT</span>
               <img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
             </div>
             <div class="card-content">
@@ -60,7 +63,7 @@
       <div class="col s12 m4">
         <div class="card-panel teal lighten-2 small">
             <div class="card-image">
-              <span class="card-title">INCI-CON</span>  
+              <span class="card-title">INCI-CON</span>
               <img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
             </div>
             <div class="card-content">
@@ -73,7 +76,7 @@
        <div class="col s12 m4 ">
         <div class="card-panel teal lighten-2 small">
             <div class="card-image">
-              <span class="card-title">GIRLS REP</span>  
+              <span class="card-title">GIRLS REP</span>
               <img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
             </div>
             <div class="card-content">
@@ -86,7 +89,7 @@
       <div class="col s12 m4">
         <div class="card-panel teal lighten-2 small">
             <div class="card-image">
-              <span class="card-title">SECRETARY</span>  
+              <span class="card-title">SECRETARY</span>
               <img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
             </div>
             <div class="card-content">
@@ -99,7 +102,7 @@
       <div class="col s12 m4">
         <div class="card-panel teal lighten-2 small">
             <div class="card-image">
-              <span class="card-title">PG GIRLS REP</span>  
+              <span class="card-title">PG GIRLS REP</span>
               <img class="circle responsive-img" src="http://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg"></img>
             </div>
             <div class="card-content">
@@ -113,7 +116,7 @@
     </div>
     <h3 class="center-align">CLASS REPESENTATIVES</h3>
      <div class="row container">
-    <button class="col s12 m12 l12 btn-large waves-effect waves-light red darken-1" id="showbtech">B TECH</button> 
+    <button class="col s12 m12 l12 btn-large waves-effect waves-light red darken-1" id="showbtech">B TECH</button>
     </div>
     <div class="row container">
       <div class="col s12 m12 l12" id="btech">
@@ -209,4 +212,3 @@
     </div>
 
   {% endblock %}
-                                                                                                                               
