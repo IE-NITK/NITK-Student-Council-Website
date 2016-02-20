@@ -204,3 +204,7 @@ body>.navbar-transparent {
 * {
     box-sizing: border-box;
 }
+
+.custombtn{
+  width: 100%;
+}
