@@ -15,3 +15,6 @@ class MessagePage(generic.TemplateView):
 
 class ClubLifePage(generic.TemplateView):
 	template_name="clublife.html"
+
+class AnnouncePage(generic.TemplateView):
+	template_name="announce.html"

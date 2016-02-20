@@ -1,7 +1,7 @@
 @import "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
 
 html, body{
-    height:100%;		/* For full height images */
+    height:100%;        /* For full height images */
 }
 
 .starter-template {
@@ -205,6 +205,24 @@ body>.navbar-transparent {
     box-sizing: border-box;
 }
 
+i.biggercircle {
+    font-size: 18px;
+    line-height: 42px;
+    color: #fff;
+    background-color: #999;
+    text-align: center;
+}
+
+.biggercircle{
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    overflow: hidden;
+    left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+}
 .bg-nitk {
     background: url(/static/site/img/beach.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
