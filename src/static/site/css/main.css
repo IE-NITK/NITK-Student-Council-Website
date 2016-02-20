@@ -9,11 +9,27 @@ html, body{
   text-align: center;
 }
 
-.footer {
+/*.footer {
   padding-top: 40px;
   padding-bottom: 40px;
   margin-top: 40px;
   border-top: 1px solid #eee;
+}
+*/
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -190px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 190px; /* .push must be the same height as .footer */
 }
 
 .alert {
