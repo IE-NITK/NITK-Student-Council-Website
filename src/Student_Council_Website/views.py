@@ -13,5 +13,8 @@ class AboutPage(generic.TemplateView):
 class MessagePage(generic.TemplateView):
 	template_name = "message.html"
 
+class indarticle(generic.TemplateView):
+	template_name = "indarticles.html"
+
 class ClubLifePage(generic.TemplateView):
 	template_name="clublife.html"
