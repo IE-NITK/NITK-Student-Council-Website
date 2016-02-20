@@ -1,0 +1,103 @@
+{% extends "static.html" %}
+{% load staticfiles %}
+
+{% block page-info %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <a href="/" class="breadcrumb">Home</a>
+            <a href="#!" class="breadcrumb">FAQ</a>
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="title">FAQ</h1>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+	<link href="{% static 'site/css/faq.css' %}" rel="stylesheet">
+	<ul class="collapsible" data-collapsible="expandible">
+    <li>
+      <div class="collapsible-header active" >Office timings</div>
+      <div class="collapsible-body">  <table>
+        <thead>
+          <tr>
+              <th data-field="id">Office</th>
+              <th data-field="time">Timings(Mon-Fri)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Accounts Section</td>
+            <td>9:00-17:30</td>
+          </tr>
+          <tr>
+            <td>Cash Section</td>
+            <td>9:15-12:15 & 13:45-16:00</td>
+          </tr>
+          <tr>
+            <td>Library</td>
+            <td>8:00-23:00 & 8:00-16:00(Sunday) </td>
+          </tr>
+          <tr>
+          	<td>Library Xerox Section</td>
+          	<td>8:00-20:00</td>
+          </tr>
+          <tr>
+          	<td>Gym</td>
+          	<td>5:30-8:00 & 16:30-20:00</td>
+          </tr>
+          <tr>
+          	<td>Sports Complex</td>
+          	<td>16:30-20:00</td>
+          </tr>
+        </tbody>
+      </table></div>
+    </li>
+</ul>
+<ul class="collapsible" data-collapsible="expandible">
+    <li>
+      <div class="collapsible-header active">How to pay college/hostel fees?</div>
+      <div class="collapsible-body">
+		<p>SBI collect or DD, redirect to DD details page</p>
+      </div>
+    </li>
+</ul>
+<ul class="collapsible" data-collapsible="expandible">
+    <li>
+      <div class="collapsible-header active">How to attain address proof of NITK?</div>
+      <div class="collapsible-body">
+      	
+      		<p>Go to academic section, apply for bonafide.
+      		<br>
+      		Fill out the form.
+      		<br>
+      		Pay Rs200 per transcript at the cash section
+      		<br>
+      		Collect your transcripts in 10-15 days</p>
+      </div>
+    </li>
+
+ </ul>
+ <ul class="collapsible" data-collapsible="expandible">
+    <li>
+      <div class="collapsible-header active">How to book the guest house?</div>
+      <div class="collapsible-body">
+		<p>DFW office, AC corridor, get gorm, fill and get sign from HoD/Fac AD, give it back to DFW office.
+		</p>
+      </div>
+    </li>
+</ul>
+<ul class="collapsible" data-collapsible="expandible">
+     <li>
+      <div class="collapsible-header active">What is the cost of the room in the guest house?</div>
+      <div class="collapsible-body">
+		<p>1000 room for day 1, 600 from day 2 onwards.</p>
+      </div>
+    </li>
+
+  </ul>
+        
+{% endblock %}
