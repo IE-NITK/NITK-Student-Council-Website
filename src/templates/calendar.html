@@ -16,13 +16,27 @@
   <script src="{% static 'site/js/moment.min.js' %}"></script>
   <script src="{% static 'site/js/fullcalendar.min.js' %}"></script>
   <script type="text/javascript">
+    var eventlist = [];
+    var eventobj = {{eventlist|safe}};
+    for(var i=0, size=eventobj.length; i<size; i++){
+      var item = eventobj[i];
+      var url = "/events/?events_id=" + item.id;
+      var newitem = {
+        "title" : item.title,
+        "start" : item.start,
+        "end" : item.end,
+        "url" : url
+      };
+      eventlist.push(newitem);
+    }
+
     $(document).ready(function() {
 
       // page is now ready, initialize the calendar...
 
       $('#calendar').fullCalendar({
           // put your options and callbacks here
-          events : {{eventlist|safe}}
+          events : eventlist
       })
     });
     $(".button-collapse").sideNav();

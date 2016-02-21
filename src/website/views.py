@@ -6,14 +6,10 @@ import json
 # Create your views here.
 
 def date_handler(obj):
+    # To handle the date format while JSON conversion
     return obj.isoformat() if hasattr(obj, 'isoformat') else obj
 
 def calEvents(request):
-    #events = []
-    #eventlist = Events.objects.all()
-    #for event in eventlist:
-    #    events.append({'title': event.title, 'start': event.start, 'end': event.end})
-    #return render(request, 'calendar.html', json.dumps(events, cls=DjangoJSONEncoder))
-    objectQuerySet = Events.objects.values('title','start','end')
+    objectQuerySet = Events.objects.values('id','title','start','end')
     events = json.dumps(list(objectQuerySet), default=date_handler)
     return render(request, 'calendar.html', {'eventlist':events})
