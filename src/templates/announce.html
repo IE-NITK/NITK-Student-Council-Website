@@ -1,0 +1,75 @@
+{% extends "static.html" %}
+
+{% block page-info %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <a href="/" class="breadcrumb">Home</a>
+            <a href="#!" class="breadcrumb">Announcements</a>
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="title">Announcements</h1>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'site/css/message.css' %}" rel="stylesheet">
+
+<div class="container">
+     <div class="collection">
+            {% for announce in Announcements %}
+                <a class="collection-item" href="">
+                    <li class="collection-item avatar">
+                        <i class="material-icons biggercircle red">play_arrow</i>
+                        <br><span class="title">&nbsp&nbsp&nbsp {{ announce.title }}</span>
+                    </li>
+                </a>
+            {% endfor %}
+        <ul class="collection">
+                  <a class="collection-item" href=""><li class="collection-item avatar">
+                    <i class="material-icons biggercircle red">play_arrow</i>
+                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 1</span>
+                  </li></a>
+                  <a class="collection-item" href=""><li class="collection-item avatar">
+                    <i class="material-icons biggercircle blue">play_arrow</i>
+                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 2</span>
+                  </li></a>
+                  <a class="collection-item" href=""><li class="collection-item avatar">
+                    <i class="material-icons biggercircle orange">play_arrow</i>
+                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 3</span>
+                  </li></a>
+                  <a class="collection-item" href=""><li class="collection-item avatar">
+                    <i class="material-icons biggercircle yellow">play_arrow</i>
+                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 4</span>
+                  </li></a>
+                  <a class="collection-item" href=""><li class="collection-item avatar">
+                    <i class="material-icons biggercircle brown">play_arrow</i>
+                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 5</span>
+                  </li></a>
+                  <a class="collection-item" href=""><li class="collection-item avatar">
+                    <i class="material-icons biggercircle green">play_arrow</i>
+                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 6</span>
+                  </li></a>
+                  <a class="collection-item" href=""><li class="collection-item avatar">
+                    <i class="material-icons biggercircle pink">play_arrow</i>
+                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 7</span>
+                  </li></a>
+                  <a class="collection-item" href=""><li class="collection-item avatar">
+                    <i class="material-icons biggercircle purple">play_arrow</i>
+                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 8</span>
+                  </li></a>
+                  <a class="collection-item" href=""><li class="collection-item avatar">
+                    <i class="material-icons biggercircle teal">play_arrow</i>
+                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 9</span>
+                  </li></a>
+                  <a class="collection-item" href=""><li class="collection-item avatar">
+                    <i class="material-icons biggercircle maroon">play_arrow</i>
+                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 10</span>
+                  </li></a>   
+      </div>
+  </div>  
+{% endblock %}
+
