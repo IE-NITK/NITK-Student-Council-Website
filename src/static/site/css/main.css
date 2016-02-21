@@ -244,6 +244,69 @@ i.biggercircle {
     margin-bottom: 0px;
 }
 
-.custombtn{
-    width: 100%;
+.event_item {
+    border: none;
+    margin-bottom: 30px;
+}
+.event_item {
+    border: 1px solid #D0D3D4;
+    /*color: #115740;*/
+    display: table;
+    clear: both;
+    height: 80px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-decoration: none !important;
+    position: relative;
+    width: 98%;
+}
+
+
+.event_name {
+    border-left: 7px solid #D0D3D4;
+    margin-left: 65px;
+}
+.event_name {
+    position: relative;
+    z-index: 0;
+    /*font-weight: bold;*/
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+.event_datetime {
+    width: 65px;
+    background-color: #ffffff;
+}
+.event_datetime {
+    width: 80px;
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    margin: 5px 0;
+    /*background-color: #D0D3D4;*/
+}
+
+.event_month {
+    font-size: 16px;
+}
+
+
+.event_day {
+    font-size: 27px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.event_time {
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.4em;
+}
+
+.event_month, .event_day, .event_time {
+    display: block;
 }
