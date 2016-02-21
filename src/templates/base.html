@@ -24,7 +24,7 @@
 </head>
 <body>
   {% block navbar %}
-  <div class="navbar-fixed">
+  <!-- <div class="navbar-fixed">
   <nav class="black" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">NITK SC</a>
       <ul class="right hide-on-med-and-down">
@@ -45,7 +45,47 @@
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-</div>
+</div> -->
+  <ul id="dropdown1"class="dropdown-content center-align">
+    <li><a href="">Meassage from the President</a></li>
+    <li><a href="">Meet the Representatives</a></li>
+    <li><a href="">Minutes of the Meeting</a></li>
+    <li><a href="">Announcements</a></li>
+  </ul>
+  <ul id="dropdown2" class="dropdown-content center-align">
+    <li><a href="">News</a></li>
+    <li class="divider"></li>
+    <li><a href="">Events</a></li>
+    <li><a href="">Calender</a></li>
+    <li class="divider"></li>
+    <li><a href="">Blog</a></li>
+    <li class="divider"></li>
+    <li><a href="">Club Life</a></li>
+  </ul>
+  <ul id="dropdown3" class="dropdown-content center-align">
+    <li><a href="">Achievements and Agenda</a></li>
+    <li><a href="">Opportunities</a></li>
+    <li class="divider"></li>
+    <li><a href="">Contact Numbers</a></li>
+    <li><a href="">FAQ</a></li>
+  </ul>
+  <nav class="black" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="#!" class="brand-logo">NITK SC</a>
+      <ul class="right hide-on-med-and-down">
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Student Council<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">What's New<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Miscellaneous<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a href="">Login</a></li>
+      </ul>
+      <ul id="slide-out" class="side-nav">
+          <li><a href="#!">First Sidebar Link</a></li>
+          <li><a href="#!">Second Sidebar Link</a></li>
+        </ul>
+        <a href="" id="sidenav" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    </div>
+  </nav>
 
   {% endblock %}
 
@@ -85,8 +125,22 @@
 
   {% block scripts %}
     <script type="text/javascript">
-      $(".button-collapse").sideNav();   // THIS IS NOT WORKING!        
+
+    $(document).ready(function(){
+
+      $(".dropdown-button").dropdown();
+      $(".button-collapse").sideNav();
+
+    });
+
+    $(document).click(function(){
+      $("#sidenav").sideNav('show');
+    });
+ 
     </script>
+
+  
+
   {% endblock scripts %}
 
   </body>
