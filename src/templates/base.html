@@ -47,40 +47,56 @@
     <li><a href="">Contact Numbers</a></li>
     <li><a href="">FAQ</a></li>
   </ul>
-  <nav class="black" role="navigation">
-    <div class="nav-wrapper container">
-      <a href="#!" class="brand-logo">NITK SC</a>
-      <ul class="right hide-on-med-and-down">
-        <!-- Dropdown Trigger -->
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Student Council<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">What's New<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Miscellaneous<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a href="">Login</a></li>
-      </ul>
-      <ul id="slide-out" class="side-nav">
-          <li><a href="">Meassage from the President</a></li>
-          <li><a href="">Meet the Representatives</a></li>
-          <li><a href="">Minutes of the Meeting</a></li>
-          <li><a href="">Announcements</a></li>
-          <li class="divider"></li>
-          <li><a href="">News</a></li>
-          <li class="divider"></li>
-          <li><a href="">Events</a></li>
-          <li><a href="">Calender</a></li>
-          <li class="divider"></li>
-          <li><a href="">Blog</a></li>
-          <li class="divider"></li>
-          <li><a href="">Club Life</a></li>
-          <li class="divider"></li>
-          <li><a href="">Achievements and Agenda</a></li>
-          <li><a href="">Opportunities</a></li>
-          <li class="divider"></li>
-          <li><a href="">Contact Numbers</a></li>
-          <li><a href="">FAQ</a></li>
+  <div class="navbar-fixed">
+    <nav class="black" role="navigation">
+      <div class="nav-wrapper container">
+        <a href="#!" class="brand-logo">NITK SC</a>
+        <ul class="right hide-on-med-and-down">
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Student Council<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown2">What's New<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Miscellaneous<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="">Login</a></li>
         </ul>
-        <a href="" id="sidenav" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    </div>
-  </nav>
+        <ul id="slide-out" class="side-nav collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Student Council</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="">Meassage from the President</a></li>
+                  <li><a href="">Meet the Representatives</a></li>
+                  <li><a href="">Minutes of the Meeting</a></li>
+                  <li><a href="">Announcements</a></li>
+                </ul>
+              </div>
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">What's New</a>
+            <div class="collapsible-body">
+                <ul>
+                  <li><a href="">News</a></li>
+                  <li class="divider"></li>
+                  <li><a href="">Events</a></li>
+                  <li><a href="">Calender</a></li>
+                  <li class="divider"></li>
+                  <li><a href="">Blog</a></li>
+                  <li class="divider"></li>
+                  <li><a href="">Club Life</a></li>
+                </ul>
+              </div>
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Miscellaneous</a>
+            <div class="collapsible-body">
+                <ul>
+                  <li><a href="">Achievements and Agenda</a></li>
+                  <li><a href="">Opportunities</a></li>
+                  <li class="divider"></li>
+                  <li><a href="">Contact Numbers</a></li>
+                  <li><a href="">FAQ</a></li>
+                </ul>
+              </div>
+
+          </ul>
+          <a href="" id="sidenav" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      </div>
+    </nav>
+  </div>
 
   {% endblock %}
 
@@ -108,7 +124,7 @@
           </div>
     <div class="footer-copyright">
       <div class="container center">
-      Built with <3 at <a class="blue-text text-lighten-3" href="http://ienitk.in">IE-NITK</a>
+      Built with <i class="fa fa-heart"></i> at <a class="blue-text text-lighten-3" href="http://ienitk.in">IE-NITK</a>
       </div>
     </div>
   </footer>
@@ -125,16 +141,13 @@
 
       $(".dropdown-button").dropdown();
       $(".button-collapse").sideNav({
-        menuWidth: 260, // Default is 240
+        menuWidth: 320, // Default is 240
         edge: 'left',
         closeOnClick: true
       });
 
     });
     </script>
-
-  
-
   {% endblock scripts %}
 
   </body>
