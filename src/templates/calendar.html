@@ -20,7 +20,7 @@
     var eventobj = {{eventlist|safe}};
     for(var i=0, size=eventobj.length; i<size; i++){
       var item = eventobj[i];
-      var url = "/events/?events_id=" + item.id;
+      var url = "/events/" + item.id;
       var newitem = {
         "title" : item.title,
         "start" : item.start,
