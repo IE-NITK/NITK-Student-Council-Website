@@ -58,8 +58,25 @@
         <li><a href="">Login</a></li>
       </ul>
       <ul id="slide-out" class="side-nav">
-          <li><a href="#!">First Sidebar Link</a></li>
-          <li><a href="#!">Second Sidebar Link</a></li>
+          <li><a href="">Meassage from the President</a></li>
+          <li><a href="">Meet the Representatives</a></li>
+          <li><a href="">Minutes of the Meeting</a></li>
+          <li><a href="">Announcements</a></li>
+          <li class="divider"></li>
+          <li><a href="">News</a></li>
+          <li class="divider"></li>
+          <li><a href="">Events</a></li>
+          <li><a href="">Calender</a></li>
+          <li class="divider"></li>
+          <li><a href="">Blog</a></li>
+          <li class="divider"></li>
+          <li><a href="">Club Life</a></li>
+          <li class="divider"></li>
+          <li><a href="">Achievements and Agenda</a></li>
+          <li><a href="">Opportunities</a></li>
+          <li class="divider"></li>
+          <li><a href="">Contact Numbers</a></li>
+          <li><a href="">FAQ</a></li>
         </ul>
         <a href="" id="sidenav" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     </div>
@@ -107,7 +124,11 @@
     $(document).ready(function(){
 
       $(".dropdown-button").dropdown();
-      $(".button-collapse").sideNav();
+      $(".button-collapse").sideNav({
+        menuWidth: 260, // Default is 240
+        edge: 'left',
+        closeOnClick: true
+      });
 
     });
     </script>
