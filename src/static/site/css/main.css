@@ -249,7 +249,8 @@ i.biggercircle {
     margin-bottom: 30px;
 }
 .event_item {
-    border: 1px solid #D0D3D4;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
     /*color: #115740;*/
     display: table;
     clear: both;
