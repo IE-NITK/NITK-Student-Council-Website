@@ -264,8 +264,9 @@ i.biggercircle {
 
 
 .event_name {
-    border-left: 7px solid #D0D3D4;
+    border-left: 3px solid #D0D3D4;
     margin-left: 65px;
+    padding-left: 5px;
 }
 .event_name {
     position: relative;
