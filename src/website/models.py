@@ -21,11 +21,12 @@ class News(models.Model):
 
 class Club(models.Model):
     user = models.ForeignKey(Profile)
+    name = models.CharField(max_length=300)
     convenor = models.CharField(max_length=100)
     strength = models.IntegerField()
 
     def __str__(self):
-        return self.user.user.get_full_name
+        return self.name
 
 class Member(models.Model):
     user = models.ForeignKey(Profile)
@@ -53,7 +54,8 @@ class Events(models.Model):
     title = models.CharField(max_length=200)
     organizer = models.ForeignKey(Club)
     details = models.CharField(max_length=2000)
-    date = models.DateTimeField()
+    start = models.DateTimeField()
+    end = models.DateTimeField()
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
     contact = models.CharField(max_length=15, validators=[phone_regex], blank=True)
 
