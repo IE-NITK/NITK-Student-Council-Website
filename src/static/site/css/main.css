@@ -231,6 +231,14 @@ i.biggercircle {
     background-size: cover;
 }
 
+.bg-nitk2 {
+    background: url(/static/site/img/im2.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .content { max-width: 1000px; margin: 50px auto; padding: 20px; margin-top: 0px; background: white;}
 
 .bg-grey { background-color: #f2f2f2;}
