@@ -20,6 +20,7 @@
 
 <div class="container">
      <div class="collection">
+         <ul>
             {% for announce in Announcements %}
                 <a class="collection-item" href="">
                     <li class="collection-item avatar">
@@ -28,7 +29,8 @@
                     </li>
                 </a>
             {% endfor %}
-        <ul class="collection">
+        </ul>
+        <ul>
                   <a class="collection-item" href=""><li class="collection-item avatar">
                     <i class="material-icons biggercircle red">play_arrow</i>
                     <br><span class="title">&nbsp&nbsp&nbsp Announcement 1</span>
@@ -68,7 +70,8 @@
                   <a class="collection-item" href=""><li class="collection-item avatar">
                     <i class="material-icons biggercircle maroon">play_arrow</i>
                     <br><span class="title">&nbsp&nbsp&nbsp Announcement 10</span>
-                  </li></a>   
+                  </li></a>
+        </ul>
       </div>
   </div>  
 {% endblock %}
