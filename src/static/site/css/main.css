@@ -383,3 +383,13 @@ i.biggercircle {
     -webkit-animation-timing-function: linear;
     -moz-animation-timing-function: linear;
 }
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -190px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 190px; /* .push must be the same height as .footer */
+}
