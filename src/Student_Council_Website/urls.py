@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^', include(accounts.urls, namespace='accounts')),
     url(r'^markdown/', include('django_markdown.urls')),
     url(r'^clublife/', views.ClubLifePage.as_view(), name='club'),
+    url(r'^announce/', views.AnnouncePage.as_view(), name='announce'),
     url(r'^contacts/',views.ContactNumbers.as_view(),name='contacts')
 ]
 
