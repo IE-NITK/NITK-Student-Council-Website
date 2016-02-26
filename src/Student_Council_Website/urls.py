@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 import profiles.urls
 import accounts.urls
 from . import views
+import website.views as websiteviews
 
 urlpatterns = [
     url(r'^$', views.HomePage.as_view(), name='home'),
@@ -12,10 +13,12 @@ urlpatterns = [
     url(r'^represent/', views.represent.as_view(), name='represent'),
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^calendar/$', websiteviews.calEvents),
     url(r'^', include(accounts.urls, namespace='accounts')),
     url(r'^markdown/', include('django_markdown.urls')),
     url(r'^clublife/', views.ClubLifePage.as_view(), name='club'),
     url(r'^announce/', views.AnnouncePage.as_view(), name='announce'),
+    url(r'^contacts/',views.ContactNumbers.as_view(),name='contacts')
 ]
 
 # User-uploaded files like profile pics need to be served in development

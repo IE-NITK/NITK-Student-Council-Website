@@ -18,3 +18,6 @@ class ClubLifePage(generic.TemplateView):
 
 class AnnouncePage(generic.TemplateView):
 	template_name="announce.html"
+
+class ContactNumbers(generic.TemplateView):
+	template_name="contacts.html"
