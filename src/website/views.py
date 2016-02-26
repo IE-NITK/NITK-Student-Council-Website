@@ -30,11 +30,11 @@ def calEvents(request):
     return render(request, 'calendar.html', {'eventlist':events})
 
 def homePage(request):
-    eventlist = Events.objects.all().order_by('start')[:5]
-    newslist = News.objects.all().order_by('timestamp')[:5]
-    articlelist = Articles.objects.all().order_by('published')[:5]
+    eventlist = Events.objects.all().order_by('-start')[:5]
+    newslist = News.objects.all().order_by('-timestamp')[:5]
+    articlelist = Articles.objects.all().order_by('-published')[:5]
     return render(request,'home.html',{'events':eventlist,'news':newslist,'articles':articlelist})
 
 def announcements(request):
-    announcelist = Announcements.objects.all().order_by('-start')
-    return render(request,'announce.html',{announcements:'announcelist'})
+    announcelist = Announcements.objects.all().order_by('timestamp')
+    return render(request,'announce.html',{'announcements':announcelist})

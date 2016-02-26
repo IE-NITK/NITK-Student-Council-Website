@@ -5,9 +5,11 @@ from django.conf.urls.static import static
 import profiles.urls
 import accounts.urls
 import website.urls
+import website.views as websiteviews
 from . import views
 
 urlpatterns = [
+    url(r'^$', websiteviews.homePage, name='home'),
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(accounts.urls, namespace='accounts')),
