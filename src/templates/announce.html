@@ -21,58 +21,15 @@
 <div class="container">
      <div class="collection">
          <ul>
-            {% for announce in Announcements %}
-                <a class="collection-item" href="">
+            {% for item in announcements %}
+                <a class="collection-item" href="/announce/{{item.id}}">
                     <li class="collection-item avatar">
                         <i class="material-icons biggercircle red">play_arrow</i>
-                        <br><span class="title">&nbsp&nbsp&nbsp {{ announce.title }}</span>
+                        <br><span class="title">{{item.title}}</span>
                     </li>
                 </a>
             {% endfor %}
         </ul>
-        <ul>
-                  <a class="collection-item" href=""><li class="collection-item avatar">
-                    <i class="material-icons biggercircle red">play_arrow</i>
-                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 1</span>
-                  </li></a>
-                  <a class="collection-item" href=""><li class="collection-item avatar">
-                    <i class="material-icons biggercircle blue">play_arrow</i>
-                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 2</span>
-                  </li></a>
-                  <a class="collection-item" href=""><li class="collection-item avatar">
-                    <i class="material-icons biggercircle orange">play_arrow</i>
-                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 3</span>
-                  </li></a>
-                  <a class="collection-item" href=""><li class="collection-item avatar">
-                    <i class="material-icons biggercircle yellow">play_arrow</i>
-                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 4</span>
-                  </li></a>
-                  <a class="collection-item" href=""><li class="collection-item avatar">
-                    <i class="material-icons biggercircle brown">play_arrow</i>
-                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 5</span>
-                  </li></a>
-                  <a class="collection-item" href=""><li class="collection-item avatar">
-                    <i class="material-icons biggercircle green">play_arrow</i>
-                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 6</span>
-                  </li></a>
-                  <a class="collection-item" href=""><li class="collection-item avatar">
-                    <i class="material-icons biggercircle pink">play_arrow</i>
-                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 7</span>
-                  </li></a>
-                  <a class="collection-item" href=""><li class="collection-item avatar">
-                    <i class="material-icons biggercircle purple">play_arrow</i>
-                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 8</span>
-                  </li></a>
-                  <a class="collection-item" href=""><li class="collection-item avatar">
-                    <i class="material-icons biggercircle teal">play_arrow</i>
-                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 9</span>
-                  </li></a>
-                  <a class="collection-item" href=""><li class="collection-item avatar">
-                    <i class="material-icons biggercircle maroon">play_arrow</i>
-                    <br><span class="title">&nbsp&nbsp&nbsp Announcement 10</span>
-                  </li></a>
-        </ul>
       </div>
-  </div>  
+  </div>
 {% endblock %}
-
