@@ -19,6 +19,15 @@ class News(models.Model):
     def __str__(self):
         return self.title
 
+class Announcements(models.Model):
+    title = models.CharField(max_length=300)
+    details = models.CharField(max_length=2000)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    pinned = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
+
 class Club(models.Model):
     user = models.ForeignKey(Profile)
     name = models.CharField(max_length=300)
