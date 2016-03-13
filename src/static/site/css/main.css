@@ -208,3 +208,18 @@ body>.navbar-transparent {
 .custombtn{
   width: 100%;
 }
+
+ul.tabs.customtabs{
+  flex-direction:column;
+  height: 100%;
+  float: left;
+  width: 20%;
+}
+
+ul.tabs.customtabs .indicator{
+  display: none;
+}
+
+ul.tabs.customtabs li.active{
+  background-color: fuschia;
+}
