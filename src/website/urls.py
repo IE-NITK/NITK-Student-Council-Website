@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^announce/', views.announcements, name='announce'),
     url(r'^contacts/',views.ContactNumbers.as_view(),name='contacts'),
     url(r'^news/', views.NewsPage.as_view(), name='news'),
+    url(r'^eachNews/', views.eachNewsPage.as_view(), name='eachNews'),
 ]
