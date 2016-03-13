@@ -20,6 +20,9 @@ class ClubLifePage(generic.TemplateView):
 class ContactNumbers(generic.TemplateView):
 	template_name="contacts.html"
 
+class NewsPage(generic.TemplateView):
+	template_name="news.html"
+
 def date_handler(obj):
     # To handle the date format while JSON conversion
     return obj.isoformat() if hasattr(obj, 'isoformat') else obj
