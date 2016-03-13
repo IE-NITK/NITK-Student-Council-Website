@@ -31,26 +31,12 @@
   </div>
   <div class="col s10">
     <div class="collection">
-        {% for news in News %}
-        <a class="collection-item avatar" href="">
+        {% for item in news %}
+        <a class="collection-item avatar" href="/news/{{item.id}}">
             <i class="material-icons biggercircle red">info</i>
-            <br><span class="title">&nbsp&nbsp&nbsp {{ news.title }}</span>
+            <br><span class="title">{{ item.title }}</span>
         </a>
         {% endfor %}
-      <!-- TO BE DELETED -->
-        <a class="collection-item avatar" href="">
-            <i class="material-icons biggercircle red">info</i>
-            <br><span class="title">&nbsp&nbsp&nbsp News 1</span>
-        </a>
-        <a class="collection-item avatar" href="">
-            <i class="material-icons biggercircle yellow">info</i>
-            <br><span class="title">&nbsp&nbsp&nbsp News 2</span>
-        </a>
-        <a class="collection-item avatar" href="">
-            <i class="material-icons biggercircle blue">info</i>
-            <br><span class="title">&nbsp&nbsp&nbsp News 3</span>
-        </a>
-      <!-- TILL HERE -->
     </div>
   </div>
 
