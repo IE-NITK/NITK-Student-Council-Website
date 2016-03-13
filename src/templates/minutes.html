@@ -1,0 +1,63 @@
+{% extends "static.html" %}
+
+{% block page-info %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <a href="/" class="breadcrumb">Home</a>
+            <a href="#!" class="breadcrumb">Meeting Minutes/Letters</a>
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="title">Meeting Minutes/Letters</h1>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'site/css/message.css' %}" rel="stylesheet">
+
+<div class="row flow-text">
+    <p> Click on any of the below links to open the relevant file. The link will redirect you to the document. You may download a copy if you like!</p>
+    <br></br>
+
+    <nav>
+        <div class="nav-wrapper center-align">
+            <p>Meeting Minutes</p>
+        </div>
+    </nav>
+
+    <div class="collection">
+        <a href="" class="collection-item">Students' Council Meeting 01 (Closed Doors)- 26 July 2012</a>
+        <a href="" class="collection-item">Students' Council Meeting 01 (Closed Doors)- 26 July 2012</a>
+        <a href="" class="collection-item">Students' Council Meeting 02 (Open House) - 31 August 2012�</a>
+        <a href="" class="collection-item">Students' Council Meeting 03 (Open) - 16 January 2013</a>
+    </div>
+    
+    <nav>
+        <div class="nav-wrapper center-align">
+            <p>Letters</p>
+        </div>
+    </nav>
+
+    <p><b>Letters 2012-13</b></p>
+
+    <div class="collection">
+        <a href="" class="collection-item">Students' Council Meeting 01 (Closed Doors)- 26 July 2012</a>
+        <a href="" class="collection-item">Students' Council Meeting 01 (Closed Doors)- 26 July 2012</a>
+        <a href="" class="collection-item">Students' Council Meeting 02 (Open House) - 31 August 2012�</a>
+        <a href="" class="collection-item">Students' Council Meeting 03 (Open) - 16 January 2013</a>
+    </div>
+
+     <p><b>Letters 2015-16</b></p>
+
+    <div class="collection">
+        <a href="" class="collection-item">Students' Council Meeting 01 (Closed Doors)- 26 July 2012</a>
+        <a href="" class="collection-item">Students' Council Meeting 01 (Closed Doors)- 26 July 2012</a>
+        <a href="" class="collection-item">Students' Council Meeting 02 (Open House) - 31 August 2012�</a>
+        <a href="" class="collection-item">Students' Council Meeting 03 (Open) - 16 January 2013</a>
+    </div>
+  
+</div>
+{% endblock %}

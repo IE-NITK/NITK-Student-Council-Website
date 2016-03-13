@@ -18,3 +18,5 @@ class ClubLifePage(generic.TemplateView):
 class EventsPage(generic.TemplateView):
 	template_name="events.html"
 
+class MinutesPage(generic.TemplateView):
+    template_name = "minutes.html"
