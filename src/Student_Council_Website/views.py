@@ -1,6 +1,5 @@
 from django.views import generic
 
-
 class HomePage(generic.TemplateView):
     template_name = "home.html"
 
@@ -18,3 +17,4 @@ class ClubLifePage(generic.TemplateView):
 
 class EventsPage(generic.TemplateView):
 	template_name="events.html"
+
