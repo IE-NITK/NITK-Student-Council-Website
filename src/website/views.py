@@ -20,12 +20,6 @@ class ClubLifePage(generic.TemplateView):
 class ContactNumbers(generic.TemplateView):
 	template_name="contacts.html"
 
-class NewsPage(generic.TemplateView):
-	template_name="news.html"
-
-class eachNewsPage(generic.TemplateView):
-	template_name="eachNews.html"
-
 def date_handler(obj):
     # To handle the date format while JSON conversion
     return obj.isoformat() if hasattr(obj, 'isoformat') else obj
@@ -44,3 +38,11 @@ def homePage(request):
 def announcements(request):
     announcelist = Announcements.objects.all().order_by('timestamp')
     return render(request,'announce.html',{'announcements':announcelist})
+
+def newsPage(request, num=0):
+    if num:
+        news = News.objects.get(id=num)
+        return render(request,'eachNews.html',{'news':news})
+    else:
+        news = News.objects.all().order_by('timestamp')
+        return render(request,'news.html',{'news':news})

@@ -9,6 +9,6 @@ urlpatterns = [
     url(r'^clublife/', views.ClubLifePage.as_view(), name='club'),
     url(r'^announce/', views.announcements, name='announce'),
     url(r'^contacts/',views.ContactNumbers.as_view(),name='contacts'),
-    url(r'^news/', views.NewsPage.as_view(), name='news'),
-    url(r'^eachNews/', views.eachNewsPage.as_view(), name='eachNews'),
+    url(r'^news/$', views.newsPage, name='news'),
+    url(r'^news/(?P<num>[0-9]+)/$', views.newsPage, name='eachNews'),
 ]
