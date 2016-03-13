@@ -1,0 +1,57 @@
+{% extends "static.html" %}
+
+{% block page-info %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <a href="/" class="breadcrumb">Home</a>
+            <a href="#!" class="breadcrumb">News</a>
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="title">News</h1>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'site/css/message.css' %}" rel="stylesheet">
+<div class="row">
+  <div class="col s2">
+    <div class="row center-align">
+      <h5>Categories</h5>
+      <ul class="tabs customtabs">
+        <li class="tab col s12" id=""><a href="">Campus News</a></li>
+        <li class="tab col s12" id=""><a href="">In the News</a></li>
+        <li class="tab col s12" id=""><a href="">Spotlights</a></li>
+        <li class="tab col s12" id=""><a href="">Something</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col s10">
+    <div class="collection">
+        {% for news in News %}
+        <a class="collection-item avatar" href="">
+            <i class="material-icons biggercircle red">info</i>
+            <br><span class="title">&nbsp&nbsp&nbsp {{ news.title }}</span>
+        </a>
+        {% endfor %}
+      <!-- TO BE DELETED -->
+        <a class="collection-item avatar" href="">
+            <i class="material-icons biggercircle red">info</i>
+            <br><span class="title">&nbsp&nbsp&nbsp News 1</span>
+        </a>
+        <a class="collection-item avatar" href="">
+            <i class="material-icons biggercircle yellow">info</i>
+            <br><span class="title">&nbsp&nbsp&nbsp News 2</span>
+        </a>
+        <a class="collection-item avatar" href="">
+            <i class="material-icons biggercircle blue">info</i>
+            <br><span class="title">&nbsp&nbsp&nbsp News 3</span>
+        </a>
+      <!-- TILL HERE -->
+    </div>
+  </div>
+
+{% endblock %}

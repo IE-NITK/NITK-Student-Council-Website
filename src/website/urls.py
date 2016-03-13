@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^clublife/', views.ClubLifePage.as_view(), name='club'),
     url(r'^announce/', views.announcements, name='announce'),
     url(r'^contacts/',views.ContactNumbers.as_view(),name='contacts'),
+    url(r'^news/', views.NewsPage.as_view(), name='news'),
 ]
