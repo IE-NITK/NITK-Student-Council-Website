@@ -20,16 +20,12 @@
 
 <div class="container">
      <div class="collection">
-         <ul>
             {% for item in announcements %}
-                <a class="collection-item" href="/announce/{{item.id}}">
-                    <li class="collection-item avatar">
+                <a class="collection-item avatar" href="/announce/{{item.id}}">
                         <i class="material-icons biggercircle red">play_arrow</i>
                         <br><span class="title">{{item.title}}</span>
-                    </li>
                 </a>
             {% endfor %}
-        </ul>
       </div>
   </div>
 {% endblock %}
