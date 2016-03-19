@@ -9,12 +9,13 @@ from . import views
 urlpatterns = [
     url(r'^$', views.HomePage.as_view(), name='home'),
     url(r'^message/$', views.MessagePage.as_view(), name='message'),
-    url(r'^represent/', views.represent.as_view(), name='represent'),
+    url(r'^represent/', views.RepresentPage.as_view(), name='represent'),
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(accounts.urls, namespace='accounts')),
     url(r'^markdown/', include('django_markdown.urls')),
     url(r'^clublife/', views.ClubLifePage.as_view(), name='club'),
+    url(r'^nitk_life/', views.NitkLifePage.as_view(), name='nitk_life')
 ]
 
 # User-uploaded files like profile pics need to be served in development
