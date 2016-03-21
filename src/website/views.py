@@ -41,3 +41,11 @@ def homePage(request):
 def announcements(request):
     announcelist = Announcements.objects.all().order_by('timestamp')
     return render(request,'announce.html',{'announcements':announcelist})
+
+def newsPage(request, num=0):
+    if num:
+        news = News.objects.get(id=num)
+        return render(request,'eachNews.html',{'news':news})
+    else:
+        news = News.objects.all().order_by('timestamp')
+        return render(request,'news.html',{'news':news})
