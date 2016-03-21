@@ -393,3 +393,16 @@ i.biggercircle {
 .footer, .push {
     height: 190px; /* .push must be the same height as .footer */
 }
+
+.tabs .tab a {
+      color: #424242;
+  }
+
+    
+.tabs .tab a:hover {
+    color: #e0e0e0;
+}
+
+.tabs .indicator {
+    background-color: #e0e0e0;
+}
