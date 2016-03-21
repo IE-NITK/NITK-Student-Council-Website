@@ -1,4 +1,6 @@
 {% extends "static.html" %}
+{% load staticfiles %}
+
 {% block page-info %}
 <div class="container">
   <div class="row">
@@ -24,7 +26,8 @@
             <li class="tab"><a href="#inside_nitk">Inside Nitk</a></li>
             <li class="tab"><a href="#fest">Fests</a></li>
             <li class="tab"><a href="#academics">Academics</a></li>
-            <li class="tab"><a href="#hostels">Hostels</a></li>
+            <li class="tab"><a href="#sports">Sports</a></li>
+           
           </ul>
         </div>
 
@@ -37,8 +40,8 @@
             <div class="main-wrap">
                 <div id="content-section">
                     <div id='wsite-content' class='wsite-elements wsite-not-footer'>
-                        <h2 class="wsite-content-title" style="text-align:center;">&nbsp;INSIDE LIFE</h2>
-                        <h3 class="align-left">FACILITIES</h3>
+                        <h2 class="wsite-content-title" style="text-align:center;">&nbsp;INSIDE LIFE-FACILITIES</h2>
+                       
                                               
                           
                        
@@ -48,7 +51,7 @@
                               <h3 class="align-left"> Silver Jubliee Auditorium </h3>
                               <div class= "row">
                                 <div class="col s12 m5 l5">
-                                  <img src="" alt="sja">
+                                  <img src="{% static 'site/img/sja.jpg' %}" alt="sja" style="height:300px;width:350px;">
                                 </div>
                                 <div class="col s12 m7 l7">
                                   <p> <span class="black-text">SJA is a huge auditorium that regularly hosts major events of NITK. Formed to commemorate NITK's Silver Jubilee, it is the projection of NITK’s pride as one of the top engineering institutions in the country.<br>
@@ -71,7 +74,7 @@
                               <h3 class="align-left"> STUDENTS' ACtivity center (SAC)</h3>
                               <div class= "row">
                                 <div class="col s12 m5 l5">
-                                  <img src="" alt="sac">
+                                  <img src="{% static 'site/img/sac.jpg' %}" alt="sac" style="height:300px;width:350px;">
                                 </div>
                                 <div class="col s12 m7 l7">
                                   <p> <span class="black-text">
@@ -93,7 +96,7 @@
                               <h3 class="align-left"> Library </h3>
                               <div class= "row">
                                 <div class="col s12 m5 l5">
-                                  <img src="" alt="sja">
+                                  <img src="{% static 'site/img/library.jpg' %}" alt="library" style="height:300px;width:350px;">
                                 </div>
                                 <div class="col s12 m7 l7">
                                   <p> <span class="black-text">The NITK Library is housed in a spacious three-storied independent building adjoining the Main building of the Institute on the Southern side of the campus. The library, with a floor area of about 3,410 Sq mtrs., is segregated into two wings. 
@@ -110,7 +113,7 @@
                              
 
                                       <table class="bordered highlight centered">
-                                       <h4> Timings </h4>
+                                       <h5> Timings </h5>
 
                                         <tbody>
                                           <tr>
@@ -147,7 +150,7 @@
                               <h3 class="align-left"> Health Care Centre</h3>
                               <div class= "row">
                                 <div class="col s12 m5 l5">
-                                  <img src="" alt="hcc">
+                                  <img src="{% static 'site/img/hcc.jpg' %}" alt="hcc" style="height:300px;width:350px;">
                                 </div>
                                 <div class="col s12 m7 l7">
                                   <p> <span class="black-text">
@@ -173,10 +176,10 @@
                               <h3 class="align-left"> Main Building</h3>
                               <div class= "row">
                                 <div class="col s12 m6 l6">
-                                  <img src="" alt="mb1">
+                                  <img src="{% static 'site/img/mb1.jpg' %}" alt="mb1" style="height:400px;width:475px;">
                                 </div>
                                 <div class="col s12 m6 l6">
-                                  <img src="" alt="mb2">
+                                  <img src="{% static 'site/img/hcc.jpg' %}" alt="mb2" style="height:400px;width:425px;">
                                 </div>
                               </div>
                               <div class="row">
@@ -205,10 +208,10 @@
                               <h3 class="align-left"> Workshop</h3>
                               <div class= "row">
                                 <div class="col s12 m6 l6">
-                                  <img src="" alt="workshop1">
+                                  <img src="{% static 'site/img/workshop1.jpg' %}" alt="wk1" style="height:400px;width:425px;">
                                 </div>
                                 <div class="col s12 m6 l6">
-                                  <img src="" alt="workshop2">
+                                 <img src="{% static 'site/img/workshop2.jpg' %}" alt="wk2" style="height:400px;width:425px;">
                                 </div>
                               </div>
                               <div class="row">
@@ -234,7 +237,7 @@
                               <h3 class="align-left"> Campus Map</h3>
                               <div class= "row">
                                 <div class="col s12 m12">
-                                  <img src="" alt="campus map">
+                                  <img src="{% static 'site/img/campusmap.png' %}" alt="campusmap" style="height:400px;width:100%;">
                                 </div>
                               </div>
                               <div class="row">
@@ -266,10 +269,10 @@
                        <div class="row">
                           <div class="col s12 m12 l12">
                             <div class="card-panel grey lighten-5">
-                              <h3 class="align-left">Engineer</h3>
+                              <h3 class="center-align">Engineer</h3>
                               <div class= "row">
                                 <div class="col  push-m3 ">
-                                  <img src="" alt="engi1">
+                                  <img src="{% static 'site/img/engi1.jpg' %}" alt="engi1" style="height:400px;width:425px;">
                                 </div>
                                
                               </div>
@@ -295,10 +298,10 @@
                           <div class="row">
                           <div class="col s12 m12 l12">
                             <div class="card-panel grey lighten-5">
-                              <h3 class="align-left">Incident</h3>
+                              <h3 class="center-align">Incident</h3>
                               <div class= "row">
                                 <div class="col  push-m3 ">
-                                  <img src="" alt="inci1">
+                                  <img src="{% static 'site/img/inci1.jpg' %}" alt="inci1" style="height:400px;width:425px;">
                                 </div>
                                
                               </div>
@@ -319,10 +322,10 @@
                            <div class="row">
                           <div class="col s12 m12 l12">
                             <div class="card-panel grey lighten-5">
-                              <h3 class="align-left">Crescendo</h3>
+                              <h3 class="center-align">Crescendo</h3>
                               <div class= "row">
                                 <div class="col  push-m3 ">
-                                  <img src="" alt="crescendo">
+                                  <img src="{% static 'site/img/crescendo.jpg' %}" alt="crescendo" style="height:400px;width:425px;">
                                 </div>
                                
                               </div>
@@ -344,10 +347,10 @@
                        <div class="row">
                           <div class="col s12 m12 l12">
                             <div class="card-panel grey lighten-5">
-                              <h3 class="align-left">Bharath Darshan</h3>
+                              <h3 class="center-align">Bharath Darshan</h3>
                               <div class= "row">
                                 <div class="col  push-m3 ">
-                                  <img src="" alt="bharath">
+                                  <img src="{% static 'site/img/bharath.jpg' %}" alt="bd" style="height:400px;width:425px;">
                                 </div>
                                
                               </div>
@@ -371,10 +374,10 @@
                        <div class="row">
                           <div class="col s12 m12 l12">
                             <div class="card-panel grey lighten-5">
-                              <h3 class="align-left">NITK Film Festival</h3>
+                              <h3 class="center-align">NITK Film Festival</h3>
                               <div class= "row">
                                 <div class="col  push-m3 ">
-                                  <img src="" alt="filmfestival">
+                                  <img src="{% static 'site/img/filmfestival.jpg' %}" alt="filmfestival" style="height:400px;width:425px;">
                                 </div>
                                
                               </div>
@@ -399,12 +402,181 @@
 	</div>
 
 	<div id="academics">
-		test4
+		
+    <h2 class="center-align"> ACADEMICS </h2> 
+    <h3 class="center-align"> (FIRST YEAR) </h3> 
+
+    <div class="row">
+                          <div class="col s12 m12 l12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="align-left"> PHYSICS CYCLE</h3>
+                              
+                              <div class="row">
+                                <div class="col s12 m12 l12">
+                                  <h5>1. Physics - PH111 (4 credits)-</h5>
+                                  <p>Physics cycle has 2 4 credit courses. Physics course structure is THE best among all first year courses. You will be introduced to the very famous Einstein’s theory of relativity. The course will go deeper into Quantum Mechanics and Structure of materials. Studying for physics can be challenging. 
+
+                                   <br> Rote learning is minimum and decent amount of problem solving and some theoretical proofs. Questions are never by the book and for Physics class notes are a must. Arthur Bieser’s Modern Physics is the go-to book for Physics. You may refer to Ben Streetman and some other reference material for later chapters. Your week will also consist of a tutorial lecture for problem solving.
+                                    <br></p>
+
+                                  <h5>2. Physics Lab - PH110 (1 credit)-</h5>
+                                  <p>
+
+                                   As for Physics Lab is concerned, there will be a set of 7 experiments which will carry 5 marks each. End Semester for 60 marks and 5 marks for the journal. This is not your college stuff so proper understanding of each experiment is a must. Experiments are handpicked and cover a wide range of topics.<br>
+                                  </p>
+
+                                  <h5>3. Computer Programming - CO111 (4 credits)-</h5>
+
+                                   <p>CO110 is the second of the 4 credit family. The course is really simple. You will be taught C programming from the archaic “Hello World”. You can refer any material for this course as it depends mostly on understanding the basics of C. Recommended books would be “Let Us C” by Yeshwant Kanetkar. Books by Gottfried and the legendary Dennis Ritchie are also good. 
+                                                  <br>
+                                    Quizzes are mostly MCQ’s based on a block of code which is generally tricky if you haven’t got your concepts right. Mid Sems and End Sems are based on theory and program writing (which may get a little bit clumsy if your paper is devoid of comments). <br></p>
+                                    <h5>4. Computer Lab - CO110 (1 credit) - </h5>
+
+                                   <p> Computer Lab likewise is decently tough. End Sems can be bad if you can’t debug your code in time. The plan of action for each lab session is teacher based and may vary. Basically you will have to code up basic programs to clear your concepts.<br>
+
+                                    P.S—This is an advice from the seniors (: p ). If you have a scheduled a plan for the week for studying, use the time for CO 110 and CO 111 for studying a new language or for competitive programming.<br> </p>
+
+                                    <h5>5. Mechanical Engineering - ME 110 (3 credits)-</h5>
+
+                                   <p> Basics of Mechanical Engineering is a course for which you will require the tools you used for Board Exams- Rote Learning and Speed! Chill, it’s not that bad. Mechanical Engineering is completely based on understanding of concepts. You will encounter the mechanism of Engines, Refrigeration and Boilers. The course is replete with diagrams and formulae. You may land up learning everything but not answering to the point and losing the marks hence. <br>
+
+                                    If you have understood the concepts, it will be evident in your answers. You will have 1-2 workshop sessions for lathe and drilling part. Exams are going to be well, seemingly endless. KR Gopal Krishna is enough. You may receive printed notes from your teachers too.<br></p>
+
+                                    <h5>6. Electronics and Communication Engineering - ECE 110 (3 credits)-</h5>
+
+                                    <p>Welcome to the world of circuits and transistors. EC is one of the toughest disciplines of engineering and its smaller version won’t disappoint you at all. It is a well-designed course to give you fundamental understanding of BJT’s and Logic. Your studies will be mostly dependent on Boylestad and Nashelky for circuits. You may also refer Albert Malvino. For Logic , class notes, if taken properly, should be enough. Exams will comprise of problems, theory and Logic related sums.<br></p>
+
+                                    <h5>5. Humanities - HU110 (1 credit)-</h5>
+
+                                   <p> This series of lectures will generally be small debate sessions. These can be really interesting if your class actively takes part. There is a small test in the end covering some topics. Credit for this course is not calculated for your pointer, but it is mandatory to receive 
+                                    a satisfactory(S) grade here.<br></p>
+                                   
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="row">
+                          <div class="col s12 m12 l12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="align-left"> CHEMISTRY CYCLE</h3>
+                              
+                              <div class="row">
+                                <div class="col s12 m12 l12">
+                                  
+                                  <h5>1. Chemistry –CY110 (3 credits)-</h5>
+
+                                  <p>The syllabus is split into 2 parts, with 2 or sometimes 3 teachers teaching 1 section. Use the textbook Engineering Chemistry by Gadag and Shetty. For some chapters you may have to refer to other textbooks, available in the library. The problems are usually directly from Gadag and Shetty, so be sure to solve those.<br></p>
+
+                                  <h5>2. Engineering Mathematics-MA110/MA111 (3 credits each)- </h5>
+
+                                  <p>This is there in both cycles and the syllabus is common to both cycles. It’s only calculus, but a lot of it is really new. You should buy the book Thomas’ Calculus by Weir, Hass and Giordano or at least get the pdf. It will be used in both semesters and will quickly be out of stock in the shops in Surathkal. <br>
+
+                                  If you want to borrow it from the library you will have to wait till the mid-sems at least for the library card. The book costs around Rs.800 (first-hand). It is good for theory but the problems are very basic. Refer to your class notes and those of others.<br></p>
+
+                                  <h5>3. Engineering Mechanics-AM110 (3 credits)-</h5>
+
+                                  <p>ApMech covers JEE mechanics (Statics only) at a slightly higher level along with a few new chapters. You can use the textbooks Engineering Mechanics by Bhavikatti and Mechanics of Materials by Beer and Johnston. For the quizzes Bhavikatti and the notes are enough. Usually the sums done in class will be from Beer and Johnston. Go through your class notes for sure before mid-sems and end-sems, the sums will use very similar concepts.<br></p>
+
+                                  <h5>4) Elements of Electrical and Electronics Engineering-EE110 (3 credits)- </h5>
+
+                                  <p>It covers the JEE syllabus like KVL/KCL, moving on to magnetic and AC circuits, 3-phase systems, transformers and induction motors (cue 3 Idiots dialogues in your mind :P). You can refer to Electrical Technology by Edward Hughes. For some chapters the teachers may give printed notes. <br>
+
+                                  However, the best reference for this course is actually the class notes-similar sums come in tests and a wide variety of problems are covered. Remember to check the notes of your friends in other sections for more sums. <br></p>
+
+                                 <h5> 5. Engineering Graphics-ME111 (3 credits)-</h5>
+
+                                  <p>EG can be regarded as a lab course. There will be one Instructions class and one drawing class on consecutive days every week. The concepts are taught in the Instructions class and drawings based on these concepts are to be drawn the following day. There is no theory test. <br>
+
+                                  You will need to buy a mini-drafter, a folder, pencils and erasers, drawing clip, large set squares (which have built-in protractors), 
+                                  compass and a black sheet to keep under the drawing sheets to prevent them from getting dirty (all available in the cooperative store). You can refer to the book A Textbook of Engineering Graphics by K.R. Gopalakrishna or Engineering Drawing by the same author. <br>
+
+                                  The teacher will give a sheet for every chapter with many problems. You only need to refer to these sheets and your homework and class work. Use the textbooks for different and difficult problems.<br> </p>
+
+                                  <h5>6. Professional Communication-HU110 (3 credits)- </h5>
+
+                                  <p>ProfComm teaches you the elements of organisational, oral and written communication. Each student will have to give a public speech and take part in a group discussion (G.D). Refer to the textbook Technical Communication by Raman and Sharma. Go through the book properly before exams, there is a considerable theory portion in mid-sems and end-sems. Learn letter and résumé formats properly and remember to write fast and NEATLY-this actually helps get better marks (no kidding!), they won’t cut marks for bad handwriting but they might be more lenient if your paper looks neat.<br></p>
+
+                                  <h5>7. Chemistry Laboratory-CY111 (2 credits)-</h5>
+
+                                   <p>Various titrations and some instrumental experiments are performed. The section is divided into 2 batches for this course and each batch has the lab on a different day of the week. A manual with information on each experiment including the theory, procedure and calculations is provided at the beginning of the semester for Rs.10. This is sufficient for the course, but bear in mind that twisted questions are asked in the theory tests for which just learning the manual by rote will not suffice.<br></p>
+
+                                  <h5>8. Environmental Studies-CV110 (1 credit)-</h5>
+
+                                  <p>This is a Mandatory Learning Course. You get either a Satisfactory (S) grade or an Unsatisfactory (N) grade. It doesn’t count towards your Semester Grade Point Average (SGPA). Teachers will either conduct lectures or divide the class into groups to make presentations (more likely).<br><p>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
 	</div>
 
-	<div id="hostels">
-		test5
-	</div>
+
+<div id="sports">
+
+  <h2 class="center-align"> SPORTS IN NITK </h2> 
+  <div class="row">
+                          <div class="col s12 m12 l12">
+                            <div class="card-panel grey lighten-5">
+                              
+                              <div class="row">
+                                <div class="col s12 m12 l12">
+                                  
+                                <p>  <br><br><br>
+                                Did you think that NITK is just a temple of nerds and extracurricular activities like sports and games are not given any kind of attention then think again.<br>
+
+                                NITK offers state of the art sports facilities.  The college sports an Olympic size swimming pool, three tennis courts, two basketball courts, two volleyball courts, full size football and cricket grounds, one hockey field, one handball court, three badminton courts, five T.T tables etc. Other games like Chess and Carrom are also encouraged.<br><br></p>
+
+                                <h5>Swimming Pool:</h5>
+                                <p>All students are welcome to register and utilize the facility. But being in a proper swimming attire is a must i.e. swimming costume/trunks + cap. Instructor and life guards are always present. But the registration process is a bit of a pain; the student has to submit a Xerox copy of his/her admission letter in order to get the registration form. <br>
+
+                                Then he/she has to get an approval from a doctor in Health Care Centre saying that he/she is fit for swimming. Swimming wear can be brought by the student or it can also be bought in the store inside the swimming pool. Advice: Maximize its use in summer.<br></p>
+
+                                <h5>Football: </h5>
+                                <p>Football is very popular in NITK. Every evening one can find at least 6-8 groups playing football in the ground apart from the college team. Footballs and practice cones can be issued from the sports complex adjacent to the ground by giving your college ID (or Library card). Again Inter collegiate and Inter year tournaments are held. Also there is a special “only freshers” tournament held in the beginning of 1st semester between the twelve 1st year classes. Five a side Beach football is organized during Incident and five a side ‘flood lit’ football tournament is held during Phoenix.
+                                  <br>
+                                 Inter NIT tournament was held last year and NITK won the Gold medal. Want to get into the college team? Just practice with the 
+                                team every evening. Selections will be held in the 1st semester.<br>
+
+                                </p>
+
+                                <h5>Basketball:</h5>
+
+                                <p>Basketball: There are two basketball courts. Both of them are in a great condition. One of them is reserved for the college team and should be vacated whenever they come for practice. The other one 
+                                can be made use of at any time. There are two major competitions that take place on these courts, one is the inter collegiate basketball tournament known as the “Slam dunk” which takes place during 
+                                Incident, and the other one is the inter year basketball tournament which takes place during crescendo. <br>
+
+                                Inter class freshers tournament is held in the 1st and want to get into the college team just join the team in practice every evening. Selections will be held.<br></p>
+
+                               
+
+                                <h5>Cricket:</h5>
+
+                                <p>Cricket too is very popular in NITK. Cricket bats, balls, stumps etc. can be issued from the complex by giving your college ID. Inter Year and Inter branch tournaments are held. Last year the inter class “mixed” cricket tournament was organized (5 boys + 2 girls required in one team :P). Selections for getting into the College cricket team will be held in either the 1st or 2nd semester.
+
+                                <br></p><h5>Badminton/Table Tennis:</h5>
+                                <p>The courts and tables are located inside the sports complex. The complex is open from 6 in the morning to 8 in the evening. One can issue T.T balls and Shuttles from the complex.<br>
+
+                                But one has to bring their own T.T bats and Badminton racquets too play. Inter class badminton and T.T tournament is held at the beginning of 1st semester for the freshers by the Recreational committee.<br></p>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+</div>
+
+
 
 
 		
