@@ -13,26 +13,29 @@
 	<div class="container">
 		<div class="row">
 			<h1>NITK<br>Students' Council</h1>
-			<a href="#more" class="btn2 btn2-circle page-scroll">
+			<!-- <a href="#more" class="btn2 btn2-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
-                        </a>
+                        </a> -->
 		</div>
 	</div>
 </div>
 <div id="more">
+<div class="bg-test2">
+	<br><br>
+</div>
 <div class="bg-nitk2">
 	<div class="container">
 		<div class="row">
-			<div class="col s12 l3">
+			<div class="col s12 l6">
 				<div class="grey-text">
 		          <div class="icon-block">
 		            <div class="center white-text"><i class="material-icons" style="font-size: 50px; padding-top:75px;">event</i></div>
-		            <h5 class="center"><a href="">Events</a></h5>
+		            <!-- <h5 class="center"><a href="">Events</a></h5> -->
 		          </div>
 		        </div>
 				<div class="row">
 			        <div class="col s12">
-			          <div class="card white">
+			          <div class="card grey lighten-5">
 			            <div class="card-content blue-text text-darken-4">
 			              <span class="card-title">What's happening in college?</span>
 			             		<ul>
@@ -59,43 +62,16 @@
 			        </div>
 			    </div>
 			</div>
-
 			<div class="col s12 l6">
-		        <div class="grey-text">
-		          <div class="icon-block">
-		            <div class="center white-text"><i class="material-icons" style="font-size: 50px; padding-top:75px;">speaker_notes</i></div>
-		            <h5 class="center"><a href="">News</a></h5>
-		          </div>
-		        </div>
-				<div class="row">
-			        <div class="col s12">
-			          <div class="card white">
-			            <div class="card-content blue-text text-darken-4">
-			              <span class="card-title">Top Stories</span>
-			             		<ul class="collection">
-														{% for item in news %}
-			                      <li class="collection-item"><a href="/news/{{item.id}}">{{item.title}}</a></li>
-														{% endfor %}
-			                    </ul>
-			            </div>
-			            <div class="card-action">
-			              <a href="/news">More News</a>
-			            </div>
-			          </div>
-			        </div>
-			    </div>
-			</div>
-
-			<div class="col s12 l3">
 				<div class="grey-text">
 		          <div class="icon-block">
 		            <div class="center white-text"><i class="material-icons" style="font-size: 50px; padding-top:75px;">book</i></div>
-		            <h5 class="center"><a href="">Blog</a></h5>
+		            <!-- <h5 class="center"><a href="">Blog</a></h5> -->
 		          </div>
 		        </div>
 				<div class="row">
 			        <div class="col s12">
-			          <div class="card white">
+			          <div class="card grey lighten-5">
 			            <div class="card-content blue-text text-darken-4">
 			              <span class="card-title">The Beach Side Blues</span>
 			             		<ul class="collection">
@@ -106,6 +82,31 @@
 			            </div>
 			            <div class="card-action">
 			              <a href="/announce">More Blogs</a>
+			            </div>
+			          </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="col s12 l12">
+		        <div class="grey-text">
+		          <div class="icon-block">
+		            <div class="center white-text"><i class="material-icons" style="font-size: 50px; padding-top:75px;">speaker_notes</i></div>
+		            <!-- <h5 class="center"><a href="">News</a></h5> -->
+		          </div>
+		        </div>
+				<div class="row">
+			        <div class="col s12">
+			          <div class="card grey lighten-5">
+			            <div class="card-content blue-text text-darken-4">
+			              <span class="card-title">Top Stories</span>
+			             		<ul class="collection">
+														{% for item in news %}
+			                      <li class="collection-item"><a href="/news/{{item.id}}">{{item.title}}</a></li>
+														{% endfor %}
+			                    </ul>
+			            </div>
+			            <div class="card-action">
+			              <a href="/news">More News</a>
 			            </div>
 			          </div>
 			        </div>

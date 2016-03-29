@@ -9,7 +9,7 @@ import website.views as websiteviews
 from . import views
 
 urlpatterns = [
-    url(r'^$', websiteviews.homePage, name='home'),
+    url(r'^$', websiteviews.homePage, name='home'), #DO NOT remove this line!
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(accounts.urls, namespace='accounts')),
