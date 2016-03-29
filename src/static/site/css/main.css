@@ -75,7 +75,7 @@ body>.navbar-transparent {
     -webkit-background-size: cover;
     background-size: cover;
     color: #f5f5f5;
-    padding: 10em 0;
+    padding: 1em 0;
     margin-bottom: 0;
     height: 50%;
 }
@@ -93,7 +93,7 @@ body>.navbar-transparent {
     color:#f5f5f5;
     text-shadow: 0px 0px 2px black;
     text-transform: uppercase;
-    font-size: 112px;
+    font-size: 80px;
     font-weight: 600;
     font-family: 'Cornerstone', sans-serif;
 }
