@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^contacts/',views.ContactNumbers.as_view(),name='contacts'),
     url(r'^news/$', views.newsPage, name='news'),
     url(r'^news/(?P<num>[0-9]+)/$', views.newsPage, name='eachNews'),
+    url(r'^faq/',views.FAQ.as_view(),name='faq'),
 ]
