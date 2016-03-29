@@ -12,97 +12,109 @@
 	<!-- CSS for text within the jumbotron havent been defined -->
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 col-sm-8">
-				<h1>NITK<br>Students' Council</h1>
-			</div>
+			<h1>NITK<br>Students' Council</h1>
+			<a href="#more" class="btn2 btn2-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
 		</div>
 	</div>
 </div>
-
-<div class="row bg-white">
-
-	<div class="col s12 m4">
-        <div class="grey-text">
-          <div class="icon-block">
-            <h1 class="center red-text"><i class="material-icons">speaker_notes</i></h1>
-            <h5 class="center">News</h5>
-          </div>
-        </div>
-        <!-- Put in template for each news article -->
+<div id="more">
+<div class="bg-nitk2">
+	<div class="container">
 		<div class="row">
-	        <div class="col s12">
-	          <div class="card blue-grey darken-1">
-	            <div class="card-content white-text">
-	              <span class="card-title">Card Title</span>
-	              <p>I am a very simple card. I am good at containing small bits of information.
-	              I am convenient because I require little markup to use effectively.</p>
-	            </div>
-	            <div class="card-action">
-	              <a href="#">This is a link</a>
-	              <a href="#">This is a link</a>
-	            </div>
-	          </div>
-	        </div>
-	    </div>
-        <!-- Template ends here -->
-	</div>
+			<div class="col s12 l3">
+				<div class="grey-text">
+		          <div class="icon-block">
+		            <div class="center white-text"><i class="material-icons" style="font-size: 50px; padding-top:75px;">event</i></div>
+		            <h5 class="center"><a href="">Events</a></h5>
+		          </div>
+		        </div>
+				<div class="row">
+			        <div class="col s12">
+			          <div class="card white">
+			            <div class="card-content blue-text text-darken-4">
+			              <span class="card-title">What's happening in college?</span>
+			             		<ul>
+												{% for item in events %}
+			                      <li>
+			                      	<a href="/events/{{item.id}}" class="event_item">
+			                      		<div class="event_datetime">
+			                      			<span class="event_month">{{item.start|date:"M"}}</span>
+			                      			<span class="event_day">{{item.start|date:"d"}}</span>
+			                      			<span class="event_time">{{item.start|date:"g:i a"}}</span>
+			                      		</div>
+			                      		<div class="event_name">
+			                      			<span>{{item.title}}</span>
+			                      		</div>
+			                      	</a>
+			                      </li>
+													{% endfor %}
+			                    </ul>
+			            </div>
+			            <div class="card-action">
+			              <a href="/events">View All Events</a>
+			            </div>
+			          </div>
+			        </div>
+			    </div>
+			</div>
 
-	<div class="col s12 m4">
-		<div class="grey-text">
-          <div class="icon-block">
-            <h1 class="center red-text"><i class="material-icons">event</i></h1>
-            <h5 class="center">Events</h5>
-          </div>
-        </div>
-        <!-- Put in template for each event -->
-		<div class="row">
-	        <div class="col s12">
-	          <div class="card blue-grey darken-1">
-	            <div class="card-content white-text">
-	              <span class="card-title">Card Title</span>
-	              <p>I am a very simple card. I am good at containing small bits of information.
-	              I am convenient because I require little markup to use effectively.</p>
-	            </div>
-	            <div class="card-action">
-	              <a href="#">This is a link</a>
-	              <a href="#">This is a link</a>
-	            </div>
-	          </div>
-	        </div>
-	    </div>
-        <!-- Template ends here -->
-	</div>
+			<div class="col s12 l6">
+		        <div class="grey-text">
+		          <div class="icon-block">
+		            <div class="center white-text"><i class="material-icons" style="font-size: 50px; padding-top:75px;">speaker_notes</i></div>
+		            <h5 class="center"><a href="">News</a></h5>
+		          </div>
+		        </div>
+				<div class="row">
+			        <div class="col s12">
+			          <div class="card white">
+			            <div class="card-content blue-text text-darken-4">
+			              <span class="card-title">Top Stories</span>
+			             		<ul class="collection">
+														{% for item in news %}
+			                      <li class="collection-item"><a href="/news/{{item.id}}">{{item.title}}</a></li>
+														{% endfor %}
+			                    </ul>
+			            </div>
+			            <div class="card-action">
+			              <a href="/news">More News</a>
+			            </div>
+			          </div>
+			        </div>
+			    </div>
+			</div>
 
-	<div class="col s12 m4">
-		<div class="grey-text">
-          <div class="icon-block">
-            <h1 class="center red-text"><i class="material-icons">book</i></h1>
-            <h5 class="center">Blog</h5>
-          </div>
-        </div>
-        <!-- Put in template for each blog -->
-		<div class="row">
-	        <div class="col s12">
-	          <div class="card blue-grey darken-1">
-	            <div class="card-content white-text">
-	              <span class="card-title">Card Title</span>
-	              <p>I am a very simple card. I am good at containing small bits of information.
-	              I am convenient because I require little markup to use effectively.</p>
-	            </div>
-	            <div class="card-action">
-	              <a href="#">This is a link</a>
-	              <a href="#">This is a link</a>
-	            </div>
-	          </div>
-	        </div>
-	    </div>
-        <!-- Template ends here -->
+			<div class="col s12 l3">
+				<div class="grey-text">
+		          <div class="icon-block">
+		            <div class="center white-text"><i class="material-icons" style="font-size: 50px; padding-top:75px;">book</i></div>
+		            <h5 class="center"><a href="">Blog</a></h5>
+		          </div>
+		        </div>
+				<div class="row">
+			        <div class="col s12">
+			          <div class="card white">
+			            <div class="card-content blue-text text-darken-4">
+			              <span class="card-title">The Beach Side Blues</span>
+			             		<ul class="collection">
+														{% for item in articles %}
+			                      <li class="collection-item"><a href="/announce/{{item.id}}">{{item.title}}</a></li>
+														{% endfor %}
+			                    </ul>
+			            </div>
+			            <div class="card-action">
+			              <a href="/announce">More Blogs</a>
+			            </div>
+			          </div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+
 	</div>
 
 </div>
-
-{% endblock %}
-
-{% block scripts %}
-
+</div>
 {% endblock %}
