@@ -2,15 +2,15 @@
 
 {% block page-info %}
 <div class="container">
-    <div class="row">
-        <div class="col s12">
-            <a href="/" class="breadcrumb">Home</a>
-            <a href="#!" class="breadcrumb">News</a>
-        </div>
-    </div>
-    <div class="row">
-        <h1 class="title">News</h1>
-    </div>
+	<div class="row">
+		<div class="col s12">
+			<a href="/" class="breadcrumb">Home</a>
+			<a href="#!" class="breadcrumb">News</a>
+		</div>
+	</div>
+	<div class="row">
+		<h1 class="title">News</h1>
+	</div>
 </div>
 {% endblock %}
 
@@ -18,26 +18,86 @@
 {% load static %}
 <link href="{% static 'site/css/message.css' %}" rel="stylesheet">
 <div class="row">
-  <div class="col s2">
-    <div class="row center-align">
-      <h5>Categories</h5>
-      <ul class="tabs customtabs">
-        <li class="tab col s12" id=""><a href="">Campus News</a></li>
-        <li class="tab col s12" id=""><a href="">In the News</a></li>
-        <li class="tab col s12" id=""><a href="">Spotlights</a></li>
-        <li class="tab col s12" id=""><a href="">Something</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="col s10">
-    <div class="collection">
-        {% for item in news %}
-        <a class="collection-item avatar" href="/news/{{item.id}}">
-            <i class="material-icons biggercircle red">info</i>
-            <br><span class="title">{{ item.title }}</span>
-        </a>
-        {% endfor %}
-    </div>
-  </div>
-
+	<div class="col s2">
+		<div class="row center-align">
+			<h5>Categories</h5>
+			<ul class="tabs customtabs">
+				<li class="tab col s12" id="campusNews"><a href="">Campus News</a></li>
+				<li class="tab col s12" id="inTheNew"><a href="">In the News</a></li>
+				<li class="tab col s12" id="spotLights"><a href="">Spotlights</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="campus">
+		<div class="col s10">
+			<div class="collection">
+				{% for item in news %}
+				<a class="collection-item avatar" href="/news/{{item.id}}">
+					<i class="material-icons biggercircle red">info</i>
+					<br><span class="title">{{ item.title }}</span>
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div id="inthenews">
+		<div class="col s10">
+			<div class="collection">
+				{% for item in news %}
+				<a class="collection-item avatar" href="/news/{{item.id}}">
+					<i class="material-icons biggercircle red">info</i>
+					<br><span class="title">{{ item.title }}</span>
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div id="spotlight">
+		<div class="col s10">
+			<div class="collection">
+				{% for item in news %}
+				<a class="collection-item avatar" href="/news/{{item.id}}">
+					<i class="material-icons biggercircle red">info</i>
+					<br><span class="title">{{ item.title }}</span>
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 {% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$(".dropdown-button").dropdown();
+	$(".button-collapse").sideNav({
+		menuWidth: 320, // Default is 240
+		edge: 'left',
+		closeOnClick: true
+	});
+
+	$("#inthenews").hide();
+	$("#spotlight").hide();
+
+	$("#campusNews").click(function(){
+		$("#campus").show();
+		$("#inthenews").hide();
+		$("#spotlight").hide();
+	});
+
+	$("#inTheNew").click(function(){
+		$("#campus").hide();
+		$("#inthenews").show();
+		$("#spotlight").hide();
+	});
+
+	$("#spotLights").click(function(){
+		$("#campus").hide();
+		$("#inthenews").hide();
+		$("#spotlight").show();
+	});
+});
+
+</script>
+{% endblock scripts %}

@@ -210,6 +210,21 @@ body>.navbar-transparent {
     box-sizing: border-box;
 }
 
+ul.tabs.customtabs{
+  flex-direction:column;
+  height: 100%;
+  float: left;
+  width: 20%;
+}
+
+ul.tabs.customtabs .indicator{
+  display: none;
+}
+
+ul.tabs.customtabs li.active{
+  background-color: fuschia;
+}
+
 i.biggercircle {
     font-size: 18px;
     line-height: 42px;
@@ -407,7 +422,7 @@ i.biggercircle {
       color: #424242;
   }
 
-    
+
 .tabs .tab a:hover {
     color: #e0e0e0;
 }

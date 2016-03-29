@@ -2,42 +2,49 @@
 <html>
 {% load staticfiles %}
 {% block styles %}
-  <link href="{% static 'site/css/main.css' %}" rel="stylesheet">
-  <link href="{% static 'site/css/fullcalendar.min.css' %}" rel="stylesheet">
-  <link href="{% static 'materialize/css/materialize.min.css' %}" rel="stylesheet">
+<link href="{% static 'site/css/main.css' %}" rel="stylesheet">
+<link href="{% static 'site/css/fullcalendar.min.css' %}" rel="stylesheet">
+<link href="{% static 'materialize/css/materialize.min.css' %}" rel="stylesheet">
 {% endblock styles %}
 
 {% block content %}
-  <div id='calendar'></div>
+<div id='calendar'></div>
 {% endblock %}
 
 {% block scripts %}
-  <script src="{% static 'site/js/jquery.min.js' %}"></script>
-  <script src="{% static 'site/js/moment.min.js' %}"></script>
-  <script src="{% static 'site/js/fullcalendar.min.js' %}"></script>
-  <script type="text/javascript">
-    var eventlist = [];
-    var eventobj = {{eventlist|safe}};
-    for(var i=0, size=eventobj.length; i<size; i++){
-      var item = eventobj[i];
-      var url = "/events/" + item.id;
-      var newitem = {
-        "title" : item.title,
-        "start" : item.start,
-        "end" : item.end,
-        "url" : url
-      };
-      eventlist.push(newitem);
-    }
-    $(document).ready(function() {
+<script src="{% static 'site/js/jquery.min.js' %}"></script>
+<script src="{% static 'site/js/moment.min.js' %}"></script>
+<script src="{% static 'site/js/fullcalendar.min.js' %}"></script>
+<script type="text/javascript">
 
-      // page is now ready, initialize the calendar...
+var eventlist = [];
+var eventobj = {{eventlist|safe}};
+for(var i=0, size=eventobj.length; i<size; i++){
+	var item = eventobj[i];
+	var url = "/events/" + item.id;
+	var newitem = {
+		"title" : item.title,
+		"start" : item.start,
+		"end" : item.end,
+		"url" : url
+	};
+	eventlist.push(newitem);
+}
+$(document).ready(function() {
 
-      $('#calendar').fullCalendar({
-          // put your options and callbacks here
-          events : eventlist
-      })
-    });
-    $(".button-collapse").sideNav();
-  </script>
+	// page is now ready, initialize the calendar...
+
+	$('#calendar').fullCalendar({
+		// put your options and callbacks here
+		events : eventlist
+	})
+	$(".dropdown-button").dropdown();
+	$(".button-collapse").sideNav({
+		menuWidth: 320, // Default is 240
+		edge: 'left',
+		closeOnClick: true
+	});
+});
+$(".button-collapse").sideNav();
+</script>
 {% endblock %}
