@@ -18,3 +18,6 @@ class indarticle(generic.TemplateView):
 
 class ClubLifePage(generic.TemplateView):
 	template_name="clublife.html"
+
+class articlePage(generic.TemplateView):
+	template_name="article.html"
