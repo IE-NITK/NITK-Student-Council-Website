@@ -24,7 +24,7 @@ class News(models.Model):
 
 class Announcements(models.Model):
     title = models.CharField(max_length=300)
-    thumbnail = ThumbnailerImageField(upload_to='news_thumbnail/%Y-%m-%d/', blank=True)
+    thumbnail = ThumbnailerImageField(upload_to='announcement_thumbnail/%Y-%m-%d/', blank=True)
     details = MarkdownField()
     timestamp = models.DateTimeField(auto_now_add=True)
     pinned = models.BooleanField(default=False)
@@ -52,15 +52,30 @@ class Member(models.Model):
                    ('MN', 'Mining Engineering'),
                    ('MT', 'Materials and Metallurgical Engineering'),
                    ]
+    YEAR_LIST = [(1,'First Year'),
+                 (2,'Second Year'),
+                 (3,'Third Year'),
+                 (4,'Final Year'),
+                ]
+    DESIGNATION = [('PR','President'),
+                   ('IC','Incident Convenor'),
+                   ('EC','Engineer Convenor'),
+                   ('GS','Secretary'),
+                   ('GR','Girls\' Representative'),
+                   ('PG','PG Girls\' Representative'),
+                   ('CR','Class Representative'),
+                  ]
+    name = models.CharField(max_length=50)
     branch = models.CharField(max_length=2, choices=BRANCH_LIST)
-    prof_pic = models.ImageField(upload_to='scmember_profile_pics/%Y-%m-%d/',null=True,blank=True)
+    prof_pic = models.ImageField(upload_to='member_pic_thumbnail/%Y-%m-%d/', blank=True)
+    year = models.IntegerField(choices=YEAR_LIST)
+    designation = models.CharField(max_length=2, choices=DESIGNATION)
     email = models.EmailField()
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
     phone_number = models.CharField(max_length=15, validators=[phone_regex], blank=True)
 
     def __str__(self):
-        return self.user.get_full_name
-
+        return u'%s %s %s %s' % (self.name,self.branch,self.get_year_display(),self.get_designation_display())
 
 class Events(models.Model):
     title = models.CharField(max_length=200)
@@ -76,7 +91,7 @@ class Events(models.Model):
 
 class Author(models.Model):
     name = models.CharField(max_length=50)
-    prof_pic = ThumbnailerImageField(upload_to='author_profile_pics/%Y-%m-%d/',null=True,blank=True)
+    prof_pic = models.ImageField(upload_to='author_profile_pics/%Y-%m-%d/',null=True,blank=True)
     blurb = MarkdownField()
 
     def __str__(self):

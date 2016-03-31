@@ -4,7 +4,7 @@ from . import views
 urlpatterns = [
     url(r'^$', views.homePage, name='home'),
     url(r'^message/$', views.MessagePage.as_view(), name='message'),
-    url(r'^represent/', views.represent.as_view(), name='represent'),
+    url(r'^represent/', views.meetTheReps, name='represent'),
     url(r'^calendar/$', views.calEvents, name='calendar'),
     url(r'^announce/', views.announcements, name='announce'),
     url(r'^contacts/',views.ContactNumbers.as_view(),name='contacts'),
