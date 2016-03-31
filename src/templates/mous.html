@@ -4,7 +4,8 @@
 	<div class="row">
 		<div class="col s12">
 			<a href="/" class="breadcrumb">Home</a>
-			<a href="#!" class="breadcrumb">Resources</a>
+			<a class="breadcrumb">Academics</a>
+			<a href="#!" class="breadcrumb">MoUs</a>
 		</div>
 	</div>
 </div>
@@ -13,14 +14,17 @@
 <div class="container">
 	<div class="row center-align">
 
-		{% for resource in resources %}
+		{% for mou in mous %}
 		<div class="col s12 m6">
-			<a href="{{resource.link}}" target="_blank">
+			<a href="{{mou.link}}" target="_blank">
 				<div class="card blue-grey lighten-4 waves-effect waves-block waves-light custom-card valign-wrapper">
 					<div class="card-content black-text fixed-height-300">
-						<h4>{{resource.title}}</h4>
-						<p> {{resource.description}} </p>
+						<h5>{{mou.title}}</h5>
+						<p> {{mou.description}} </p>
 					</div>
+					<div class="card-action">
+              			<p>{{mou.date_of_signing}}</p>
+            		</div>
 				</div>
 			</a>
 		</div>
