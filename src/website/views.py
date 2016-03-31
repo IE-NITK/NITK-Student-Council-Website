@@ -36,9 +36,9 @@ def calEvents(request):
     return render(request, 'calendar.html', {'eventlist':events})
 
 def homePage(request):
-    eventlist = Events.objects.all().order_by('-start')[:5]
-    newslist = News.objects.all().order_by('-timestamp')[:5]
-    articlelist = Articles.objects.all().order_by('-published')[:5]
+    eventlist = Events.objects.all().order_by('-start')[:3]
+    newslist = News.objects.all().order_by('-timestamp')[:3]
+    articlelist = Articles.objects.all().order_by('-published')[:3]
     return render(request,'home.html',{'events':eventlist,'news':newslist,'articles':articlelist})
 
 def announcements(request):
@@ -51,4 +51,8 @@ def newsPage(request, num=0):
         return render(request,'eachNews.html',{'news':news})
     else:
         news = News.objects.all().order_by('timestamp')
-        return render(request,'news.html',{'news':news})
+        inthenews = news.filter(category='N')
+        spotlight = news.filter(category='S')
+        campus = news.filter(category='C')
+        pinned = news.filter(pinned=True)
+        return render(request,'news.html',{'inthenews':inthenews,'spotlight':spotlight,'campus':campus,'pinned':pinned})

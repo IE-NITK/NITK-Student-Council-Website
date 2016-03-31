@@ -11,6 +11,7 @@ class News(models.Model):
             ('S', 'Spotlight'),
             ]
     title = models.CharField(max_length=300)
+    news_pic = models.ImageField(upload_to='article_pics/%Y-%m-%d/',null=True,blank=True)
     details = models.CharField(max_length=2000)
     category = models.CharField(max_length=1, choices=CHOICE)
     timestamp = models.DateTimeField(auto_now_add=True)
