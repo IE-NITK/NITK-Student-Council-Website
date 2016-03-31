@@ -8,7 +8,18 @@ class FilterEventsAdmin(admin.ModelAdmin):
         obj.save()
     def get_queryset(self, request):
         qs = super(FilterEventsAdmin, self).get_queryset(request)
-        return qs.filter(organizer=request.user.club)
+        if request.user.is_superuser:
+            return qs
+        else:
+            return qs.filter(organizer = request.user.club)
+    def has_change_permission(self, request, obj=None):
+        if not obj:
+            return True # So they can see the change list page
+        if request.user.is_superuser or obj.organizer == request.user.club:
+            return True
+        else:
+            return False
+    has_delete_permission = has_change_permission
 
 class EventsAdmin(FilterEventsAdmin):
     fields = ['title','details','start','end','contact']
