@@ -20,6 +20,9 @@ class ContactNumbers(generic.TemplateView):
 class NitkLifePage(generic.TemplateView):
     template_name = "nitk_life.html"
 
+class SenatePage(generic.TemplateView):
+    template_name = "senate.html"
+
 class FAQ(generic.TemplateView):
     template_name="faq.html"
 
