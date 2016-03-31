@@ -1,5 +1,6 @@
 {% extends "static.html" %}
-
+{% load django_markdown %}
+{% load thumbnail %}
 {% block page-info %}
 
 <div class="container">
@@ -10,7 +11,7 @@
             <a href="#!" class="breadcrumb">Adobe – An opportunity to Dreamweave your summer</a>
         </div>
     </div>
-    
+
 </div>
 {% endblock %}
 
@@ -19,43 +20,36 @@
 <link href="{% static 'site/css/message.css' %}" rel="stylesheet">
     <div class="container">
         <div class="row">
-        <h3 class="title">Adobe – An opportunity to Dreamweave your summer</h3>
+        <h3 class="title">{{article.title}}</h3>
             </div>
 
 </div>
 
 <div class="container">
-    
+
 
     <!--<div class="row left-align">
-        
+
         <h7> Chandraketan Sahu is a final year student of Computer Science and Engineering. He is an atheist, and enjoys reading novels, listening to Hindi music and following politics. Chandraketan spends his free time writing, both in Hindi and in English </h7>
     </div>
     <div class="row right-align">
               <img style="float: right; margin: -50px 15px 15px 0px;" width =100 height =100 class="responsive-img"  src="{% static 'site/img/2014-02-04-03580.jpg' %}">
     </div>
     -->
-                
+
 
     <div class ="row center-align">
-        <img height=700 class="responsive-img"  src="{% static 'site/img/business_opportunity_dirty_cars_wanted.jpg' %}">
-    </div>   
+        <img height=700 class="responsive-img"  src="/media/{{article.article_pic}}">
+    </div>
 </div>
     <div class="row">
     <!--     <div class="row">
         <div class="col s8 push-s2"> -->
     <div class="col s10 push-s1 flow-text "
      style="text-align:justify">
-    <article >Most of the software giants offer a huge list of facilities and goodies to their interns, and Adobe is no different. You walk into a beautiful office on Banerghatta road and right into one of those super comfy ergonomic chairs that they ship from an undisclosed location far, far away. There’s a wide range of beverages, cup noodles and even a fridge full of soft drinks to make sure you don’t work hungry or thirsty. All this sounds very appealing but what Adobe really offers is something far more precious. Freedom.
-
-The research internship at Adobe is very unique in the sense that they don’t give you a problem to solve. You choose your own problem. This entails a month of study where you explore a broad area of research, learn what has been solved and what hasn’t. The beauty of this process is that they insist that you think purely of the problem and avoid worrying about the solution. This prevents you from picking a very easy problem, and also ensures that you leave no stone unturned. From experience, I would say that the amount you learn from such an exploration is unparalleled. Imagine going to work every morning, just reading, looking, searching for a problem that you find interesting. For lack of a better word, this part of the internship was simply awesome. Once you’ve found your problem (“my precious”) though, it is your responsibility to defend it! And you have to defend your problem against a room full of Adobe’s top minds, the management and the best researchers. Once you have passed this grueling examination, you are finally allowed to delve into the solution space, how to solve your beloved problem. Normally, this would be a daunting task, but there are people all around waiting to help, all you need to do is ask. We’ve all heard of those stories where the only purpose of interns is to get coffee. Well those stories sure as hell didn’t come from Adobe. You are treated almost an equal with veterans of the industry and even the naïve little questions are answered without the slightest hesitation.
-
-My particular research area was around Social Querying. This is a key aspect of social listening, which is the process by which companies these days get an idea of the sentiment, and thoughts surrounding their brand name from the social media. (Feel free to wiki all these fancy terms) Now before we can put our hi-tech analysis tools onto the social media, we first need to get those posts that are relevant to that particular brand. You could skip this step but analyzing baseball tweets when you’re looking into Apple products seems a bit redundant. The analysis tools are automated but right now, there are no such tools to get this “relevant” feed. As of now, it’s done by the marketer. He/she constructs a query that can be run on the social media aggregators (twitter search etc.) This relies on experience, knowledge of the marketer and lots of time poring over the results in order to refine the query. During my internship, I developed a tool that could do this process for the marketer, given a particular brand, and maybe some specific range of products, the tool would generate a query that would ensure that we get most of the relevant tweets while ensuring that we avoid the irrelevant ones.
-
-This internship has been one of the best experiences I have ever had. I have learned more than I could have possibly imagined and I have had the pleasure of meeting some of the finest people I have ever known. For those of you out there who think Adobe is just Photoshop, know that you are seeing just the tip of the iceberg.
-    </article>
+    <article >{{article.content|markdown}}</article>
     <div>
-    
+
     <!--         </div>
     </div> -->
     </div>
@@ -64,21 +58,18 @@ This internship has been one of the best experiences I have ever had. I have lea
     <div class="row valign-wrapper">
     <div class="col s4 ">
                     <img width="100" height= "100" class="responsive-img circle tall"
-                 src="{% static 'site/img/1098438_532556806815926_1102778035_n-150x150.jpg' %}"/>
+                 src="{{article.author.prof_pic.avatar.url}}"/>
     </div>
-    <div class="col s6 row center-align ">       
-        <h1 class="flow-text"> <strong>Kartik Sreenivasan </h1>
+    <div class="col s6 row center-align ">
+        <h1 class="flow-text"> <strong>{{article.author.name}}</h1>
     </div>
 </div>
     <div class="row">
         <div class="col s12">
-                <h6 class="custom1"> Kartik Sreenivasan is a third year student of Information Technology. He is an active member of the Institution of Engineers (NITK chapter). Kartik is fondly known as TenTen for maintaining a near perfect GPA. He is an avid biker and is crazy about gaming, especially DotA. Kartik is also a big fan of fiction, including Alistair MacLean novels and The Lord of the Rings.
-                </h6>
+                <h6 class="custom1">{{article.author.blurb}} </h6>
                 <br>
                 <h6 class="custom1">
-                    <strong>Published </strong>Sep. 21, 2014
-                    <br>
-                    <strong>In Featured,</strong> Intern Diaries
+                    <strong>Published </strong> {{article.published}}
                 </h6>
         </div>
     </div>
