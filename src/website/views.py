@@ -11,14 +11,14 @@ class represent(generic.TemplateView):
 class AboutPage(generic.TemplateView):
     template_name = "about.html"
 
+class article(generic.TemplateView):
+    template_name = "article.html"
+
 class MessagePage(generic.TemplateView):
 	template_name = "message.html"
 
 class Blog(generic.TemplateView):
 	template_name = "blog.html"
-
-class ClubLifePage(generic.TemplateView):
-	template_name="clublife.html"
 
 class ContactNumbers(generic.TemplateView):
 	template_name="contacts.html"
@@ -26,8 +26,14 @@ class ContactNumbers(generic.TemplateView):
 class NitkLifePage(generic.TemplateView):
     template_name = "nitk_life.html"
 
+class SenatePage(generic.TemplateView):
+    template_name = "senate.html"
+
 class FAQ(generic.TemplateView):
     template_name="faq.html"
+
+class Resources(generic.TemplateView):
+    template_name = "resources.html"
 
 def date_handler(obj):
     # To handle the date format while JSON conversion

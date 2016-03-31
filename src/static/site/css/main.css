@@ -32,6 +32,8 @@ html, body {
     height: 190px; /* .push must be the same height as .footer */
 }
 
+
+
 .alert {
     margin-top: 55px;
     margin-bottom: 0;
@@ -212,6 +214,7 @@ body>.navbar-transparent {
     padding-top: 48px;
     padding-bottom: 48px;
 }
+
 .jumbotron {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -275,6 +278,14 @@ i.biggercircle {
     background-size: cover;
 }
 
+.custom1{
+    font-size: 20px;
+    font-style: italic;
+}
+.tall{
+    min-height: 50px;
+    min-width: 50px;
+}
 .content { max-width: 1000px; margin: 50px auto; padding: 20px; margin-top: 0px; background: white;}
 
 .bg-grey { background-color: #f2f2f2;}
@@ -287,6 +298,7 @@ i.biggercircle {
     margin-top: 20px;
     margin-bottom: 0px;
 }
+
 .page-info .title {
     margin-top: 10px;
     margin-bottom: 0px;
@@ -446,6 +458,12 @@ i.biggercircle {
 .tabs .indicator {
     background-color: #e0e0e0;
 }
+
 .fixed-height {
   height: 400px;
   }
+
+
+.custom-card div:hover {
+    background-color: rgb(176,190,197);
+}
