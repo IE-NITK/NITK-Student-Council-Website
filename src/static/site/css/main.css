@@ -467,3 +467,7 @@ i.biggercircle {
 .custom-card div:hover {
     background-color: rgb(176,190,197);
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Signika', sans-serif;
+}
