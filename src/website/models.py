@@ -75,25 +75,16 @@ class Member(models.Model):
                  (3,'Third Year'),
                  (4,'Final Year'),
                 ]
-    DESIGNATION = [('PR','President'),
-                   ('IC','Incident Convenor'),
-                   ('EC','Engineer Convenor'),
-                   ('GS','Secretary'),
-                   ('GR','Girls\' Representative'),
-                   ('PG','PG Girls\' Representative'),
-                   ('CR','Class Representative'),
-                  ]
     name = models.CharField(max_length=50)
     branch = models.CharField(max_length=2, choices=BRANCH_LIST)
     prof_pic = models.ImageField(upload_to='member_pic_thumbnail/%Y-%m-%d/', blank=True)
     year = models.IntegerField(choices=YEAR_LIST)
-    designation = models.CharField(max_length=2, choices=DESIGNATION)
     email = models.EmailField()
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
     phone_number = models.CharField(max_length=15, validators=[phone_regex], blank=True)
 
     def __str__(self):
-        return u'%s %s %s %s' % (self.name,self.branch,self.get_year_display(),self.get_designation_display())
+        return u'%s %s %s' % (self.name,self.branch,self.get_year_display())
 
 class Events(models.Model):
     title = models.CharField(max_length=200)

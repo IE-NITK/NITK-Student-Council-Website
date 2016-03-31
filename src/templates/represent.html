@@ -164,7 +164,7 @@
                     <img class="biggercircle" src="/media/{{item.prof_pic}}"/>
                     <br>
                     <span class="title">{{item.name}}</span>
-                    <br>{{item.branch}}
+                    <br>{{item.get_branch_display}}
                     <div class="secondary-content">{{item.email}}<br>{{item.phone_number}}</div><br>
                   </li>
                   {% endfor %}
@@ -181,7 +181,7 @@
                     <img class="biggercircle" src="/media/{{item.prof_pic}}"/>
                     <br>
                     <span class="title">{{item.name}}</span>
-                    <br>{{item.branch}}
+                    <br>{{item.get_branch_display}}
                     <div class="secondary-content">{{item.email}}<br>{{item.phone_number}}</div><br>
                   </li>
                   {% endfor %}
