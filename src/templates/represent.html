@@ -37,12 +37,12 @@
         <div class="card-panel grey lighten-4 small">
             <div class="card-image">
               <span class="card-title" style="font-weight:bold;font-size:24px;">PRESIDENT</span><br><br>
-              <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
+              <img class="circle responsive-img" src="/media/{{presi.prof_pic}}" style="width:160px;height:160px;"></img>
             </div>
             <div class="card-content">
-            <br><p style="font-size:18px;">NAME OF PRESIDENT</p>
-            <p>9876543210</p>
-            <p><a href="mailto:xyzexample@gmail.com">xyzexample@gmail.com</a></p>
+            <br><p style="font-size:18px;">{{presi.name}}</p>
+            <p>{{presi.phone_number}}</p>
+            <p><a href="mailto:{{presi.email}}">{{presi.email}}</a></p>
             </div>
         </div>
       </div>
@@ -50,12 +50,12 @@
         <div class="card-panel grey lighten-4 small">
             <div class="card-image">
               <span class="card-title" style="font-weight:bold;font-size:24px;">SECRETARY</span><br><br>
-              <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
+              <img class="circle responsive-img" src="/media/{{sec.prof_pic}}" style="width:160px;height:160px;"></img>
             </div>
             <div class="card-content">
-            <br><p style="font-size:18px;">NAME OF PRESIDENT</p>
-            <p>9876543210</p>
-            <p><a href="mailto:xyzexample@gmail.com">xyzexample@gmail.com</a></p>
+            <br><p style="font-size:18px;">{{sec.name}}</p>
+            <p>{{sec.phone_number}}</p>
+            <p><a href="mailto:{{sec.email}}">{{sec.email}}</a></p>
             </div>
         </div>
       </div>
@@ -63,12 +63,12 @@
         <div class="card-panel grey lighten-4 small">
             <div class="card-image">
               <span class="card-title" style="font-weight:bold;font-size:24px;">ENGI-CON</span><br><br>
-              <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
+              <img class="circle responsive-img" src="/media/{{engi.prof_pic}}" style="width:160px;height:160px;"></img>
             </div>
             <div class="card-content">
-            <br><p style="font-size:18px;">NAME OF PRESIDENT</p>
-            <p>9876543210</p>
-            <p><a href="mailto:xyzexample@gmail.com">xyzexample@gmail.com</a></p>
+            <br><p style="font-size:18px;">{{engi.name}}</p>
+            <p>{{engi.phone_number}}</p>
+            <p><a href="mailto:{{engi.email}}">{{engi.email}}</a></p>
             </div>
         </div>
       </div>
@@ -76,12 +76,12 @@
         <div class="card-panel grey lighten-4 small">
             <div class="card-image">
               <span class="card-title" style="font-weight:bold;font-size:24px;">INCI-CON</span><br><br>
-              <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
+              <img class="circle responsive-img" src="/media/{{inci.prof_pic}}" style="width:160px;height:160px;"></img>
             </div>
             <div class="card-content">
-            <br><p style="font-size:18px;">NAME OF PRESIDENT</p>
-            <p>9876543210</p>
-            <p><a href="mailto:xyzexaghghmple@gmail">xyzexaghghmple@gmail.com</a></p>
+            <br><p style="font-size:18px;">{{inci.name}}</p>
+            <p>{{inci.phone_number}}</p>
+            <p><a href="mailto:{{inci.email}}">{{inci.email}}</a></p>
             </div>
         </div>
       </div>
@@ -89,12 +89,12 @@
         <div class="card-panel grey lighten-4 small">
             <div class="card-image">
               <span class="card-title" style="font-weight:bold;font-size:24px;">GIRLS REP</span><br><br>
-              <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
+              <img class="circle responsive-img" src="/media/{{grep.prof_pic}}" style="width:160px;height:160px;"></img>
             </div>
             <div class="card-content">
-            <br><p style="font-size:18px;">NAME OF PRESIDENT</p>
-            <p>9876543210</p>
-            <p><a href="mailto:xyzexample@gmail.com">xyzexample@gmail.com</a></p>
+            <br><p style="font-size:18px;">{{grep.name}}</p>
+            <p>{{grep.phone_number}}</p>
+            <p><a href="mailto:{{grep.email}}">{{grep.email}}</a></p>
             </div>
         </div>
       </div>
@@ -102,12 +102,12 @@
         <div class="card-panel grey lighten-4 small">
             <div class="card-image">
               <span class="card-title" style="font-weight:bold;font-size:24px;">PG GIRLS REP</span><br><br>
-              <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
+              <img class="circle responsive-img" src="/media/{{pgrep.prof_pic}}" style="width:160px;height:160px;"></img>
             </div>
             <div class="card-content">
-            <br><p style="font-size:18px;">NAME OF PRESIDENT</p>
-            <p>9876543210</p>
-            <p><a href="mailto:xyzexample@gmail.com">xyzexample@gmail.com</a></p>
+            <br><p style="font-size:18px;">{{pgrep.name}}</p>
+            <p>{{pgrep.phone_number}}</p>
+            <p><a href="mailto:{{pgrep.email}}">{{pgrep.email}}</a></p>
             </div>
         </div>
       </div>
@@ -125,27 +125,15 @@
               </div>
               <div class="collapsible-body">
                 <ul class="collection">
-                  <li class="collection-item avatar">
-                    <i class="material-icons biggercircle red">play_arrow</i>
-                    <span class="title">Alvin</span>
-                    <br>Mech
-                    <div class="secondary-content">x@gmail.com<br> 98766543</div><br>
-                    Address
+                  {% for item in final %}
+                  <li class="collection-item avatar" style="padding-left:80px">
+                    <img class="biggercircle" src="/media/{{item.prof_pic}}"/>
+                    <br>
+                    <span class="title">{{item.name}}</span>
+                    <br>  {{item.get_branch_display}}
+                    <div class="secondary-content">{{item.email}}<br>{{item.phone_number}}</div><br>
                   </li>
-                   <li class="collection-item avatar">
-                    <i class="material-icons biggercircle">folder</i>
-                    <span class="title">George</span>
-                    <br>Mech
-                    <div class="secondary-content">y@gmail.com<br>9876654378</div><br>
-                    Address
-                  </li>
-                  <li class="collection-item avatar">
-                    <i class="material-icons biggercircle green">insert_chart</i>
-                    <span class="title">Kalyan</span>
-                    <br>IT
-                    <div class="secondary-content">z@gmail.com<br>9876654378</div><br>
-                    Address
-                  </li>
+                  {% endfor %}
                 </ul>
               </div>
           </li>
@@ -154,27 +142,15 @@
               </div>
               <div class="collapsible-body">
                 <ul class="collection">
-                  <li class="collection-item avatar">
-                    <i class="material-icons biggercircle red">play_arrow</i>
-                    <span class="title">Alvin</span>
-                    <br>Mech
-                    <div class="secondary-content">x@gmail.com<br> 98766543</div><br>
-                    Address
+                  {% for item in third %}
+                  <li class="collection-item avatar" style="padding-left:80px">
+                    <img class="biggercircle" src="/media/{{item.prof_pic}}"/>
+                    <br>
+                    <span class="title">{{item.name}}</span>
+                    <br>{{item.get_branch_display}}
+                    <div class="secondary-content"><br>{{item.email}}<br>{{item.phone_number}}</div><br>
                   </li>
-                    <li class="collection-item avatar">
-                    <i class="material-icons biggercircle">folder</i>
-                    <span class="title">George</span>
-                    <br>Mech
-                    <div class="secondary-content">y@gmail.com<br>9876654378</div><br>
-                    Address
-                  </li>
-                    <li class="collection-item avatar">
-                    <i class="material-icons biggercircle green">insert_chart</i>
-                    <span class="title">Kalyan</span>
-                    <br>IT
-                    <div class="secondary-content">z@gmail.com<br>9876654378</div><br>
-                    Address
-                  </li>
+                  {% endfor %}
                 </ul>
               </div>
           </li>
@@ -183,27 +159,15 @@
               </div>
               <div class="collapsible-body">
                 <ul class="collection">
-                  <li class="collection-item avatar">
-                    <i class="material-icons biggercircle red">play_arrow</i>
-                    <span class="title">Alvin</span>
-                    <br>Mech
-                    <div class="secondary-content">x@gmail.com<br> 98766543</div><br>
-                    Address
+                  {% for item in second %}
+                  <li class="collection-item avatar" style="padding-left:80px">
+                    <img class="biggercircle" src="/media/{{item.prof_pic}}"/>
+                    <br>
+                    <span class="title">{{item.name}}</span>
+                    <br>{{item.branch}}
+                    <div class="secondary-content">{{item.email}}<br>{{item.phone_number}}</div><br>
                   </li>
-                   <li class="collection-item avatar">
-                    <i class="material-icons biggercircle">folder</i>
-                    <span class="title">George</span>
-                    <br>Mech
-                    <div class="secondary-content">y@gmail.com<br>9876654378</div><br>
-                    Address
-                  </li>
-                  <li class="collection-item avatar">
-                    <i class="material-icons biggercircle green">insert_chart</i>
-                    <span class="title">Kalyan</span>
-                    <br>IT
-                    <div class="secondary-content">z@gmail.com<br>9876654378</div><br>
-                    Address
-                  </li>
+                  {% endfor %}
                 </ul>
               </div>
           </li>
@@ -212,27 +176,15 @@
               </div>
               <div class="collapsible-body">
                 <ul class="collection">
-                  <li class="collection-item avatar">
-                    <i class="material-icons biggercircle red">play_arrow</i>
-                    <span class="title">Alvin</span>
-                    <br>Mech
-                    <div class="secondary-content">x@gmail.com<br> 98766543</div><br>
-                    Address
+                  {% for item in first %}
+                  <li class="collection-item avatar" style="padding-left:80px">
+                    <img class="biggercircle" src="/media/{{item.prof_pic}}"/>
+                    <br>
+                    <span class="title">{{item.name}}</span>
+                    <br>{{item.branch}}
+                    <div class="secondary-content">{{item.email}}<br>{{item.phone_number}}</div><br>
                   </li>
-                   <li class="collection-item avatar">
-                    <i class="material-icons biggercircle">folder</i>
-                    <span class="title">George</span>
-                    <br>Mech
-                    <div class="secondary-content">y@gmail.com<br>9876654378</div><br>
-                    Address
-                  </li>
-                  <li class="collection-item avatar">
-                    <i class="material-icons biggercircle green">insert_chart</i>
-                    <span class="title">Kalyan</span>
-                    <br>IT
-                    <div class="secondary-content">z@gmail.com<br>9876654378</div><br>
-                    Address
-                  </li>
+                  {% endfor %}
                 </ul>
               </div>
           </li>

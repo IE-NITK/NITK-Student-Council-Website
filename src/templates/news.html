@@ -1,4 +1,5 @@
 {% extends "static.html" %}
+{% load thumbnail %}
 
 {% block page-info %}
 <div class="container">
@@ -30,8 +31,8 @@
 		<div class="col s10">
 			<div class="collection">
 				{% for item in campus %}
-				<a class="collection-item avatar" href="/news/{{item.id}}">
-					<i class="material-icons biggercircle red">info</i>
+				<a class="collection-item avatar" href="/news/{{item.id}}" style="padding-left:80px">
+					<img class="biggercircle" src="{{ item.thumbnail.avatar.url }}" alt="" />
 					<br><span class="title">{{ item.title }}</span>
 				</a>
 				{% endfor %}
@@ -42,8 +43,8 @@
 		<div class="col s10">
 			<div class="collection">
 				{% for item in inthenews %}
-				<a class="collection-item avatar" href="/news/{{item.id}}">
-					<i class="material-icons biggercircle red">info</i>
+				<a class="collection-item avatar" href="/news/{{item.id}}" style="padding-left:80px">
+					<img class="biggercircle" src="{{ item.thumbnail.avatar.url }}" alt="" />
 					<br><span class="title">{{ item.title }}</span>
 				</a>
 				{% endfor %}
@@ -54,8 +55,8 @@
 		<div class="col s10">
 			<div class="collection">
 				{% for item in spotlight %}
-				<a class="collection-item avatar" href="/news/{{item.id}}">
-					<i class="material-icons biggercircle red">info</i>
+				<a class="collection-item avatar" href="/news/{{item.id}}" style="padding-left:80px">
+					<img class="biggercircle" src="{{ item.thumbnail.avatar.url }}" alt="" />
 					<br><span class="title">{{ item.title }}</span>
 				</a>
 				{% endfor %}
