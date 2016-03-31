@@ -14,9 +14,6 @@ class AboutPage(generic.TemplateView):
 class MessagePage(generic.TemplateView):
 	template_name = "message.html"
 
-class ClubLifePage(generic.TemplateView):
-	template_name="clublife.html"
-
 class ContactNumbers(generic.TemplateView):
 	template_name="contacts.html"
 
