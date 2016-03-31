@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.core.validators import RegexValidator
 from django_markdown.models import MarkdownField
-from profiles.models import Profile
+from django.conf import settings
 
 class News(models.Model):
     CHOICE = [('C', 'Campus News'),
@@ -11,6 +11,7 @@ class News(models.Model):
             ('S', 'Spotlight'),
             ]
     title = models.CharField(max_length=300)
+    news_pic = models.ImageField(upload_to='article_pics/%Y-%m-%d/',null=True,blank=True)
     details = models.CharField(max_length=2000)
     category = models.CharField(max_length=1, choices=CHOICE)
     timestamp = models.DateTimeField(auto_now_add=True)
@@ -29,7 +30,7 @@ class Announcements(models.Model):
         return self.title
 
 class Club(models.Model):
-    user = models.ForeignKey(Profile)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
     name = models.CharField(max_length=300)
     convenor = models.CharField(max_length=100)
     strength = models.IntegerField()
@@ -38,7 +39,7 @@ class Club(models.Model):
         return self.name
 
 class Member(models.Model):
-    user = models.ForeignKey(Profile)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
     BRANCH_LIST = [('CH', 'Chemical Engineering'),
                    ('CO', 'Computer Engineering'),
                    ('CV', 'Civil Engineering'),
@@ -56,12 +57,12 @@ class Member(models.Model):
     phone_number = models.CharField(max_length=15, validators=[phone_regex], blank=True)
 
     def __str__(self):
-        return self.user.user.get_full_name
+        return self.user.get_full_name
 
 
 class Events(models.Model):
     title = models.CharField(max_length=200)
-    organizer = models.ForeignKey(Club)
+    organizer = models.ForeignKey(Club, editable=False)
     details = models.CharField(max_length=2000)
     start = models.DateTimeField()
     end = models.DateTimeField()
@@ -82,6 +83,7 @@ class Author(models.Model):
 class Articles(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(Author)
+    article_pic = models.ImageField(upload_to='article_pics/%Y-%m-%d/',null=True,blank=True)
     content = MarkdownField()
     published = models.DateTimeField(auto_now_add=True)
 

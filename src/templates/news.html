@@ -31,7 +31,7 @@
 	<div id="campus">
 		<div class="col s10">
 			<div class="collection">
-				{% for item in news %}
+				{% for item in campus %}
 				<a class="collection-item avatar" href="/news/{{item.id}}">
 					<i class="material-icons biggercircle red">info</i>
 					<br><span class="title">{{ item.title }}</span>
@@ -43,7 +43,7 @@
 	<div id="inthenews">
 		<div class="col s10">
 			<div class="collection">
-				{% for item in news %}
+				{% for item in inthenews %}
 				<a class="collection-item avatar" href="/news/{{item.id}}">
 					<i class="material-icons biggercircle red">info</i>
 					<br><span class="title">{{ item.title }}</span>
@@ -55,7 +55,7 @@
 	<div id="spotlight">
 		<div class="col s10">
 			<div class="collection">
-				{% for item in news %}
+				{% for item in spotlight %}
 				<a class="collection-item avatar" href="/news/{{item.id}}">
 					<i class="material-icons biggercircle red">info</i>
 					<br><span class="title">{{ item.title }}</span>
