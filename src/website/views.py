@@ -11,9 +11,6 @@ class represent(generic.TemplateView):
 class AboutPage(generic.TemplateView):
     template_name = "about.html"
 
-class article(generic.TemplateView):
-    template_name = "article.html"
-
 class MessagePage(generic.TemplateView):
 	template_name = "message.html"
 
@@ -51,15 +48,24 @@ def homePage(request):
     return render(request,'home.html',{'events':eventlist,'news':newslist,'articles':articlelist})
 
 def announcements(request):
-    announcelist = Announcements.objects.all().order_by('timestamp')
+    announcelist = Announcements.objects.all().order_by('-timestamp')
     return render(request,'announce.html',{'announcements':announcelist})
+
+def blogPage(request, num=0):
+    if num:
+        article = Articles.objects.get(id=num)
+        return render(request,'article.html',{'article':article})
+    else:
+        articles = Articles.objects.all().order_by('-published')
+        return render(request,'blog.html',{'article':articles})
+
 
 def newsPage(request, num=0):
     if num:
         news = News.objects.get(id=num)
         return render(request,'eachNews.html',{'news':news})
     else:
-        news = News.objects.all().order_by('timestamp')
+        news = News.objects.all().order_by('-timestamp')
         inthenews = news.filter(category='N')
         spotlight = news.filter(category='S')
         campus = news.filter(category='C')

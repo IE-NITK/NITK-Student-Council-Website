@@ -1,4 +1,5 @@
 {% extends "static.html" %}
+{% load django_markdown %}
 
 {% block page-info %}
 <div class="container">
@@ -18,7 +19,7 @@
 <div class="container">
   <div class="row valign-wrapper">
     <div class="col s12">
-      <img class="responsive-img" src="{% static 'site/img/sample.jpg' %}">
+      <img class="responsive-img" src="/media/{{news.news_pic}}">
     </div>
 
   </div>
@@ -27,7 +28,7 @@
     <div class="col s12">
       <h2>{{ news.title }}</h2>
       <article >
-          {{ news.details }}
+          {{ news.details|markdown }}
       </article>
 
     </div>

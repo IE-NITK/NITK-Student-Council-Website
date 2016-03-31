@@ -1,4 +1,5 @@
 {% extends "static.html" %}
+{% load django_markdown %}
 
 {% block page-info %}
 <div class="container">
@@ -15,61 +16,19 @@
 {% load static %}
 <link href="{% static 'site/css/main.css' %}" rel="stylesheet">
 
-
+{% for item in article %}
 	<div class="row">
 		<div class="col s6 m6">
 			<div class="card-panel grey lighten-5 fixed-height">
-				<h3 class="align-left"><a href="#"> Let's Talk About Ragging </a></h3>
+				<h3 class="align-left"><a href="/blog/{{item.id}}"> {{item.title}} </a></h3>
 				<div class= "row">
 						<p>
-
-											<h6>By Kishan Sagathiya</h6>
-I remember one student sitting in a corner surrounded by ten guys who were kicking him like crazy. He didn't even try to fight back. He suffered like all of them did. It was not that they were weak.They were actually stronger than some of the 12th grade students. It wasn't even that they weren't united. It was just that they were scared, in a place far from their homes.
-
+							<h6>By {{item.author.name}}</h6>
+              {{item.content|markdown|truncatechars_html:200}}
 						</p>
 					</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col s6 m6">
-				<div class="card-panel grey lighten-5 fixed-height">
-					<h3 class="align-left"><a href="#"> Let's Talk About Ragging </a></h3>
-					<div class= "row">
-							<p>
-
-												<h6>By Kishan Sagathiya</h6>
-	I remember one student sitting in a corner surrounded by ten guys who were kicking him like crazy. He didn't even try to fight back. He suffered like all of them did. It was not that they were weak.They were actually stronger than some of the 12th grade students. It wasn't even that they weren't united. It was just that they were scared, in a place far from their homes.
-
-							</p>
-						</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col s6 m6">
-					<div class="card-panel grey lighten-5 fixed-height">
-						<h3 class="align-left"><a href="#"> Let's Talk About Ragging </a></h3>
-						<div class= "row">
-								<p>
-
-													<h6>By Kishan Sagathiya</h6>
-		I remember one student sitting in a corner surrounded by ten guys who were kicking him like crazy. He didn't even try to fight back. He suffered like all of them did. It was not that they were weak.They were actually stronger than some of the 12th grade students. It wasn't even that they weren't united. It was just that they were scared, in a place far from their homes.
-
-								</p>
-							</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col s6 m6">
-						<div class="card-panel grey lighten-5 fixed-height">
-							<h3 class="align-left"><a href="#"> Let's Talk About Ragging </a></h3>
-							<div class= "row">
-									<p>
-
-														<h6>By Kishan Sagathiya</h6>
-			I remember one student sitting in a corner surrounded by ten guys who were kicking him like crazy. He didn't even try to fight back. He suffered like all of them did. It was not that they were weak.They were actually stronger than some of the 12th grade students. It wasn't even that they weren't united. It was just that they were scared, in a place far from their homes.
-
-									</p>
-								</div>
-						</div>
-					</div>
-	</div>{% endblock %}
+	</div>
+{% endfor %}
+{% endblock %}
