@@ -172,4 +172,4 @@ class SenateReport(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=200, null=True, blank=True)
     def __str__(self):
-        return self.title + '-' + str(self.date_of_meeting)
+        return self.title + '-' + str(self.date_of_report)
