@@ -446,3 +446,6 @@ i.biggercircle {
 .tabs .indicator {
     background-color: #e0e0e0;
 }
+.fixed-height {
+  height: 400px;
+  }
