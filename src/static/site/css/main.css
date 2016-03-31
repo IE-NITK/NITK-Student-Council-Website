@@ -459,9 +459,11 @@ i.biggercircle {
     background-color: #e0e0e0;
 }
 
-.fixed-height {
-  height: 400px;
-  }
+@media only screen and (min-width: 650px) {
+    .fixed-height {
+        height: 400px;
+    }
+ }
 
 
 .custom-card div:hover {
