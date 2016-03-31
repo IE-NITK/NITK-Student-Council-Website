@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.core.validators import RegexValidator
 from django_markdown.models import MarkdownField
-from profiles.models import Profile
+from django.conf import settings
 
 class News(models.Model):
     CHOICE = [('C', 'Campus News'),
@@ -29,7 +29,7 @@ class Announcements(models.Model):
         return self.title
 
 class Club(models.Model):
-    user = models.ForeignKey(Profile)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
     name = models.CharField(max_length=300)
     convenor = models.CharField(max_length=100)
     strength = models.IntegerField()
@@ -38,7 +38,7 @@ class Club(models.Model):
         return self.name
 
 class Member(models.Model):
-    user = models.ForeignKey(Profile)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
     BRANCH_LIST = [('CH', 'Chemical Engineering'),
                    ('CO', 'Computer Engineering'),
                    ('CV', 'Civil Engineering'),
@@ -56,12 +56,12 @@ class Member(models.Model):
     phone_number = models.CharField(max_length=15, validators=[phone_regex], blank=True)
 
     def __str__(self):
-        return self.user.user.get_full_name
+        return self.user.get_full_name
 
 
 class Events(models.Model):
     title = models.CharField(max_length=200)
-    organizer = models.ForeignKey(Club)
+    organizer = models.ForeignKey(Club, editable=False)
     details = models.CharField(max_length=2000)
     start = models.DateTimeField()
     end = models.DateTimeField()
