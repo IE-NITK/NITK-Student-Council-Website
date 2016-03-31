@@ -26,9 +26,6 @@ class SenatePage(generic.TemplateView):
 class FAQ(generic.TemplateView):
     template_name="faq.html"
 
-class Resources(generic.TemplateView):
-    template_name = "resources.html"
-
 def date_handler(obj):
     # To handle the date format while JSON conversion
     return obj.isoformat() if hasattr(obj, 'isoformat') else obj
@@ -67,6 +64,26 @@ def newsPage(request, num=0):
         campus = news.filter(category='C')
         pinned = news.filter(pinned=True)
         return render(request,'news.html',{'inthenews':inthenews,'spotlight':spotlight,'campus':campus,'pinned':pinned})
+
+def minutes(request):
+    minuteslist = Minute.objects.all().order_by('-date_of_meeting')
+    return render(request, 'minutes.html', {'minutes':minuteslist})
+
+def mous(request):
+    mouslist = MoU.objects.all().order_by('-date_of_signing')
+    return render(request, 'mous.html', {'mous':mouslist})
+
+def grants(request):
+    grantlist = ResearchGrant.objects.all().order_by('-date_of_grant')
+    return render(request, 'grants.html', {'grants':grantlist})
+
+def resources(request):
+    resourcelist = Resource.objects.all().order_by('-timestamp')
+    return render(request, 'resources.html', {'resources':resourcelist})
+
+def reports(request):
+    reportlist = SenateReport.objects.all().order_by('-date_of_report')
+    return render(request, 'senatereports.html', {'reports':reportlist})
 
 def meetTheReps(request):
     presi = Member.objects.get(designation='PR')

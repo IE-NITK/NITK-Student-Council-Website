@@ -14,6 +14,11 @@ urlpatterns = [
     url(r'^news/$', views.newsPage, name='news'),
     url(r'^news/(?P<num>[0-9]+)/$', views.newsPage, name='eachNews'),
     url(r'^faq/',views.FAQ.as_view(),name='faq'),
-	url(r'^resources/',views.Resources.as_view(),name='resources'),
     url(r'^senate/',views.SenatePage.as_view(),name='senate'),
+    url(r'^minutes/',views.minutes,name='minutes'),
+    url(r'^mou/',views.mous,name='mous'),
+    url(r'^grants/',views.grants,name='grants'),
+    url(r'^reports/',views.reports,name='reports'),
+    url(r'^resources/',views.resources,name='resources'),
+
 ]

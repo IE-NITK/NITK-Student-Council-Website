@@ -124,3 +124,43 @@ class Complaint(models.Model):
 
     def __str__(self):
         return self.complaint
+
+class Minute(models.Model):
+    link = models.URLField()
+    date_of_meeting = models.DateField()
+    title = models.CharField(max_length=100, default="Minutes of the Meeting")
+    description = models.CharField(max_length=200, null=True, blank=True)
+    def __str__(self):
+        return self.title + '-' + str(self.date_of_meeting)
+
+class ResearchGrant(models.Model):
+    link = models.URLField()
+    date_of_grant = models.DateField()
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=200, null=True, blank=True)
+    def __str__(self):
+        return self.title
+
+class MoU(models.Model):
+    link = models.URLField()
+    date_of_signing = models.DateField()
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=200, null=True, blank=True)
+    def __str__(self):
+        return self.title
+
+class Resource(models.Model):
+    link = models.URLField()
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=200, null=True, blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.title
+
+class SenateReport(models.Model):
+    link = models.URLField()
+    date_of_report = models.DateField()
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=200, null=True, blank=True)
+    def __str__(self):
+        return self.title + '-' + str(self.date_of_meeting)
