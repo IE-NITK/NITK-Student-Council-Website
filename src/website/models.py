@@ -82,6 +82,7 @@ class Author(models.Model):
 class Articles(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(Author)
+    article_pic = models.ImageField(upload_to='article_pics/%Y-%m-%d/',null=True,blank=True)
     content = MarkdownField()
     published = models.DateTimeField(auto_now_add=True)
 
