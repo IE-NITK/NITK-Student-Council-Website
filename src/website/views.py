@@ -5,9 +5,6 @@ from django.core import serializers
 import json
 # Create your views here.
 
-class represent(generic.TemplateView):
-    template_name = "represent.html"
-
 class AboutPage(generic.TemplateView):
     template_name = "about.html"
 
@@ -59,7 +56,6 @@ def blogPage(request, num=0):
         articles = Articles.objects.all().order_by('-published')
         return render(request,'blog.html',{'article':articles})
 
-
 def newsPage(request, num=0):
     if num:
         news = News.objects.get(id=num)
@@ -71,3 +67,16 @@ def newsPage(request, num=0):
         campus = news.filter(category='C')
         pinned = news.filter(pinned=True)
         return render(request,'news.html',{'inthenews':inthenews,'spotlight':spotlight,'campus':campus,'pinned':pinned})
+
+def meetTheReps(request):
+    presi = Member.objects.get(designation='PR')
+    inci = Member.objects.get(designation='IC')
+    engi = Member.objects.get(designation='EC')
+    sec = Member.objects.get(designation='GS')
+    grep = Member.objects.get(designation='GR')
+    pgrep = Member.objects.get(designation='PG')
+    first = Member.objects.filter(year=1).filter(designation='CR')
+    second = Member.objects.filter(year=2).filter(designation='CR')
+    third = Member.objects.filter(year=3).filter(designation='CR')
+    final = Member.objects.filter(year=4).filter(designation='CR')
+    return render(request,'represent.html',{'presi':presi,'inci':inci,'engi':engi,'sec':sec,'grep':grep,'pgrep':pgrep,'first':first,'second':second,'third':third,'final':final})

@@ -1,6 +1,5 @@
 {% extends "static.html" %}
 {% load django_markdown %}
-{% load thumbnail %}
 {% block page-info %}
 
 <div class="container">
@@ -58,7 +57,7 @@
     <div class="row valign-wrapper">
     <div class="col s4 ">
                     <img width="100" height= "100" class="responsive-img circle tall"
-                 src="{{article.author.prof_pic.avatar.url}}"/>
+                 src="/media/{{article.author.prof_pic}}"/>
     </div>
     <div class="col s6 row center-align ">
         <h1 class="flow-text"> <strong>{{article.author.name}}</h1>
