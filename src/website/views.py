@@ -86,12 +86,12 @@ def reports(request):
     return render(request, 'senatereports.html', {'reports':reportlist})
 
 def meetTheReps(request):
-    presi = Member.objects.get(designation='PR')
-    inci = Member.objects.get(designation='IC')
-    engi = Member.objects.get(designation='EC')
-    sec = Member.objects.get(designation='GS')
-    grep = Member.objects.get(designation='GR')
-    pgrep = Member.objects.get(designation='PG')
+    presi = CoreMember.objects.get(designation='PR')
+    inci = CoreMember.objects.get(designation='IC')
+    engi = CoreMember.objects.get(designation='EC')
+    sec = CoreMember.objects.get(designation='GS')
+    grep = CoreMember.objects.get(designation='GR')
+    pgrep = CoreMember.objects.get(designation='PG')
     first = Member.objects.filter(year=1).filter(designation='CR')
     second = Member.objects.filter(year=2).filter(designation='CR')
     third = Member.objects.filter(year=3).filter(designation='CR')
