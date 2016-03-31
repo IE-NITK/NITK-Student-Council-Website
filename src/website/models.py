@@ -50,6 +50,7 @@ class CoreMember(models.Model):
                    ('PG','PG Girls\' Representative'),
                   ]
     name = models.CharField(max_length=50)
+    prof_pic = models.ImageField(upload_to='member_pic_thumbnail/%Y-%m-%d/', blank=True)
     designation = models.CharField(max_length=2, choices=DESIGNATION)
     email = models.EmailField()
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
