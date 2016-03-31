@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^news/$', views.newsPage, name='news'),
     url(r'^news/(?P<num>[0-9]+)/$', views.newsPage, name='eachNews'),
     url(r'^faq/',views.FAQ.as_view(),name='faq'),
+	url(r'^resources/',views.Resources.as_view(),name='resources'),
 ]
