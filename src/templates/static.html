@@ -14,9 +14,10 @@
 	<link href="{% static 'materialize/css/materialize.min.css' %}" rel="stylesheet">
 
 	<!-- Custom styles for this site -->
-	{% block styles %}
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Signika:600' rel='stylesheet' type='text/css'>
 	<link href="{% static 'site/css/main.css' %}" rel="stylesheet">
+	{% block styles %}
+
 	{% endblock styles %}
 
 	<!-- Custom tags for the head tag -->
@@ -121,9 +122,6 @@
 						<a href="#!" class="breadcrumb">Page Info 2</a>
 					</div>
 				</div>
-				<div class="row">
-					<h1 class="title">Page Header</h1>
-				</div>
 			</div>
 			{% endblock %}
 		</div>
@@ -166,7 +164,7 @@
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="{% static 'materialize/js/materialize.min.js' %}"></script>
 
-	{% block scripts %}
+
 	<script type="text/javascript">
 	$(document).ready(function(){
 
@@ -179,6 +177,7 @@
 
 	});
 	</script>
+	{% block scripts %}
 	{% endblock scripts %}
 
 </body>
