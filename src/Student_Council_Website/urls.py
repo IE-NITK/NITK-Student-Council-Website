@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 import profiles.urls
 import accounts.urls
 import website.urls
+import smriti.urls
 import website.views as websiteviews
 from . import views
 
@@ -14,6 +15,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(accounts.urls, namespace='accounts')),
     url(r'^', include(website.urls, namespace='website')),
+    url(r'^smriti/', include(smriti.urls, namespace='smriti')),
     url(r'^markdown/', include('django_markdown.urls')),
 ]
 
