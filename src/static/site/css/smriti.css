@@ -27,3 +27,8 @@
 .cover .btn-large {
     min-width: 250px;
 }
+
+body {
+    margin: 0 auto;
+    background-color: #078AB5;
+}

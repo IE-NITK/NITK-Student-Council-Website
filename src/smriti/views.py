@@ -12,10 +12,11 @@ def login_view(request):
         username = request.POST.get('email','')
         password = request.POST.get('password','')
         user = auth.authenticate(email=username,password=password)
-        print username
-        print user
 
         if user is not None:
             return HttpResponseRedirect('/smriti/home/')
         else:
             return HttpResponseRedirect('/smriti/invalid/')
+
+class HomePage(generic.TemplateView):
+    template_name = "smriti/home.html"
