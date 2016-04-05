@@ -78,7 +78,7 @@ INSTALLED_APPS = (
     'profiles',
     'accounts',
     'website',
-    'smriti',
+    #'smriti',
     'django_markdown',
 
 )
