@@ -29,6 +29,13 @@
 }
 
 body {
-    margin: 0 auto;
     background-color: #078AB5;
+}
+
+.smriti {
+font-family: 'Great Vibes', cursive;
+}
+
+.custom-card div:hover {
+    background-color: rgb(176,190,197);
 }

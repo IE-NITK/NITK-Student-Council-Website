@@ -1,0 +1,56 @@
+{% extends "smriti/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <section style="padding-top:15px">
+        <div class="row">
+    <form class="col s12">
+      <div class="row center-align">
+
+        <div class="card grey lighten-2 lighten-3 waves-effect waves-block waves-light valign-wrapper z-depth-2">
+        <div class="input-field col s12 m8 offset-l2">
+
+            <i class="material-icons prefix">search</i>
+             <input id="icon_prefix" type="text" class="validate">
+             <label for="icon_prefix">Search for the Name/Roll No</label>
+         </div>
+        </div>
+      </div>
+    </form>
+  </div>
+    </section>
+    <div class="divider"></div>
+    <p class="flow-text"> Browse by branches </p>
+	<div class="row center-align">
+		<div class="col s12 m6">
+			<a href="resource.link">
+				<div class="card-panel grey lighten-3 waves-effect waves-block waves-light valign-wrapper z-depth-2">
+					<div class="card-content black-text">
+                            <h4>Computer Engineering</h4>
+                    </div>
+				</div>
+			</a>
+		</div>
+        <div class="col s12 m6">
+           <a href="resource.link">
+               <div class="card-panel grey lighten-3 waves-effect waves-block waves-light valign-wrapper z-depth-2">
+                   <div class="card-content black-text">
+                            <h4>Material And Mettalurgical Engineering</h4>
+                    </div>
+               </div>
+           </a>
+       </div>
+       <div class="col s12 m6">
+           <a href="resource.link">
+               <div class="card-panel grey lighten-3 waves-effect waves-block waves-light valign-wrapper z-depth-2">
+                   <div class="card-content black-text">
+                           <h4>Electrical And Electronics Engineering</h4>
+                   </div>
+               </div>
+           </a>
+       </div>
+    </div>
+</div>
+{% endblock content %}

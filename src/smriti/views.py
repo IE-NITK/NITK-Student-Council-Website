@@ -20,3 +20,6 @@ def login_view(request):
 
 class HomePage(generic.TemplateView):
     template_name = "smriti/home.html"
+
+class BrowsePage(generic.TemplateView):
+    template_name = "smriti/browse.html"
