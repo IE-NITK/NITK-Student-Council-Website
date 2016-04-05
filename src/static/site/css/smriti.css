@@ -30,8 +30,14 @@
 
 body {
     background-color: #078AB5;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
+main {
+    flex: 1 0 auto;
+  }
 .smriti {
 font-family: 'Great Vibes', cursive;
 }
