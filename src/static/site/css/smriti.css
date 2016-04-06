@@ -45,3 +45,7 @@ font-family: 'Great Vibes', cursive;
 .custom-card div:hover {
     background-color: rgb(176,190,197);
 }
+
+section {
+    padding-top: 10px;
+}
