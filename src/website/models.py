@@ -6,6 +6,7 @@ from django_markdown.models import MarkdownField
 from django.conf import settings
 from easy_thumbnails.fields import ThumbnailerImageField
 
+@python_2_unicode_compatible
 class News(models.Model):
     CHOICE = [('C', 'Campus News'),
             ('N', 'In the News'),
@@ -22,6 +23,7 @@ class News(models.Model):
     def __str__(self):
         return self.title
 
+@python_2_unicode_compatible
 class Announcements(models.Model):
     title = models.CharField(max_length=300)
     thumbnail = ThumbnailerImageField(upload_to='announcement_thumbnail/%Y-%m-%d/', blank=True)
@@ -32,6 +34,7 @@ class Announcements(models.Model):
     def __str__(self):
         return self.title
 
+@python_2_unicode_compatible
 class Club(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL)
     name = models.CharField(max_length=300)
@@ -41,6 +44,7 @@ class Club(models.Model):
     def __str__(self):
         return self.name
 
+@python_2_unicode_compatible
 class CoreMember(models.Model):
     DESIGNATION = [('PR','President'),
                    ('IC','Incident Convenor'),
@@ -62,6 +66,7 @@ class CoreMember(models.Model):
     def __str__(self):
         return u'%s %s' % (self.name,self.get_designation_display())
 
+@python_2_unicode_compatible
 class Member(models.Model):
     BRANCH_LIST = [('CH', 'Chemical Engineering'),
                    ('CO', 'Computer Engineering'),
@@ -89,6 +94,7 @@ class Member(models.Model):
     def __str__(self):
         return u'%s %s %s' % (self.name,self.branch,self.get_year_display())
 
+@python_2_unicode_compatible
 class Events(models.Model):
     title = models.CharField(max_length=200)
     organizer = models.ForeignKey(Club, editable=False)
@@ -101,6 +107,7 @@ class Events(models.Model):
     def __str__(self):
         return self.title
 
+@python_2_unicode_compatible
 class Author(models.Model):
     name = models.CharField(max_length=50)
     prof_pic = models.ImageField(upload_to='author_profile_pics/%Y-%m-%d/',null=True,blank=True)
@@ -109,6 +116,7 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
+@python_2_unicode_compatible
 class Articles(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(Author)
@@ -119,6 +127,7 @@ class Articles(models.Model):
     def __str__(self):
         return self.title
 
+@python_2_unicode_compatible
 class Complaint(models.Model):
     choice = [('H', 'HCC'),
             ('S', 'Security'),
@@ -137,6 +146,7 @@ class Complaint(models.Model):
     def __str__(self):
         return self.complaint
 
+@python_2_unicode_compatible
 class Minute(models.Model):
     link = models.URLField()
     date_of_meeting = models.DateField()
@@ -145,6 +155,7 @@ class Minute(models.Model):
     def __str__(self):
         return self.title + '-' + str(self.date_of_meeting)
 
+@python_2_unicode_compatible
 class ResearchGrant(models.Model):
     link = models.URLField()
     date_of_grant = models.DateField()
@@ -153,6 +164,7 @@ class ResearchGrant(models.Model):
     def __str__(self):
         return self.title
 
+@python_2_unicode_compatible
 class MoU(models.Model):
     link = models.URLField()
     date_of_signing = models.DateField()
@@ -161,6 +173,7 @@ class MoU(models.Model):
     def __str__(self):
         return self.title
 
+@python_2_unicode_compatible
 class Resource(models.Model):
     link = models.URLField()
     title = models.CharField(max_length=100)
@@ -169,6 +182,7 @@ class Resource(models.Model):
     def __str__(self):
         return self.title
 
+@python_2_unicode_compatible
 class SenateReport(models.Model):
     link = models.URLField()
     date_of_report = models.DateField()
@@ -176,3 +190,19 @@ class SenateReport(models.Model):
     description = models.CharField(max_length=200, null=True, blank=True)
     def __str__(self):
         return self.title + '-' + str(self.date_of_report)
+
+@python_2_unicode_compatible
+class Letter(models.Model):
+    LIST = (('DR','Director'),
+            ('SW','Dean SW'),
+            ('FW','Dean FW'),
+            ('PD','Dean P&D'),
+            ('HS','Hostel Office'),
+            ('MC','Miscellaneous'),
+    )
+    addressee = models.CharField(max_length=2, choices=LIST)
+    subject = models.CharField(max_length=100)
+    link = models.URLField()
+    date_of_letter = models.DateField()
+    def __str__(self):
+        return self.addressee + '-' + self.subject
