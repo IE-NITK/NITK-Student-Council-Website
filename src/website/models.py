@@ -46,6 +46,7 @@ class CoreMember(models.Model):
                    ('IC','Incident Convenor'),
                    ('EC','Engineer Convenor'),
                    ('GS','Secretary'),
+                   ('JS','Joint Secretary'),
                    ('GR','Girls\' Representative'),
                    ('PG','PG Girls\' Representative'),
                    ('PP','PG Representative'),
