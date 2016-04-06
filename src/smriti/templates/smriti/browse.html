@@ -6,7 +6,7 @@
 <div class="container">
     <section style="padding-top:15px">
         <div class="row">
-    <form class="col s12">
+    <form class="col s12" action='/smriti/search/' method='POST'> {% csrf_token %}
       <div class="row center-align">
 
         <div class="card white lighten-2 lighten-3 waves-effect waves-block waves-light valign-wrapper z-depth-2">
@@ -26,13 +26,12 @@
     <ul class="collapsible collection with-header z-depth-2" data-collapsible="accordion">
     <li class="collection-header"><h4>Browse By Branches</h4></li>
     <li>
-     <div class="collapsible-header">Civil Engineering</div>
+     <div class="collapsible-header">Chemical Engineering</div>
      <div class="collapsible-body">
          <div class="collection">
-        <a href="#!" class="collection-item">Alvin<span class="secondary-content">12CVxx</span></a>
-        <a href="#!" class="collection-item">Alvin<span class="secondary-content">12CVxx</span></a>
-        <a href="#!" class="collection-item">Alvin<span class="secondary-content">12CVxx</span></a>
-        <a href="#!" class="collection-item">Alvin<span class="secondary-content">12CVxx</span></a>
+           {% for item in ch %}
+              <a href="/smriti/user/{{item.rollno}}" class="collection-item">{{item.user.get_full_name}}<span class="secondary-content">{{item.rollno}}</span></a>
+           {% endfor %}
       </div>
     </div>
    </li>
@@ -40,43 +39,82 @@
        <div class="collapsible-header">Computer Engineering</div>
        <div class="collapsible-body">
            <div class="collection">
-          <a href="#!" class="collection-item">Alvin<span class="secondary-content">12COxx</span></a>
-          <a href="#!" class="collection-item">Alvin<span class="secondary-content">12COxx</span></a>
-          <a href="#!" class="collection-item">Alvin<span class="secondary-content">12COxx</span></a>
-          <a href="#!" class="collection-item">Alvin<span class="secondary-content">12COxx</span></a>
+             {% for item in co %}
+                <a href="/smriti/user/{{item.rollno}}" class="collection-item">{{item.user.get_full_name}}<span class="secondary-content">{{item.rollno}}</span></a>
+             {% endfor %}
+        </div>
+      </div>
+   </li>
+   <li>
+       <div class="collapsible-header">Civil Engineering</div>
+       <div class="collapsible-body">
+           <div class="collection">
+             {% for item in cv %}
+                <a href="/smriti/user/{{item.rollno}}" class="collection-item">{{item.user.get_full_name}}<span class="secondary-content">{{item.rollno}}</span></a>
+             {% endfor %}
+        </div>
+      </div>
+   </li>
+   <li>
+       <div class="collapsible-header">Electronics and Communciation Engineering</div>
+       <div class="collapsible-body">
+           <div class="collection">
+             {% for item in ec %}
+                <a href="/smriti/user/{{item.rollno}}" class="collection-item">{{item.user.get_full_name}}<span class="secondary-content">{{item.rollno}}</span></a>
+             {% endfor %}
+        </div>
+      </div>
+   </li>
+   <li>
+       <div class="collapsible-header">Electrical and Electronics Engineering</div>
+       <div class="collapsible-body">
+           <div class="collection">
+             {% for item in ee %}
+                <a href="/smriti/user/{{item.rollno}}" class="collection-item">{{item.user.get_full_name}}<span class="secondary-content">{{item.rollno}}</span></a>
+             {% endfor %}
+        </div>
+      </div>
+   </li>
+   <li>
+       <div class="collapsible-header">Information Technology</div>
+       <div class="collapsible-body">
+           <div class="collection">
+             {% for item in it %}
+                <a href="/smriti/user/{{item.rollno}}" class="collection-item">{{item.user.get_full_name}}<span class="secondary-content">{{item.rollno}}</span></a>
+             {% endfor %}
+        </div>
+      </div>
+   </li>
+   <li>
+       <div class="collapsible-header">Mechanical Engineering</div>
+       <div class="collapsible-body">
+           <div class="collection">
+             {% for item in me %}
+                <a href="/smriti/user/{{item.rollno}}" class="collection-item">{{item.user.get_full_name}}<span class="secondary-content">{{item.rollno}}</span></a>
+             {% endfor %}
+        </div>
+      </div>
+   </li>
+   <li>
+       <div class="collapsible-header">Mining Engineering</div>
+       <div class="collapsible-body">
+           <div class="collection">
+             {% for item in mn %}
+                <a href="/smriti/user/{{item.rollno}}" class="collection-item">{{item.user.get_full_name}}<span class="secondary-content">{{item.rollno}}</span></a>
+             {% endfor %}
+        </div>
+      </div>
+   </li>
+   <li>
+       <div class="collapsible-header">Metallurgical and Materials Engineering</div>
+       <div class="collapsible-body">
+           <div class="collection">
+             {% for item in mt %}
+                <a href="/smriti/user/{{item.rollno}}" class="collection-item">{{item.user.get_full_name}}<span class="secondary-content">{{item.rollno}}</span></a>
+             {% endfor %}
         </div>
       </div>
    </li>
  </ul>
  </section>
-	<!--<div class="row center-align">
-		<div class="col s12 m6">
-			<a href="resource.link">
-				<div class="card-panel grey lighten-3 waves-effect waves-block waves-light valign-wrapper z-depth-2">
-					<div class="card-content black-text">
-                            <h4>Computer Engineering</h4>
-                    </div>
-				</div>
-			</a>
-		</div>
-        <div class="col s12 m6">
-           <a href="resource.link">
-               <div class="card-panel grey lighten-3 waves-effect waves-block waves-light valign-wrapper z-depth-2">
-                   <div class="card-content black-text">
-                            <h4>Material And Mettalurgical Engineering</h4>
-                    </div>
-               </div>
-           </a>
-       </div>
-       <div class="col s12 m6">
-           <a href="resource.link">
-               <div class="card-panel grey lighten-3 waves-effect waves-block waves-light valign-wrapper z-depth-2">
-                   <div class="card-content black-text">
-                           <h4>Electrical And Electronics Engineering</h4>
-                   </div>
-               </div>
-           </a>
-       </div>
-    </div>
-</div>-->
 {% endblock content %}

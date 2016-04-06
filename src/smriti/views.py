@@ -26,8 +26,26 @@ def homePage(request):
     profile = Profile.objects.get(user=request.user)
     return render(request,"smriti/home.html",{'testimonials':testimonials,'profile':profile})
 
-class BrowsePage(generic.TemplateView):
-    template_name = "smriti/browse.html"
+def browsePage(request):
+    ch = Profile.objects.filter(branch='CH')
+    co = Profile.objects.filter(branch='CO')
+    cv = Profile.objects.filter(branch='CV')
+    ec = Profile.objects.filter(branch='EC')
+    ee = Profile.objects.filter(branch='EE')
+    it = Profile.objects.filter(branch='IT')
+    me = Profile.objects.filter(branch='ME')
+    mn = Profile.objects.filter(branch='MN')
+    mt = Profile.objects.filter(branch='MT')
+    return render(request,"smriti/browse.html",{'ch':ch,
+                                                'co':co,
+                                                'cv':cv,
+                                                'ec':ec,
+                                                'ee':ee,
+                                                'it':it,
+                                                'me':me,
+                                                'mn':mn,
+                                                'mt':mt,
+                                                })
 
 def searchPage(request):
     if request.method == 'POST':
