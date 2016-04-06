@@ -22,9 +22,9 @@ def indexPage(request):
 
 @login_required
 def homePage(request):
-    print request.user
     testimonials = Testimonial.objects.filter(testimonial_to=request.user)
-    return render(request,"smriti/home.html",{'testimonials':testimonials})
+    profile = Profile.objects.filter(user=request.user)
+    return render(request,"smriti/home.html",{'testimonials':testimonials,'profile':profile})
 
 class BrowsePage(generic.TemplateView):
     template_name = "smriti/browse.html"
