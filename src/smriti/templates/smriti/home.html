@@ -8,10 +8,10 @@
     <section class="container" style="padding-top:15px">
         <div class="row valign-wrapper">
         <div class="col s4">
-            <img class="circle responsive-img" src="{% static 'site/img/presi.jpg' %}">
+            <img class="circle responsive-img" src="/media/{{profile.picture}}">
         </div>
         <div class="col s6">
-            <h4>Anirudh Ganesh</h4>
+            <h4>{{profile.user.get_full_name}}</h4>
         </div>
         <div class="col s2">
             <a class="btn-floating btn-large waves-effect waves-light teal lighten-3"><i class="material-icons">add</i></a>

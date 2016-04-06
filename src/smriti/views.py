@@ -23,7 +23,7 @@ def indexPage(request):
 @login_required
 def homePage(request):
     testimonials = Testimonial.objects.filter(testimonial_to=request.user)
-    profile = Profile.objects.filter(user=request.user)
+    profile = Profile.objects.get(user=request.user)
     return render(request,"smriti/home.html",{'testimonials':testimonials,'profile':profile})
 
 class BrowsePage(generic.TemplateView):
