@@ -20,5 +20,6 @@ urlpatterns = [
     url(r'^grants/',views.grants,name='grants'),
     url(r'^reports/',views.reports,name='reports'),
     url(r'^resources/',views.resources,name='resources'),
+    url(r'^letters/',views.LetterPage.as_view(),name='letters'),
 
 ]
