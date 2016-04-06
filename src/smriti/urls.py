@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^browse/', views.browsePage, name='browse'),
     url(r'^search/', views.searchPage, name='search'),
     url(r'^testimonial/', views.TestimonialPage.as_view(), name='testimonial'),
+    url(r'^write/', views.WritePage.as_view(), name='write'),
     ]

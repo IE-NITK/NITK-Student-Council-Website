@@ -1,0 +1,25 @@
+{% extends "smriti/base.html" %}
+
+{% load staticfiles %}
+{% load django_markdown %}
+{% block content %}
+<div class="container">
+    <section class="container" style="padding-top:15px">
+        <div class="row valign-wrapper">
+        <div class="col s4">
+            <img class="circle responsive-img" src="{% static 'site/img/presi.jpg' %}">
+        </div>
+        <div class="col s8">
+            <h4>Anirudh Ganesh</h4>
+        </div>
+    </section>
+    <div class="divider"></div>
+    <div class="row" style="padding-top:10px">
+        <div class="input-field col s12 m8 offset-l2">
+            <textarea name="test" id="new"></textarea>
+            {% markdown_editor "#new" %}
+            {% markdown_media %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

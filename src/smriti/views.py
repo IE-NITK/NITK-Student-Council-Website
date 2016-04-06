@@ -58,3 +58,6 @@ def searchPage(request):
 
 class TestimonialPage(generic.TemplateView):
     template_name = "smriti/testimonial.html"
+
+class WritePage(generic.TemplateView):
+    template_name = "smriti/write.html"
