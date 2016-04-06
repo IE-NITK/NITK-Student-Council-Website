@@ -17,6 +17,7 @@
         </div>
     </section>
     <div class="divider"></div>
+  {%for item in testimonials %}
 	<div class="row center-align" style="padding-top:10px">
 		<div class="col s12 m8 offset-m2 offset-l2">
 			<a href="/smriti/testimonial">
@@ -27,7 +28,7 @@
                             <img class="circle responsive-img" src="{% static 'site/img/presi.jpg' %}">
                         </div>
                         <div class="col s8">
-                            <h4>Anirudh Ganesh</h4>
+                            <h4>{{item.created_by.get_full_name}}</h4>
                         </div>
                     </div>
 						<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.  </p>
@@ -36,43 +37,7 @@
 			</a>
 		</div>
     </div>
-    <div class="row center-align">
-		<div class="col s12 m8 offset-m2 offset-l2">
-			<a href="resource.link">
-				<div class="card grey lighten-3 waves-effect waves-block waves-light custom-card valign-wrapper">
-					<div class="card-content black-text">
-                        <div class="row valign-wrapper">
-                        <div class="col s4">
-                            <img class="circle responsive-img" src="{% static 'site/img/presi.jpg' %}">
-                        </div>
-                        <div class="col s8">
-                            <h4>Anirudh Ganesh</h4>
-                        </div>
-                    </div>
-						<p> resource.description </p>
-					</div>
-				</div>
-			</a>
-		</div>
-    </div>
-    <div class="row center-align">
-		<div class="col s12 m8 offset-m2 offset-l2">
-			<a href="resource.link">
-				<div class="card grey lighten-3 waves-effect waves-block waves-light custom-card valign-wrapper">
-					<div class="card-content black-text">
-                        <div class="row valign-wrapper">
-                        <div class="col s4">
-                            <img class="circle responsive-img" src="{% static 'site/img/presi.jpg' %}">
-                        </div>
-                        <div class="col s8">
-                            <h4>Anirudh Ganesh</h4>
-                        </div>
-                    </div>
-						<p> resource.description </p>
-					</div>
-				</div>
-			</a>
-		</div>
-    </div>
+    {% endfor %}
+ </div>
 </div>
 {% endblock content %}

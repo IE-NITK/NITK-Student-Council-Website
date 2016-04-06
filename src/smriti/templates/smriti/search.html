@@ -13,70 +13,45 @@
     <div class="divider"></div>
     <section>
     <div class="row center-align">
+      {% for item in name_result %}
         <div class="col s12 m6">
           <a href=""><div class="card-panel grey lighten-4 small">
               <div class="card-image">
                 <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
               </div>
               <div class="card-content">
-              <h5>NAMES</h5>
-              <h5>12XXXX</h5>
+              <h5>{{item.user.get_full_name}}</h5>
+              <h5>{{item.rollno}}</h5>
               </div>
           </div></a>
         </div>
-     <div class="col s12 m6">
-       <a href=""><div class="card-panel grey lighten-4 small">
-           <div class="card-image">
-             <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
-           </div>
-           <div class="card-content">
-           <h5>NAME</h5>
-           <h5>12XXXX</h5>
-           </div>
-       </div></a>
-     </div>
- </div>
- <div class="row center-align">
-     <div class="col s12 m6">
-       <a href=""><div class="card-panel grey lighten-4 small ">
-           <div class="card-image">
-             <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
-           </div>
-           <div class="card-content">
-           <h5>NAME</h5>
-           <h5>12XXXX</h5>
-           </div>
-       </div>
-       </a>
-     </div>
-
-
-     <div class="col s12 m6">
-       <a href=""><div class="card-panel grey lighten-4 small ">
-           <div class="card-image">
-             <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
-           </div>
-           <div class="card-content">
-           <h5>NAME</h5>
-           <h5>12XXXX</h5>
-           </div>
-       </div>
-   </a>
-     </div>
- </a>
+      {% endfor %}
+      {% for item in roll_result %}
+        <div class="col s12 m6">
+          <a href=""><div class="card-panel grey lighten-4 small">
+              <div class="card-image">
+                <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
+              </div>
+              <div class="card-content">
+              <h5>{{item.user.get_full_name}}</h5>
+              <h5>{{item.rollno}}</h5>
+              </div>
+          </div></a>
+        </div>
+      {% endfor %}
  </div>
     </section>
     <div class="divider"></div>
  <section>
      <div class="row">
- <form class="col s12">
+ <form class="col s12" action='/smriti/search/' method='POST'> {% csrf_token %}
    <div class="row center-align">
 
      <div class="card white lighten-2 lighten-3 waves-effect waves-block waves-light valign-wrapper z-depth-2">
      <div class="input-field col s12 m8 offset-l2">
 
          <i class="material-icons prefix">search</i>
-          <input id="icon_prefix" type="text" class="validate">
+          <input id="icon_prefix" type="text" name="search_param" class="validate">
           <label for="icon_prefix">Search for the Name/Roll No</label>
       </div>
      </div>
