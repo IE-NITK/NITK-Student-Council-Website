@@ -19,34 +19,61 @@
  <div class="collapsible-header">Director</div>
  <div class="collapsible-body">
 	 <div class="collection">
-	<a href="#!" class="collection-item">SC/DPD/E13/02 - Installation of more Charging Points in Reading Room<span class="secondary-content">09 Jun 2016</span></a>
-	<a href="#!" class="collection-item">Alvin<span class="secondary-content">12CVxx</span></a>
-	<a href="#!" class="collection-item">Alvin<span class="secondary-content">12CVxx</span></a>
-	<a href="#!" class="collection-item">Alvin<span class="secondary-content">12CVxx</span></a>
+	{% for letter in director %}
+	<a href="{{letter.link}}" class="collection-item" target="_blank">{{letter.subject}}<span class="secondary-content">{{letter.date_of_letter}}</span></a>
+	{% endfor %}
   </div>
 </div>
 </li>
 <li>
-   <div class="collapsible-header">Dean (SW)</div>
+   <div class="collapsible-header">Dean (Students Welfare)</div>
    <div class="collapsible-body">
 	   <div class="collection">
-	  <a href="#!" class="collection-item">Alvin<span class="secondary-content">12COxx</span></a>
-	  <a href="#!" class="collection-item">Alvin<span class="secondary-content">12COxx</span></a>
-	  <a href="#!" class="collection-item">Alvin<span class="secondary-content">12COxx</span></a>
-	  <a href="#!" class="collection-item">Alvin<span class="secondary-content">12COxx</span></a>
+		{% for letter in sw %}
+	   	<a href="{{letter.link}}" class="collection-item" target="_blank">{{letter.subject}}<span class="secondary-content">{{letter.date_of_letter}}</span></a>
+	   	{% endfor %}
 	</div>
   </div>
 </li>
 <li>
-	<div class="collapsible-header">Dean (FW)</div>
+	<div class="collapsible-header">Dean (Faculty Welfare)</div>
 	<div class="collapsible-body">
 	<div class="collection">
-   <a href="#!" class="collection-item">Alvin<span class="secondary-content">12COxx</span></a>
-   <a href="#!" class="collection-item">Alvin<span class="secondary-content">12COxx</span></a>
-   <a href="#!" class="collection-item">Alvin<span class="secondary-content">12COxx</span></a>
-   <a href="#!" class="collection-item">Alvin<span class="secondary-content">12COxx</span></a>
- </div>
- </div>
+		{% for letter in fw %}
+	    <a href="{{letter.link}}" class="collection-item" target="_blank">{{letter.subject}}<span class="secondary-content">{{letter.date_of_letter}}</span></a>
+	    {% endfor %}
+ 	</div>
+ 	</div>
+</li>
+<li>
+	<div class="collapsible-header">Dean (Planning and Development)</div>
+	<div class="collapsible-body">
+	<div class="collection">
+		{% for letter in pd %}
+	    <a href="{{letter.link}}" class="collection-item" target="_blank">{{letter.subject}}<span class="secondary-content">{{letter.date_of_letter}}</span></a>
+	    {% endfor %}
+ 	</div>
+ 	</div>
+</li>
+<li>
+	<div class="collapsible-header">Hostel Office</div>
+	<div class="collapsible-body">
+	<div class="collection">
+		{% for letter in hostel %}
+	    <a href="{{letter.link}}" class="collection-item" target="_blank">{{letter.subject}}<span class="secondary-content">{{letter.date_of_letter}}</span></a>
+	    {% endfor %}
+ 	</div>
+ 	</div>
+</li>
+<li>
+	<div class="collapsible-header">Miscellaneous</div>
+	<div class="collapsible-body">
+	<div class="collection">
+		{% for letter in mc %}
+	    <a href="{{letter.link}}" class="collection-item" target="_blank">{{letter.subject}}<span class="secondary-content">{{letter.date_of_letter}}</span></a>
+	    {% endfor %}
+ 	</div>
+ 	</div>
 </li>
 </ul>
 </section>
