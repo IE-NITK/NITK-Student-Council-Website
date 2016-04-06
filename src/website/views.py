@@ -26,9 +26,6 @@ class SenatePage(generic.TemplateView):
 class FAQ(generic.TemplateView):
     template_name="faq.html"
 
-class LetterPage(generic.TemplateView):
-    template_name="letters.html"
-
 def date_handler(obj):
     # To handle the date format while JSON conversion
     return obj.isoformat() if hasattr(obj, 'isoformat') else obj
@@ -103,3 +100,19 @@ def meetTheReps(request):
     third = Member.objects.filter(year=3)
     final = Member.objects.filter(year=4)
     return render(request,'represent.html',{'presi':presi,'inci':inci,'engi':engi,'sec':sec,'grep':grep,'pgrep':pgrep,'pggrep':pggrep,'engit':engit,'incit':incit,'first':first,'second':second,'third':third,'final':final})
+
+def letters(request):
+    director = Letter.objects.filter(addressee="DR").order_by("-date_of_letter")
+    sw = Letter.objects.filter(addressee="SW").order_by("-date_of_letter")
+    fw = Letter.objects.filter(addressee="FW").order_by("-date_of_letter")
+    pnd = Letter.objects.filter(addressee="PD").order_by("-date_of_letter")
+    hs = Letter.objects.filter(addressee="HS").order_by("-date_of_letter")
+    mc = Letter.objects.filter(addressee="MC").order_by("-date_of_letter")
+    return render(request, 'letters.html', {
+        "director": director,
+        "sw": sw,
+        "fw": fw,
+        "pd": pnd,
+        "hostel": hs,
+        "mc": mc
+    })
