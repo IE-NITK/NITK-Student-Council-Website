@@ -147,3 +147,5 @@ THUMBNAIL_ALIASES = {
         'avatar': {'size': (50, 50), 'crop': True},
     },
 }
+
+MARKDOWN_EXTENSIONS = ["nl2br"]
