@@ -48,6 +48,9 @@ class CoreMember(models.Model):
                    ('GS','Secretary'),
                    ('GR','Girls\' Representative'),
                    ('PG','PG Girls\' Representative'),
+                   ('PP','PG Representative'),
+                   ('IT','Incident Treasurer'),
+                   ('ET','Engineer Treasurer'),
                   ]
     name = models.CharField(max_length=50)
     prof_pic = models.ImageField(upload_to='member_pic_thumbnail/%Y-%m-%d/', blank=True)
