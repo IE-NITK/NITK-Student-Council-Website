@@ -26,3 +26,6 @@ class BrowsePage(generic.TemplateView):
 
 class SearchPage(generic.TemplateView):
     template_name = "smriti/search.html"
+
+class TestimonialPage(generic.TemplateView):
+    template_name = "smriti/testimonial.html"
