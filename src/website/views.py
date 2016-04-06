@@ -115,3 +115,19 @@ def meetTheReps(request):
                                             'third':third,
                                             'final':final
                                             })
+
+def letters(request):
+    director = Letter.objects.filter(addressee="DR").order_by("-date_of_letter")
+    sw = Letter.objects.filter(addressee="SW").order_by("-date_of_letter")
+    fw = Letter.objects.filter(addressee="FW").order_by("-date_of_letter")
+    pnd = Letter.objects.filter(addressee="PD").order_by("-date_of_letter")
+    hs = Letter.objects.filter(addressee="HS").order_by("-date_of_letter")
+    mc = Letter.objects.filter(addressee="MC").order_by("-date_of_letter")
+    return render(request, 'letters.html', {
+        "director": director,
+        "sw": sw,
+        "fw": fw,
+        "pd": pnd,
+        "hostel": hs,
+        "mc": mc
+    })
