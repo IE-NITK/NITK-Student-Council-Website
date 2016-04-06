@@ -90,13 +90,28 @@ def meetTheReps(request):
     inci = CoreMember.objects.get(designation='IC')
     engi = CoreMember.objects.get(designation='EC')
     sec = CoreMember.objects.get(designation='GS')
+    jsec = CoreMember.objects.get(designation='JS')
     grep = CoreMember.objects.get(designation='GR')
-    pgrep = CoreMember.objects.get(designation='PG')
-    pggrep = CoreMember.objects.get(designation='PP')
+    pgrep = CoreMember.objects.get(designation='PP')
+    pggrep = CoreMember.objects.get(designation='PG')
     engit = CoreMember.objects.get(designation='ET')
     incit = CoreMember.objects.get(designation='IT')
     first = Member.objects.filter(year=1)
     second = Member.objects.filter(year=2)
     third = Member.objects.filter(year=3)
     final = Member.objects.filter(year=4)
-    return render(request,'represent.html',{'presi':presi,'inci':inci,'engi':engi,'sec':sec,'grep':grep,'pgrep':pgrep,'pggrep':pggrep,'engit':engit,'incit':incit,'first':first,'second':second,'third':third,'final':final})
+    return render(request,'represent.html',{'presi':presi,
+                                            'inci':inci,
+                                            'engi':engi,
+                                            'sec':sec,
+                                            'jsec':jsec,
+                                            'grep':grep,
+                                            'pgrep':pgrep,
+                                            'pggrep':pggrep,
+                                            'engit':engit,
+                                            'incit':incit,
+                                            'first':first,
+                                            'second':second,
+                                            'third':third,
+                                            'final':final
+                                            })
