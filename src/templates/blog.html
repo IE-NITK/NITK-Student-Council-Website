@@ -22,15 +22,12 @@
     {% endif %}
 		<div class="col s12 m6">
 			<div class="card-panel grey lighten-5 fixed-height">
-                <div class="row">
-                    <div class="col s8">
+                <div class="row" style="margin-bottom:0px">
 				<h5 class="align-left"><a href="/blog/{{item.id}}"> {{item.title}} </a></h3>
-                    </div>
-                    <div class="col s4">
-                        <img class="circle responsive-img" src="/media/{{item.prof_pic}}"/>
-                    </div>
                 </div>
+                <div class="row">
 							<h6>By {{item.author.name}}</h6>
+                </div>
                         <p>
               {{item.content|markdown|truncatechars_html:200}}
 						</p>
