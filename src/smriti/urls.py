@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^browse/', views.browsePage, name='browse'),
     url(r'^search/', views.searchPage, name='search'),
     url(r'^testimonial/(?P<id>[0-9]+)', views.testimonial, name='testimonial'),
-    url(r'^write/', views.WritePage.as_view(), name='write'),
+    url(r'^profiles/(?P<rollno>.+)', views.profilePage, name='profile'),
     ]

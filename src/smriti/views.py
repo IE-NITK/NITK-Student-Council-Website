@@ -19,6 +19,8 @@ def indexPage(request):
         else:
             return HttpResponseRedirect('/smriti/invalid/')
     if request.method == 'GET':
+        if request.user.is_authenticated():
+            return HttpResponseRedirect('/smriti/home/')
         return render(request,'smriti/index.html')
 
 def homePage(request):
@@ -62,3 +64,8 @@ def testimonial(request, id):
 
 class WritePage(generic.TemplateView):
     template_name = "smriti/write.html"
+
+def profilePage(request, rollno):
+    profile = get_object_or_404(Profile, rollno__iexact=rollno)
+    testimonials = Testimonial.objects.filter(testimonial_to=profile.user)
+    return render(request,"smriti/home.html",{'testimonials':testimonials,'profile':profile})
