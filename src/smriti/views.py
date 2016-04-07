@@ -55,8 +55,9 @@ def searchPage(request):
     if request.method == 'POST':
         search_param = request.POST.get('search_param','')
         name_result = Profile.objects.filter(user__name__icontains=search_param)
-        roll_result = Profile.objects.filter(rollno__iexact=search_param)
-        return render(request,"smriti/search.html",{'name_result':name_result,'roll_result':roll_result})
+        roll_result = Profile.objects.filter(rollno__icontains=search_param)
+        results = name_result | roll_result
+        return render(request,"smriti/search.html",{'results':results, 'key':search_param})
     if request.method == 'GET':
         return render(request,'smriti/search.html')
 

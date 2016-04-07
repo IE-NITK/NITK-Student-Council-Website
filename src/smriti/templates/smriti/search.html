@@ -1,36 +1,24 @@
 {% extends "smriti/base.html" %}
 
 {% load staticfiles %}
+{% load thumbnail %}
 
 {% block content %}
 <div class="container">
 
     <section>
         <div class="card-panel">
-            <h4> Search Results for : Rohit </h4>
+            <h4> Search Results for : {{key}} </h4>
         </div>
     </section>
     <div class="divider"></div>
     <section>
     <div class="row center-align">
-      {% for item in name_result %}
+      {% for item in results %}
         <div class="col s12 m6">
-          <a href=""><div class="card-panel grey lighten-4 small">
+          <a href="/smriti/profiles/{{item.rollno}}"><div class="card-panel grey lighten-4 small">
               <div class="card-image">
-                <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
-              </div>
-              <div class="card-content">
-              <h5>{{item.user.get_full_name}}</h5>
-              <h5>{{item.rollno}}</h5>
-              </div>
-          </div></a>
-        </div>
-      {% endfor %}
-      {% for item in roll_result %}
-        <div class="col s12 m6">
-          <a href=""><div class="card-panel grey lighten-4 small">
-              <div class="card-image">
-                <img class="circle responsive-img" src="{% static 'site/img/filmfestival.jpg' %}" style="width:160px;height:160px;"></img>
+                  <img title="profile picture" class="circle img-responsive" src="{% thumbnail item.profile.picture|default:'default_profile.png' 140x140 crop %}">
               </div>
               <div class="card-content">
               <h5>{{item.user.get_full_name}}</h5>
