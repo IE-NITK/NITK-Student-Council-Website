@@ -21,7 +21,7 @@
   {%for item in testimonials %}
 	<div class="row center-align" style="padding-top:10px">
 		<div class="col s12 m8 offset-m2 offset-l2">
-			<a href="/smriti/testimonial">
+			<a href="/smriti/testimonial/{{item.id}}">
 				<div class="card grey lighten-3 waves-effect waves-block waves-light custom-card valign-wrapper">
 					<div class="card-content black-text">
                         <div class="row valign-wrapper">
@@ -32,8 +32,11 @@
                             <h4>{{item.created_by.get_full_name}}</h4>
                         </div>
                     </div>
+                    <div class="divider"></div>
+                    <div class="container left-align" style="padding-top:10px">
 						<p> {{item.description|markdown|truncatechars_html:200}}  </p>
-					</div>
+                    </div>
+                    </div>
 				</div>
 			</a>
 		</div>
