@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib import auth
 from django.http import HttpResponseRedirect
@@ -56,8 +56,9 @@ def searchPage(request):
     if request.method == 'GET':
         return render(request,'smriti/search.html')
 
-class TestimonialPage(generic.TemplateView):
-    template_name = "smriti/testimonial.html"
+def testimonial(request, id):
+    testimonial = get_object_or_404(Testimonial, id=id)
+    return render(request, "smriti/testimonial.html", {'testimonial':testimonial})
 
 class WritePage(generic.TemplateView):
     template_name = "smriti/write.html"
