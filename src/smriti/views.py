@@ -1,10 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
-from django.contrib import auth
+from django.contrib import auth, messages
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from profiles.models import Profile
+from profiles.forms import ProfileForm
 from .models import *
+from braces.views import LoginRequiredMixin
 
 # Create your views here.
 
@@ -76,3 +78,30 @@ def writeTestimonial(request, rollno):
     if Testimonial.objects.filter(testimonial_to=testimonial_to.user, created_by=request.user).exists():
         return HttpResponse("Already written!")
     return render(request,"smriti/write.html", {'to':testimonial_to})
+
+class EditProfile(LoginRequiredMixin, generic.TemplateView):
+    template_name = "smriti/edit_profile.html"
+    http_method_names = ['get', 'post']
+
+    def get(self, request, *args, **kwargs):
+        user = self.request.user
+        if "profile_form" not in kwargs:
+            kwargs["profile_form"] = ProfileForm(instance=user.profile)
+        return super(EditProfile, self).get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        user = self.request.user
+        profile_form = ProfileForm(request.POST,
+                                         request.FILES,
+                                         instance=user.profile)
+        if not (profile_form.is_valid()):
+            messages.error(request, "There was a problem with the form. "
+                           "Please check the details.")
+            profile_form = ProfileForm(instance=user.profile)
+            return super(EditProfile, self).get(request,
+                                                profile_form=profile_form)
+        profile = profile_form.save(commit=False)
+        profile.user = user
+        profile.save()
+        messages.success(request, "Profile details saved!")
+        return redirect("smriti:home")
