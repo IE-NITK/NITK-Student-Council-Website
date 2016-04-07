@@ -69,3 +69,10 @@ def profilePage(request, rollno):
     profile = get_object_or_404(Profile, rollno__iexact=rollno)
     testimonials = Testimonial.objects.filter(testimonial_to=profile.user)
     return render(request,"smriti/home.html",{'testimonials':testimonials,'profile':profile})
+
+@login_required
+def writeTestimonial(request, rollno):
+    testimonial_to = get_object_or_404(Profile, rollno__iexact=rollno)
+    if Testimonial.objects.filter(testimonial_to=testimonial_to.user, created_by=request.user).exists():
+        return HttpResponse("Already written!")
+    return render(request,"smriti/write.html", {'to':testimonial_to})

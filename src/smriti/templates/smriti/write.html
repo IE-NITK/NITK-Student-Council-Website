@@ -7,10 +7,10 @@
     <section class="container" style="padding-top:15px">
         <div class="row valign-wrapper">
         <div class="col s4">
-            <img class="circle responsive-img" src="{% static 'site/img/presi.jpg' %}">
+            <img class="circle responsive-img" src={% if to.picture %}"/media/{{to.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
         </div>
         <div class="col s8">
-            <h4>Anirudh Ganesh</h4>
+            <h4>{{to.user.get_full_name}}</h4>
         </div>
     </section>
     <div class="divider"></div>
