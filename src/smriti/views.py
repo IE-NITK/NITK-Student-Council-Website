@@ -14,13 +14,13 @@ def indexPage(request):
         password = request.POST.get('password','')
         user = auth.authenticate(email=username,password=password)
         if user is not None:
+            auth.login(request, user)
             return HttpResponseRedirect('/smriti/home/')
         else:
             return HttpResponseRedirect('/smriti/invalid/')
     if request.method == 'GET':
         return render(request,'smriti/index.html')
 
-@login_required
 def homePage(request):
     testimonials = Testimonial.objects.filter(testimonial_to=request.user)
     profile = Profile.objects.get(user=request.user)
