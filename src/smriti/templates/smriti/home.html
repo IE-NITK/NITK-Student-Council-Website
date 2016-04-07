@@ -8,7 +8,7 @@
     <section class="container" style="padding-top:15px">
         <div class="row valign-wrapper">
         <div class="col s4">
-            <img class="circle responsive-img" src="/media/{{profile.picture}}">
+            <img class="circle responsive-img" src={% if profile.picture %}"/media/{{profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
         </div>
         <div class="col s6">
             <h4>{{profile.user.get_full_name}}</h4>
@@ -26,7 +26,7 @@
 					<div class="card-content black-text">
                         <div class="row valign-wrapper">
                         <div class="col s4">
-                            <img class="circle responsive-img" src="{% static 'site/img/presi.jpg' %}">
+                            <img class="circle responsive-img" src={% if item.created_by.profile.picture %} "/media/{{item.created_by.profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
                         </div>
                         <div class="col s8">
                             <h4>{{item.created_by.get_full_name}}</h4>
@@ -39,6 +39,9 @@
 		</div>
     </div>
     {% endfor %}
+    {% if not testimonials|length %}
+        <h3 class="center-align"> You have no testimonials yet</h3>
+    {% endif %}
  </div>
 </div>
 {% endblock content %}
