@@ -22,5 +22,5 @@ urlpatterns = [
     url(r'^reports/',views.reports,name='reports'),
     url(r'^resources/',views.resources,name='resources'),
     url(r'^letters/',views.letters,name='letters'),
-
+    url(r'^suggest/',views.suggest,name='suggestions'),
 ]
