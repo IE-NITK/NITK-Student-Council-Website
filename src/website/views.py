@@ -78,8 +78,12 @@ def grants(request):
     return render(request, 'grants.html', {'grants':grantlist})
 
 def resources(request):
+    categories = ResourceCategory.objects.all().order_by("name")
     resourcelist = Resource.objects.all().order_by('-timestamp')
-    return render(request, 'resources.html', {'resources':resourcelist})
+    reports = {}
+    for category in categories:
+        reports[category.name] = resourcelist.filter(category=category)
+    return render(request, 'resources.html', {'resources':reports})
 
 def reports(request):
     reportlist = SenateReport.objects.all().order_by('-date_of_report')

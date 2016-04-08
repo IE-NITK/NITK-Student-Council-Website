@@ -9,24 +9,25 @@
 	</div>
 </div>
 {% endblock %}
-{% block content %}
-<div class="container">
-	<div class="row center-align">
 
-		{% for resource in resources %}
-		<div class="col s12 m6">
-			<a href="{{resource.link}}" target="_blank">
-				<div class="card blue-grey lighten-4 waves-effect waves-block waves-light custom-card valign-wrapper">
-					<div class="card-content black-text fixed-height-300">
-						<h4>{{resource.title}}</h4>
-						<p> {{resource.description}} </p>
-					</div>
-				</div>
-			</a>
-		</div>
-		{% endfor %}
-	</div>
+{% block content %}
+<section  style="padding-top:10px">
+
+		<ul class="collapsible collection with-header z-depth-2" data-collapsible="accordion">
+		<li class="collection-header"><h4>Resources for Students</h4></li>
+		{%for category, list in resources.items %}
+		<li>
+ 		<div class="collapsible-header">{{category}}</div>
+ 		<div class="collapsible-body">
+	 <div class="collection">
+	{%for resource in list %}
+	<a href="{{resource.link}}" class="collection-item" target="_blank">{{resource.title}}</a>
+	{% endfor %}
+	{% endfor %}
+  </div>
 </div>
+</li>
+<li>
 
 
 {% endblock %}
