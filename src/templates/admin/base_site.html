@@ -13,4 +13,17 @@
 
 {% block extrahead %}{{ block.super }}
   <link href="{% static 'site/css/main.css' %}" rel="stylesheet">
+  <script>
+    (function($) {
+      $(document).ready(function() {
+        $(".add-related, .change-related").attr(
+          "onclick",
+          "event.preventDefault();onclickRelatedWorkaround(this)"
+        )
+      });
+      onclickRelatedWorkaround = function(el) {
+        if ($(el).attr("href") != null) { showAddAnotherPopup(el) }
+      }
+  })(jQuery);
+  </script>
 {% endblock %}
