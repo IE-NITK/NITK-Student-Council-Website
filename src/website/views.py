@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import *
 from django.views import generic
 from django.core import serializers
+from django.core.mail import send_mail
 import json
+from django.conf import settings
 # Create your views here.
 
 class AboutPage(generic.TemplateView):
@@ -139,3 +141,21 @@ def letters(request):
         "hostel": hs,
         "mc": mc
     })
+
+def suggest(request):
+    if request.method == 'GET':
+        return render(request, 'suggest.html')
+    if request.method == 'POST':
+        name = request.POST.get('name','')
+        contact = request.POST.get('contact','')
+        email = request.POST.get('email','')
+        content = request.POST.get('content','')
+        suggestion = "From : %s \nContact Number: %s \nEmail: %s \nSuggestion: " % (name,contact,email)
+        suggestion = suggestion + content
+        try:
+            send_mail('Suggestion', suggestion, settings.EMAIL_HOST_USER, ['studentcouncil@nitk.edu.in'], fail_silently=False)
+            success = 1
+            return render(request,'suggestresponse.html',{'success':success})
+        except:
+            success = 0
+            return render(request,'suggestresponse.html',{'success':success})
