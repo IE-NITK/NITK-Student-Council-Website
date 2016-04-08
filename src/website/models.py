@@ -175,10 +175,16 @@ class MoU(models.Model):
         return self.title
 
 @python_2_unicode_compatible
+class ResourceCategory(models.Model):
+    name = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
+        
+@python_2_unicode_compatible
 class Resource(models.Model):
     link = models.URLField()
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=200, null=True, blank=True)
+    category = models.ForeignKey(ResourceCategory)
     timestamp = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.title
