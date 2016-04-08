@@ -21,8 +21,8 @@ class BaseProfile(models.Model):
     slug = models.UUIDField(default=uuid.uuid4, blank=True, editable=False)
     # Add more user profile fields here. Make sure they are nullable
     # or with default values
-    rollno = models.CharField(max_length=7, unique=True)
-    branch = models.CharField(max_length=2, choices=BRANCH_LIST, default="CH")
+    rollno = models.CharField(max_length=7)
+    branch = models.CharField(max_length=2, choices=BRANCH_LIST)
     picture = models.ImageField('Profile picture',
                                 upload_to='profile_pics/%Y-%m-%d/',
                                 null=True,
