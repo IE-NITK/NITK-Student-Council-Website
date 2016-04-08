@@ -16,3 +16,4 @@ class Testimonial(models.Model):
     class Meta:
         unique_together = ("testimonial_to", "created_by")
         ordering = ["-timestamp"]
+        app_label = "smriti"
