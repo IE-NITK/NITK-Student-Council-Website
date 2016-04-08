@@ -21,9 +21,7 @@
         <div class="row">
         <div class="input-field col s12 m8 offset-l2">
                  {% if testimonial %}
-             <textarea id="icon_prefix" type="text" name="content" class="validate materialize-textarea">
-                    {{testimonial.description}}
-             </textarea>
+             <textarea id="icon_prefix" type="text" name="content" class="validate materialize-textarea">{{testimonial.description}}</textarea>
                 {% else %}
              <textarea id="icon_prefix" type="text" name="content" class="validate materialize-textarea"></textarea>
                 {% endif %}

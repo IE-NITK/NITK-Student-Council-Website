@@ -89,7 +89,7 @@ def writeTestimonial(request, rollno):
             testimonial_to=testimonial_to.user,
             created_by = request.user,
         )
-        test.description = content
+        test.description = content.strip()
         test.save()
         return redirect("/smriti/profiles/"+testimonial_to.rollno)
 
