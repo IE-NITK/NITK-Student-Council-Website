@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load staticfiles %}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Smriti 2016</title>
+
+	<!-- Load Core Materialize CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="{% static 'materialize/css/materialize.min.css' %}" rel="stylesheet">
+
+	<!-- Custom styles for this site -->
+	{% block styles %}
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
+	<link href="{% static 'site/css/smriti.css' %}" rel="stylesheet">
+	{% endblock styles %}
+
+	<!-- Custom tags for the head tag -->
+	{% block extrahead %}{% endblock extrahead %}
+</head>
+<body>
+	{% block navbar %}
+	<div class="navbar-fixed">
+		<nav class="black" role="navigation">
+			<div class="nav-wrapper container">
+				<a href="/smriti" class="brand-logo">
+					<span class="pad smriti">
+						Smriti 2016
+					</span>
+				</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="/smriti/home">My Testimonials</a></li>
+					<li><a href="/smriti/browse">Browse</a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+				<ul id="slide-out" class="side-nav collapsible collapsible-accordion">
+					<li class="bold"><a href="/smriti/home" class="collapsible-header waves-effect waves-teal">My Testimonials</a></li>
+					<li class="bold"><a href="/smriti/browse" class="collapsible-header waves-effect waves-teal">Browse</a></li>
+					<li class="bold"><a href="/logout" class="collapsible-header waves-effect waves-teal">Logout</a></li>
+				</ul>
+				<a href="" id="sidenav" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+			</div>
+		</nav>
+	</div>
+
+	{% endblock %}
+
+	<main>
+	{% block content %}
+	{% endblock %}
+	</main>
+
+	{% block footer %}
+	<footer class="page-footer black lighten">
+		<div class="footer-copyright">
+			<div class="container center">
+				Built with <i class="fa fa-heart"></i> at <a class="blue-text text-lighten-3" href="http://ienitk.in">IE-NITK</a>
+			</div>
+		</div>
+	</footer>
+	{% endblock %}
+
+	<!--  Scripts-->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="{% static 'materialize/js/materialize.min.js' %}"></script>
+
+	{% block scripts %}
+	<script type="text/javascript">
+		$(".button-collapse").sideNav();
+	</script>
+	{% endblock scripts %}
+
+</body>
+</html>

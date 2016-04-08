@@ -1,4 +1,4 @@
-{% extends "base2.html" %}
+{% extends "smriti/base.html" %}
 
 {% load staticfiles %}
 {% load crispy_forms_tags %}
@@ -7,7 +7,7 @@
 {% block title %}{{ block.super }}Profile{% endblock %}
 
 <!-- Benefits of the Django application -->
-{% block container %}
+{% block content %}
 
 <div class="container">
   <h1 class="text-primary">Edit Profile</h1>
@@ -24,7 +24,6 @@
     <div class="col-md-9">
       <h3>Personal info</h3>
       <form enctype="multipart/form-data" method="post">
-	{% crispy user_form %}
 	{% crispy profile_form %}
       </form>
     </div>

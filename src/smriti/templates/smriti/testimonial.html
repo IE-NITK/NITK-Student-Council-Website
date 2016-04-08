@@ -1,0 +1,39 @@
+{% extends "smriti/base.html" %}
+
+{% load staticfiles %}
+{% load django_markdown %}
+
+{% block content %}
+<div class="container">
+    <section class="container" style="padding-top:15px">
+        <div class="row valign-wrapper">
+        <div class="col s4">
+            <img class="circle responsive-img" src={% if testimonial.testimonial_to.profile.picture %}"/media/{{testimonial.testimonial_to.profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
+        </div>
+        <div class="col s8">
+            <h4>{{testimonial.testimonial_to.profile.user.get_full_name}}</h4>
+        </div>
+    </section>
+    <div class="divider"></div>
+    <div class="row" style="padding-top:10px">
+		<div class="col s12 m12 l12">
+				<div class="card grey lighten-3 waves-block waves-light valign-wrapper">
+					<div class="card-content black-text container">
+                        <div class="row valign-wrapper">
+                        <div class="col s4">
+                            <img class="circle responsive-img" src={% if testimonial.created_by.profile.picture %}"/media/{{testimonial.created_by.profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
+                        </div>
+                        <div class="col s8">
+                            <h4>{{testimonial.created_by.profile.user.get_full_name}}</h4>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="divider teal"></div>
+                    <div class="flow-text container" style="padding:20px">
+                        {{testimonial.description|markdown}}
+                    </div>
+				</div>
+		</div>
+    </div>
+</div>
+{% endblock content %}
