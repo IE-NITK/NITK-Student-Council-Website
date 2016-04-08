@@ -9,9 +9,6 @@
             <a href="#!" class="breadcrumb">Announcements</a>
         </div>
     </div>
-    <div class="row">
-        <h1 class="title">Announcements</h1>
-    </div>
 </div>
 {% endblock %}
 
@@ -22,9 +19,8 @@
 <div class="container">
      <div class="collection">
             {% for item in announcements %}
-                <a class="collection-item avatar" href="/announce/{{item.id}}" style="padding-left:80px">
-                        <img class="biggercircle" src="{{ item.thumbnail.avatar.url }}" alt="" />
-                        <br><span class="title">{{item.title}}</span>
+                <a class="collection-item" {%if item.link %}target="_blank" href="{{item.link}}" {%else%} href="/announce/{{item.id}}" {%endif%}>
+                        <h5 class="title">{{item.title}}</h5>
                 </a>
             {% endfor %}
       </div>

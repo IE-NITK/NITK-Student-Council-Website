@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import *
 from django.views import generic
 from django.core import serializers
@@ -44,6 +44,10 @@ def homePage(request):
 def announcements(request):
     announcelist = Announcements.objects.all().order_by('-timestamp')
     return render(request,'announce.html',{'announcements':announcelist})
+
+def announcement(request, id):
+    announcement = get_object_or_404(Announcements, id=id)
+    return render(request,'announce_ind.html',{'announcement':announcement})
 
 def blogPage(request, num=0):
     if num:
