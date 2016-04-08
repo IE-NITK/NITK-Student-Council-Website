@@ -76,9 +76,22 @@ def profilePage(request, rollno):
 @login_required
 def writeTestimonial(request, rollno):
     testimonial_to = get_object_or_404(Profile, rollno__iexact=rollno)
-    if Testimonial.objects.filter(testimonial_to=testimonial_to.user, created_by=request.user).exists():
-        return HttpResponse("Already written!")
-    return render(request,"smriti/write.html", {'to':testimonial_to})
+    if request.method == "GET":
+        testimonial = Testimonial.objects.filter(testimonial_to=testimonial_to.user, created_by=request.user)
+        if testimonial.exists():
+            current_content = testimonial[0]
+            return render(request,"smriti/write.html", {'to':testimonial_to, "testimonial" : current_content})
+        else:
+            return render(request,"smriti/write.html", {'to':testimonial_to})
+    elif request.method == "POST":
+        content = request.POST.get('content','')
+        test, created = Testimonial.objects.get_or_create(
+            testimonial_to=testimonial_to.user,
+            created_by = request.user,
+        )
+        test.description = content
+        test.save()
+        return redirect("/smriti/profiles/"+testimonial_to.rollno)
 
 class EditProfile(LoginRequiredMixin, generic.TemplateView):
     template_name = "smriti/edit_profile.html"

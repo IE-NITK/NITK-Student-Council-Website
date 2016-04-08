@@ -12,3 +12,7 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return "%s to %s" % (self.created_by.get_full_name(),self.testimonial_to.get_full_name())
+
+    class Meta:
+        unique_together = ("testimonial_to", "created_by")
+        ordering = ["-timestamp"]

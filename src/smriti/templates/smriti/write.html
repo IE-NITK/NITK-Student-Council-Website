@@ -12,14 +12,28 @@
         <div class="col s8">
             <h4>{{to.user.get_full_name}}</h4>
         </div>
+        </div>
     </section>
     <div class="divider"></div>
-    <div class="row" style="padding-top:10px">
+    <form class="col s12" action='/smriti/write/{{to.rollno}}' method='POST'> {% csrf_token %}
+
+        <div class="card white lighten-2 lighten-3  waves-block waves-light valign-wrapper z-depth-2" style="padding:20px">
+        <div class="row">
         <div class="input-field col s12 m8 offset-l2">
-            <textarea name="test" id="new"></textarea>
-            {% markdown_editor "#new" %}
-            {% markdown_media %}
+             <textarea id="icon_prefix" type="text" name="content" class="validate materialize-textarea">
+                 {% if testimonial %}
+                    {{testimonial.description}}
+                {% endif %}
+             </textarea>
+         </div>
         </div>
-    </div>
+         <div class="row center-align">
+             <button class="btn-large waves-effect waves-light green-lighten-2" type="submit" name="action">
+                 Submit
+             </button>
+         </div>
+        </div>
+      </div>
+    </form>
 </div>
 {% endblock content %}
