@@ -18,7 +18,7 @@
         <div class="col s12 m6">
           <a href="/smriti/profiles/{{item.rollno}}"><div class="card-panel grey lighten-4 small">
               <div class="card-image">
-                  <img title="profile picture" class="circle img-responsive" src="{% thumbnail item.profile.picture|default:'default_profile.png' 140x140 crop %}">
+                  <img title="profile picture" class="circle img-responsive" src="{% thumbnail item.picture|default:'default_profile.png' 140x140 crop %}">
               </div>
               <div class="card-content">
               <h5>{{item.user.get_full_name}}</h5>
