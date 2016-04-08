@@ -153,7 +153,7 @@ def suggest(request):
         suggestion = "From : %s \nContact Number: %s \nEmail: %s \nSuggestion: " % (name,contact,email)
         suggestion = suggestion + content
         try:
-            send_mail('Suggestion', suggestion, settings.EMAIL_HOST_USER, ['studentcouncil@nitk.edu.in'], fail_silently=False)
+            send_mail('Suggestion', suggestion, settings.EMAIL_HOST_USER, ['studentscouncil@nitk.edu.in'], fail_silently=False)
             success = 1
             return render(request,'suggestresponse.html',{'success':success})
         except:
