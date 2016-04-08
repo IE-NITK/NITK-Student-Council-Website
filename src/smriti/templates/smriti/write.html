@@ -20,11 +20,13 @@
         <div class="card white lighten-2 lighten-3  waves-block waves-light valign-wrapper z-depth-2" style="padding:20px">
         <div class="row">
         <div class="input-field col s12 m8 offset-l2">
-             <textarea id="icon_prefix" type="text" name="content" class="validate materialize-textarea">
                  {% if testimonial %}
+             <textarea id="icon_prefix" type="text" name="content" class="validate materialize-textarea">
                     {{testimonial.description}}
-                {% endif %}
              </textarea>
+                {% else %}
+             <textarea id="icon_prefix" type="text" name="content" class="validate materialize-textarea"></textarea>
+                {% endif %}
          </div>
         </div>
          <div class="row center-align">
