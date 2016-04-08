@@ -26,8 +26,8 @@ class News(models.Model):
 @python_2_unicode_compatible
 class Announcements(models.Model):
     title = models.CharField(max_length=300)
-    thumbnail = ThumbnailerImageField(upload_to='announcement_thumbnail/%Y-%m-%d/', blank=True)
-    details = MarkdownField()
+    details = MarkdownField(null=True, blank=True)
+    link = models.URLField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     pinned = models.BooleanField(default=False)
 
@@ -179,7 +179,7 @@ class ResourceCategory(models.Model):
     name = models.CharField(max_length=100)
     def __str__(self):
         return self.name
-        
+
 @python_2_unicode_compatible
 class Resource(models.Model):
     link = models.URLField()
