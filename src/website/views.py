@@ -10,9 +10,6 @@ from django.conf import settings
 class AboutPage(generic.TemplateView):
     template_name = "about.html"
 
-class MessagePage(generic.TemplateView):
-	template_name = "message.html"
-
 class Blog(generic.TemplateView):
 	template_name = "blog.html"
 
@@ -159,3 +156,7 @@ def suggest(request):
         except:
             success = 0
             return render(request,'suggestresponse.html',{'success':success})
+
+def messagePage(request):
+    messages = MessageFromPresident.objects.all().order_by('-year')
+    return render(request,'message.html',{'messages':messages})
