@@ -213,3 +213,12 @@ class Letter(models.Model):
     date_of_letter = models.DateField()
     def __str__(self):
         return self.addressee + '-' + self.subject
+
+@python_2_unicode_compatible
+class MessageFromPresident(models.Model):
+    name = models.CharField(max_length=50)
+    pic = models.ImageField(upload_to='presi_image/')
+    year = models.DateField()
+    message = MarkdownField()
+    def __str__(self):
+        return self.name

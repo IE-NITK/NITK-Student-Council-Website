@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.homePage, name='home'),
-    url(r'^message/$', views.MessagePage.as_view(), name='message'),
+    url(r'^message/$', views.messagePage, name='message'),
     url(r'^represent/', views.meetTheReps, name='represent'),
     url(r'^calendar/$', views.calEvents, name='calendar'),
     url(r'^announce/$', views.announcements, name='announce'),
