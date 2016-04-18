@@ -52,7 +52,7 @@
     </div>
     {% endfor %}
     {% if not testimonials|length %}
-        <h3 class="center-align"> You have no testimonials yet</h3>
+        <h3 class="center-align">{% if user == profile.user %}You have{%else%}{{profile.user.get_full_name}} has{%endif%} no testimonials yet</h3>
     {% endif %}
  </div>
 </div>
