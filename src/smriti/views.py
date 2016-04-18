@@ -25,6 +25,7 @@ def indexPage(request):
             return HttpResponseRedirect('/smriti/home/')
         return render(request,'smriti/index.html')
 
+@login_required
 def homePage(request):
     testimonials = Testimonial.objects.filter(testimonial_to=request.user)
     profile = Profile.objects.get(user=request.user)
