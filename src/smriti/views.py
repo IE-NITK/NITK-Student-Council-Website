@@ -31,15 +31,16 @@ def homePage(request):
     return render(request,"smriti/home.html",{'testimonials':testimonials,'profile':profile})
 
 def browsePage(request):
-    ch = Profile.objects.filter(branch='CH')
-    co = Profile.objects.filter(branch='CO')
-    cv = Profile.objects.filter(branch='CV')
-    ec = Profile.objects.filter(branch='EC')
-    ee = Profile.objects.filter(branch='EE')
-    it = Profile.objects.filter(branch='IT')
-    me = Profile.objects.filter(branch='ME')
-    mn = Profile.objects.filter(branch='MN')
-    mt = Profile.objects.filter(branch='MT')
+    final_years = Profile.objects.filter(rollno__contains="12")
+    ch = final_years.filter(branch='CH')
+    co = final_years.filter(branch='CO')
+    cv = final_years.filter(branch='CV')
+    ec = final_years.filter(branch='EC')
+    ee = final_years.filter(branch='EE')
+    it = final_years.filter(branch='IT')
+    me = final_years.filter(branch='ME')
+    mn = final_years.filter(branch='MN')
+    mt = final_years.filter(branch='MT')
     return render(request,"smriti/browse.html",{'ch':ch,
                                                 'co':co,
                                                 'cv':cv,
@@ -54,8 +55,9 @@ def browsePage(request):
 def searchPage(request):
     if request.method == 'POST':
         search_param = request.POST.get('search_param','')
-        name_result = Profile.objects.filter(user__name__icontains=search_param)
-        roll_result = Profile.objects.filter(rollno__icontains=search_param)
+        final_years = Profile.objects.filter(rollno__contains="12")
+        name_result = final_years.filter(user__name__icontains=search_param)
+        roll_result = final_years.filter(rollno__icontains=search_param)
         results = name_result | roll_result
         return render(request,"smriti/search.html",{'results':results, 'key':search_param})
     if request.method == 'GET':
