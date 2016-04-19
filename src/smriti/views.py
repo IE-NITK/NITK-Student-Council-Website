@@ -88,6 +88,8 @@ def writeTestimonial(request, rollno):
             return render(request,"smriti/write.html", {'to':testimonial_to})
     elif request.method == "POST":
         content = request.POST.get('content','')
+        if content.strip() == "":
+            return render(request, "smriti/generic.html", {"content":"Sorry! Blank testimonials are not allowed."})
         test, created = Testimonial.objects.get_or_create(
             testimonial_to=testimonial_to.user,
             created_by = request.user,
