@@ -15,7 +15,7 @@
             <h4>{{profile.user.get_full_name}}</h4>
         </div>
         <div class="row">
-            <p>{{profile.bio}}</p>
+            <p>{{profile.bio|default:""}}</p>
         </div>
         </div>
         <div class="col s2">

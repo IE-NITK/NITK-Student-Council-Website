@@ -12,6 +12,9 @@
     <div class="row"><h1 class="center">Smriti</h1></div>
 
         <div class="container">
+        {% if errors %}
+        <h6 class="center-align" style="color:#f00000;">{{errors}}</h6>
+        {% endif %}
         <form action='/smriti/' method='POST' class="col s12 m12 l12"> {% csrf_token %}
             <div class="input-field col m6 s12 l6">
                 <input placeholder="Email" id="email" name="email" type="email" class="validate">

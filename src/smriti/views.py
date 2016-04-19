@@ -19,7 +19,7 @@ def indexPage(request):
             auth.login(request, user)
             return HttpResponseRedirect('/smriti/home/')
         else:
-            return HttpResponseRedirect('/smriti/invalid/')
+            return render(request,'smriti/index.html', {"errors":"Invalid Login Credentials. Please try again with correct credentials."})
     if request.method == 'GET':
         if request.user.is_authenticated():
             return HttpResponseRedirect('/smriti/home/')
