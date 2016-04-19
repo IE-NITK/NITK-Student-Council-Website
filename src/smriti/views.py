@@ -10,6 +10,9 @@ from braces.views import LoginRequiredMixin
 
 # Create your views here.
 
+def sort_by_rollno(queryset):
+    return sorted(queryset, key=lambda x:int(x.rollno[4:]))
+
 def indexPage(request):
     if request.method == 'POST':
         username = request.POST.get('email','')
@@ -33,15 +36,15 @@ def homePage(request):
 
 def browsePage(request):
     final_years = Profile.objects.filter(rollno__contains="12")
-    ch = final_years.filter(branch='CH')
-    co = final_years.filter(branch='CO')
-    cv = final_years.filter(branch='CV')
-    ec = final_years.filter(branch='EC')
-    ee = final_years.filter(branch='EE')
-    it = final_years.filter(branch='IT')
-    me = final_years.filter(branch='ME')
-    mn = final_years.filter(branch='MN')
-    mt = final_years.filter(branch='MT')
+    ch = sort_by_rollno(final_years.filter(branch='CH'))
+    co = sort_by_rollno(final_years.filter(branch='CO'))
+    cv = sort_by_rollno(final_years.filter(branch='CV'))
+    ec = sort_by_rollno(final_years.filter(branch='EC'))
+    ee = sort_by_rollno(final_years.filter(branch='EE'))
+    it = sort_by_rollno(final_years.filter(branch='IT'))
+    me = sort_by_rollno(final_years.filter(branch='ME'))
+    mn = sort_by_rollno(final_years.filter(branch='MN'))
+    mt = sort_by_rollno(final_years.filter(branch='MT'))
     return render(request,"smriti/browse.html",{'ch':ch,
                                                 'co':co,
                                                 'cv':cv,
