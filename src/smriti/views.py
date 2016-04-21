@@ -127,3 +127,11 @@ class EditProfile(LoginRequiredMixin, generic.TemplateView):
         profile.save()
         messages.success(request, "Profile details saved!")
         return redirect("smriti:home")
+
+@login_required
+def deleteTestimonial(request, id):
+    testimonial = get_object_or_404(Testimonial, id=id)
+    if not (request.user == testimonial.testimonial_to or request.user == testimonial.created_by):
+        return render(request, "smriti/generic.html", {"content":"You dont have permissions."})
+    testimonial.delete()
+    return render(request, "smriti/generic.html", {"content":"Your testimonial has been deleted."})

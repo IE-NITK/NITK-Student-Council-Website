@@ -23,12 +23,16 @@
                         <div class="col s4">
                             <img class="circle responsive-img" src={% if testimonial.created_by.profile.picture %}"/media/{{testimonial.created_by.profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
                         </div>
-                        <div class="col s8">
+                        <div class="col s6">
                             <h4>{{testimonial.created_by.profile.user.get_full_name}}</h4>
                         </div>
                         <div class="col s2">
                             {% if user == testimonial.created_by %}
                             <a class="btn-floating btn-large waves-effect waves-light teal lighten-3" href="/smriti/write/{{testimonial.testimonial_to.profile.rollno}}"><i class="material-icons">mode_edit</i></a>
+                            <a class="btn-floating btn-large waves-effect waves-light red lighten-3" href="delete/{{testimonial.id}}"><i class="material-icons">delete</i></a>
+                            {% endif %}
+                            {% if user == testimonial.testimonial_to %}
+                            <a class="btn-floating btn-large waves-effect waves-light red lighten-3" href="delete/{{testimonial.id}}"><i class="material-icons">delete</i></a>
                             {% endif %}
                         </div>
                         </div>
