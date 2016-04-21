@@ -11,5 +11,5 @@ urlpatterns = [
     url(r'^profiles/(?P<rollno>.+)', views.profilePage, name='profile'),
     url(r'^write/(?P<rollno>.+)', views.writeTestimonial, name='write'),
     url(r'^edit_profile/', views.EditProfile.as_view(), name='edit_self'),
-
+    url(r'^feed/', views.feed, name='feed'),
     ]

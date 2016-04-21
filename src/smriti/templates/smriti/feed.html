@@ -1,0 +1,32 @@
+{% extends "smriti/base.html" %}
+
+{% load staticfiles %}
+{% load django_markdown %}
+
+{% block content %}
+<div class="container">
+    <h4> The latest testimonials written on Smriti</h4>
+    <div class="divider"></div>
+    <div class="collection">
+        {% for testimonial in testimonials %}
+            <a href="/smriti/testimonial/{{testimonial.id}}" class="collection-item">{{testimonial.created_by.get_full_name}} for {{testimonial.testimonial_to.get_full_name}}</a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container center-align">
+    <ul class="pagination">
+   {% if testimonials.has_previous %}
+       <li class="waves-effect"><a href="?page={{ testimonials.previous_page_number }}"><i class="material-icons">chevron_left</i></a></li>
+   {% else %}
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+   {% endif %}
+   <li class="active"><a href="#!">{{ testimonials.number }} of {{ testimonials.paginator.num_pages }}</a></li>
+   {% if testimonials.has_next %}
+       <li class="waves-effect"><a href="?page={{ testimonials.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+   {% else %}
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+   {% endif %}
+   </div>
+</div>
+{% endblock content %}
