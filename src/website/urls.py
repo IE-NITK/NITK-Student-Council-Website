@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'^faq/',views.FAQ.as_view(),name='faq'),
 	url(r'^resources/',views.Resources.as_view(),name='resources'),
     url(r'^senate/',views.SenatePage.as_view(),name='senate'),
+    url(r'^about/',views.AboutPage.as_view(),name='about'),
+
 ]
