@@ -4,11 +4,14 @@ from django.contrib import auth, messages
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.urlresolvers import reverse
+from django.conf import settings
 from profiles.models import Profile
 from profiles.forms import ProfileForm
 from .models import *
+from .mails import sendgrid_mail
 from braces.views import LoginRequiredMixin
-
+from django_q.tasks import async
 # Create your views here.
 
 def sort_by_rollno(queryset):
@@ -80,6 +83,23 @@ def profilePage(request, rollno):
     testimonials = Testimonial.objects.filter(testimonial_to=profile.user)
     return render(request,"smriti/home.html",{'testimonials':testimonials,'profile':profile})
 
+def send_new_testimonial_mail(to, writer, id):
+    subject = "New testimonial on Smriti from "+ writer.name
+    link = "http://students.nitk.ac.in"+reverse("smriti:testimonial", args=[id])
+    content = "Hello "+ to.name + """,
+    <br><br> You have a new testimonial on Smriti from """+ writer.name +""".
+
+    <br><br>You can view it at """+ link + """.<br><br>
+
+    Regards,<br>
+    Smriti 2016 Team, IE-NITK
+    <br><br>
+    <%asm_group_unsubscribe_url%>
+    """
+
+    asm_group = settings.SENDGRID_TESTIMONIAL_ASM_ID
+    sendgrid_mail(to.email, subject, content, asm_group)
+
 @login_required
 def writeTestimonial(request, rollno):
     testimonial_to = get_object_or_404(Profile, rollno__iexact=rollno)
@@ -100,6 +120,8 @@ def writeTestimonial(request, rollno):
         )
         test.description = content.strip()
         test.save()
+        if created:
+            async(send_new_testimonial_mail, testimonial_to.user, request.user, test.id)
         return redirect("/smriti/profiles/"+testimonial_to.rollno)
 
 class EditProfile(LoginRequiredMixin, generic.TemplateView):
