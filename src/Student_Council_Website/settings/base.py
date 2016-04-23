@@ -80,6 +80,7 @@ INSTALLED_APPS = (
     'website',
     'smriti',
     'django_markdown',
+    'django_q'
 
 )
 
