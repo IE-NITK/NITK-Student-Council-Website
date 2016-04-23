@@ -155,17 +155,13 @@ def feed(request):
     testimonial_list = Testimonial.objects.all()
     paginator = Paginator(testimonial_list, 50)
     page = request.GET.get('page')
-    print page
     try:
-        print "Trying paginator"
         testimonials = paginator.page(page)
     except PageNotAnInteger:
         # If page is not an integer, deliver first page.
         testimonials = paginator.page(1)
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
-        print "EmptyPage exception"
-        print paginator.num_pages
         testimonials = paginator.page(paginator.num_pages)
     return render(request, "smriti/feed.html", {"testimonials": testimonials})
 
