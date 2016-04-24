@@ -151,8 +151,3 @@ THUMBNAIL_ALIASES = {
 
 MARKDOWN_EXTENSIONS = ["nl2br"]
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'studentwebsitenitk@gmail.com'
-EMAIL_HOST_PASSWORD = 'rainbowsAndRoses'
