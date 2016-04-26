@@ -80,7 +80,7 @@ INSTALLED_APPS = (
     'website',
     'smriti',
     'django_markdown',
-    'django_q'
+    'django_rq'
 
 )
 
@@ -150,4 +150,12 @@ THUMBNAIL_ALIASES = {
 }
 
 MARKDOWN_EXTENSIONS = ["nl2br"]
+
+RQ_QUEUES = {
+    'default': {
+        'HOST': 'localhost',
+        'PORT': 6379,
+        'DB': 0,
+    }
+}
 

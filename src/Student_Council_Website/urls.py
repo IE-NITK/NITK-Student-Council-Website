@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^', include(website.urls, namespace='website')),
     url(r'^smriti/', include(smriti.urls, namespace='smriti')),
     url(r'^markdown/', include('django_markdown.urls')),
+    url(r'^django-rq/', include('django_rq.urls')),
 ]
 
 # User-uploaded files like profile pics need to be served in development

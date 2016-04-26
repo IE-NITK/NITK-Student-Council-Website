@@ -11,7 +11,7 @@ from profiles.forms import ProfileForm
 from .models import *
 from .mails import sendgrid_mail
 from braces.views import LoginRequiredMixin
-from django_q.tasks import async
+import django_rq
 # Create your views here.
 
 def sort_by_rollno(queryset):
@@ -121,7 +121,7 @@ def writeTestimonial(request, rollno):
         test.description = content.strip()
         test.save()
         if created:
-            async(send_new_testimonial_mail, testimonial_to.user, request.user, test.id)
+            django_rq.enqueue(send_new_testimonial_mail, testimonial_to.user, request.user, test.id)
         return redirect("/smriti/profiles/"+testimonial_to.rollno)
 
 class EditProfile(LoginRequiredMixin, generic.TemplateView):
