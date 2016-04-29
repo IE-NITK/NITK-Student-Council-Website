@@ -73,7 +73,7 @@ def searchPage(request):
 
 def testimonial(request, id):
     testimonial = get_object_or_404(Testimonial, id=id)
-    return render(request, "smriti/testimonial.html", {'testimonial':testimonial})
+    return render(request, "smriti/pdf.html", {'testimonial':testimonial})
 
 class WritePage(generic.TemplateView):
     template_name = "smriti/write.html"
@@ -172,3 +172,8 @@ def deleteTestimonial(request, id):
         return render(request, "smriti/generic.html", {"content":"You dont have permissions."})
     testimonial.delete()
     return render(request, "smriti/generic.html", {"content":"Your testimonial has been deleted."})
+
+def pdfpage(request, rollno):
+        profile = get_object_or_404(Profile, rollno=rollno)
+        testimonials = Testimonial.objects.filter(testimonial_to=profile.user)
+        return render(request,"smriti/pdf.html",{'testimonials':testimonials,'profile':profile})
