@@ -40,12 +40,13 @@ def homePage(request):
 
 def browsePage(request):
     final_years = Profile.objects.filter(rollno__contains="12")
+    cornercase = Profile.objects.filter(rollno="11IT26")
     ch = sort_by_rollno(final_years.filter(branch='CH'))
     co = sort_by_rollno(final_years.filter(branch='CO'))
     cv = sort_by_rollno(final_years.filter(branch='CV'))
     ec = sort_by_rollno(final_years.filter(branch='EC'))
     ee = sort_by_rollno(final_years.filter(branch='EE'))
-    it = sort_by_rollno(final_years.filter(branch='IT'))
+    it = list(cornercase) + sort_by_rollno(final_years.filter(branch='IT')) 
     me = sort_by_rollno(final_years.filter(branch='ME'))
     mn = sort_by_rollno(final_years.filter(branch='MN'))
     mt = sort_by_rollno(final_years.filter(branch='MT'))
