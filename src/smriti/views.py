@@ -102,22 +102,7 @@ def send_new_testimonial_mail(to, writer, id):
 
 @login_required
 def writeTestimonial(request, rollno):
-    testimonial_to = get_object_or_404(Profile, rollno__iexact=rollno)
-    if request.method == "GET":
-        return render(request, "smriti/generic.html", {'content': "Sorry, we have closed Smriti 2016 and are not accepting anymore testimonials."})
-    elif request.method == "POST":
-        content = request.POST.get('content','')
-        if content.strip() == "":
-            return render(request, "smriti/generic.html", {"content":"Sorry! Blank testimonials are not allowed."})
-        test, created = Testimonial.objects.get_or_create(
-            testimonial_to=testimonial_to.user,
-            created_by = request.user,
-        )
-        test.description = content.strip()
-        test.save()
-        if created:
-            django_rq.enqueue(send_new_testimonial_mail, testimonial_to.user, request.user, test.id)
-        return redirect("/smriti/profiles/"+testimonial_to.rollno)
+    return render(request, "smriti/generic.html", {'content': "Sorry, we have closed Smriti 2016 and are not accepting anymore testimonials."})
 
 class EditProfile(LoginRequiredMixin, generic.TemplateView):
     template_name = "smriti/edit_profile.html"

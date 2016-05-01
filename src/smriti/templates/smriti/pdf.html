@@ -6,19 +6,17 @@
 	<title>Smriti 2016</title>
 
 	<!-- Load Core Materialize CSS  -->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="{% static 'materialize/css/materialize.min.css' %}" rel="stylesheet">
-
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
 	<link href="{% static 'site/css/smriti.css' %}" rel="stylesheet">
 </head>
 
-    <section class="container" style="padding-top:15px">
-        <div class="row valign-wrapper">
+<body>
+    <section class="container" style="padding-top:15px;padding-bottom:5px">
+        <div class="row" style="margin-bottom:5px">
         <div class="col s4">
-            <img class="circle responsive-img" src={% if profile.picture %}"/media/{{profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
+            <img class="circle responsive-img" style="height:100px; width:auto" src={% if profile.picture %}"/media/{{profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
         </div>
-        <div class="col s6">
+        <div class="col s8">
             <h4>{{profile.user.get_full_name}}</h4>
         </div>
         </div>
@@ -26,18 +24,21 @@
     <div class="divider"></div>
 
     {% for testimonial in testimonials %}
-    <div class="container" style="margin-top:10px;background-color:white">
-                    <div class="row center-align padding-top:10px">
-                            <img class="circle" src={% if testimonial.created_by.profile.picture %}"/media/{{testimonial.created_by.profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
-                    </div>
-                    <div class="row center-align">
+    <div style="margin-top:10px;background-color:white">
+                    <div class="row" style="padding-top:10px;margin-bottom:2px">
+						<div class="col s4 center-align">
+                            <img class="circle responsive-img" style="height:100px; width:auto" src={% if testimonial.created_by.profile.picture %}"/media/{{testimonial.created_by.profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
+						</div>
+				        <div class="col s8">
                             <h4>{{testimonial.created_by.get_full_name}}</h4>
-                    </div>
+                    	</div>
+					</div>
     <div class="row">
         <div class="divider teal"></div>
-        <div class="flow-text" style="padding:20px">
-                        {{testimonial.description|markdown}}
+        <div class="flow-text" style="padding-left:10px;font-size:11px;">
+                      {{testimonial.description|markdown}}
         </div>
 	 </div>
     </div>
     {% endfor %}
+</body>
