@@ -32,15 +32,7 @@
                         </div>
 
                         <div class="col s2">
-                            {% if user == testimonial.created_by %}
-                            <a class="btn-floating btn-large waves-effect waves-light blue lighten-3" href="/smriti/write/{{testimonial.testimonial_to.profile.rollno}}"><i class="material-icons">mode_edit</i></a>
-                            <a class="btn-floating btn-large waves-effect waves-light red lighten-3" href="delete/{{testimonial.id}}"><i class="material-icons">delete</i></a>
-                            {%else%}
                             <a class="btn-floating btn-large waves-effect waves-light blue lighten-3" href="/smriti/profiles/{{testimonial.created_by.profile.rollno}}"><i class="material-icons">account_circle</i></a>
-                            {% endif %}
-                            {% if user == testimonial.testimonial_to %}
-                            <a class="btn-floating btn-large waves-effect waves-light red lighten-3" href="delete/{{testimonial.id}}"><i class="material-icons">delete</i></a>
-                            {% endif %}
                         </div>
                         </div>
                     </div>

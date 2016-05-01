@@ -104,12 +104,7 @@ def send_new_testimonial_mail(to, writer, id):
 def writeTestimonial(request, rollno):
     testimonial_to = get_object_or_404(Profile, rollno__iexact=rollno)
     if request.method == "GET":
-        testimonial = Testimonial.objects.filter(testimonial_to=testimonial_to.user, created_by=request.user)
-        if testimonial.exists():
-            current_content = testimonial[0]
-            return render(request,"smriti/write.html", {'to':testimonial_to, "testimonial" : current_content})
-        else:
-            return render(request,"smriti/write.html", {'to':testimonial_to})
+        return render(request, "smriti/generic.html", {'content': "Sorry, we have closed Smriti 2016 and are not accepting anymore testimonials."})
     elif request.method == "POST":
         content = request.POST.get('content','')
         if content.strip() == "":
@@ -164,7 +159,7 @@ def feed(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         testimonials = paginator.page(paginator.num_pages)
     return render(request, "smriti/feed.html", {"testimonials": testimonials})
-
+"""
 @login_required
 def deleteTestimonial(request, id):
     testimonial = get_object_or_404(Testimonial, id=id)
@@ -172,6 +167,7 @@ def deleteTestimonial(request, id):
         return render(request, "smriti/generic.html", {"content":"You dont have permissions."})
     testimonial.delete()
     return render(request, "smriti/generic.html", {"content":"Your testimonial has been deleted."})
+"""
 
 def pdfpage(request, rollno):
         profile = get_object_or_404(Profile, rollno=rollno)
