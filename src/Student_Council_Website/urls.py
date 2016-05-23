@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(accounts.urls, namespace='accounts')),
     url(r'^', include(website.urls, namespace='website')),
-    url(r'^smriti/', include(smriti.urls, namespace='smriti')),
+    # url(r'^smriti/', include(smriti.urls, namespace='smriti')), #Uncomment to activate smriti
     url(r'^markdown/', include('django_markdown.urls')),
     url(r'^django-rq/', include('django_rq.urls')),
 ]
