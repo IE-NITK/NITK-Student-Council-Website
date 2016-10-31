@@ -47,13 +47,17 @@ class Club(models.Model):
 @python_2_unicode_compatible
 class CoreMember(models.Model):
     DESIGNATION = [('PR','President'),
-                   ('IC','Incident Convenor'),
-                   ('EC','Engineer Convenor'),
+                   ('VP','Vice President'),
                    ('GS','General Secretary'),
-                   ('JS','Joint Secretary'),
-                   ('GR','Girls\' Representative'),
-                   ('PG','PG Girls\' Representative'),
-                   ('PP','PG Representative'),
+                   ('JU','Joint Secretary UG'),
+                   ('JP','Joint Secretary PG'),
+                   ('GR','PG/PhD Girls\' Representative'),
+                   ('TU','Technical Secretary UG'),
+                   ('TP','Technical Secretary PG'),
+                   ('CU','Cultural Secretary UG'),
+                   ('CP','Cultural Secretary PG'),
+                   ('EC','Engineer Convenor'),
+                   ('IC','Incident Convenor'),
                    ('IT','Incident Treasurer'),
                    ('ET','Engineer Treasurer'),
                   ]
@@ -83,6 +87,7 @@ class Member(models.Model):
                  (2,'Second Year'),
                  (3,'Third Year'),
                  (4,'Final Year'),
+                 (5,'PG PhD'),
                 ]
     name = models.CharField(max_length=50)
     branch = models.CharField(max_length=2, choices=BRANCH_LIST)
