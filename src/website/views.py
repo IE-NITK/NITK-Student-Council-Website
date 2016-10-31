@@ -94,33 +94,43 @@ def reports(request):
 
 def meetTheReps(request):
     presi = CoreMember.objects.get(designation='PR')
+    vpresi = CoreMember.objects.get(designation='VP')
+    sec = CoreMember.objects.get(designation='GS')
+    jsecu = CoreMember.objects.get(designation='JU')
+    jsecp = CoreMember.objects.get(designation='JP')
+    pggrep = CoreMember.objects.get(designation='GR')
+    techu = CoreMember.objects.get(designation='TU')
+    techp = CoreMember.objects.get(designation='TP')
+    cultu = CoreMember.objects.get(designation='CU')
+    cultp = CoreMember.objects.get(designation='CP')
     inci = CoreMember.objects.get(designation='IC')
     engi = CoreMember.objects.get(designation='EC')
-    sec = CoreMember.objects.get(designation='GS')
-    jsec = CoreMember.objects.get(designation='JS')
-    grep = CoreMember.objects.get(designation='GR')
-    pgrep = CoreMember.objects.get(designation='PP')
-    pggrep = CoreMember.objects.get(designation='PG')
     engit = CoreMember.objects.get(designation='ET')
     incit = CoreMember.objects.get(designation='IT')
     first = Member.objects.filter(year=1)
     second = Member.objects.filter(year=2)
     third = Member.objects.filter(year=3)
     final = Member.objects.filter(year=4)
+    pgphd = Member.objects.filter(year=5)
     return render(request,'represent.html',{'presi':presi,
+                                            'vpresi':vpresi,
+                                            'sec':sec,
+                                            'jsecu':jsecu,
+                                            'jsecp':jsecp,
+                                            'pggrep':pggrep,
+                                            'techu':techu,
+                                            'techp':techp,
+                                            'cultu':cultu,
+                                            'cultp':cultp,
                                             'inci':inci,
                                             'engi':engi,
-                                            'sec':sec,
-                                            'jsec':jsec,
-                                            'grep':grep,
-                                            'pgrep':pgrep,
-                                            'pggrep':pggrep,
                                             'engit':engit,
                                             'incit':incit,
                                             'first':first,
                                             'second':second,
                                             'third':third,
-                                            'final':final
+                                            'final':final,
+                                            'pgphd':pgphd
                                             })
 
 def letters(request):
