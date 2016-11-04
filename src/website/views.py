@@ -107,11 +107,14 @@ def meetTheReps(request):
     engi = CoreMember.objects.get(designation='EC')
     engit = CoreMember.objects.get(designation='ET')
     incit = CoreMember.objects.get(designation='IT')
+    engij = CoreMember.objects.get(designation='EJ')
+    incij = CoreMember.objects.get(designation='IJ')
     first = Member.objects.filter(year=1)
     second = Member.objects.filter(year=2)
     third = Member.objects.filter(year=3)
     final = Member.objects.filter(year=4)
-    pgphd = Member.objects.filter(year=5)
+    pg = Member.objects.filter(year=5)
+    phd = Member.objects.filter(year=6)
     return render(request,'represent.html',{'presi':presi,
                                             'vpresi':vpresi,
                                             'sec':sec,
@@ -126,11 +129,14 @@ def meetTheReps(request):
                                             'engi':engi,
                                             'engit':engit,
                                             'incit':incit,
+                                            'engij':engij,
+                                            'incij':incij,
                                             'first':first,
                                             'second':second,
                                             'third':third,
                                             'final':final,
-                                            'pgphd':pgphd
+                                            'pg':pg,
+                                            'phd':phd,
                                             })
 
 def letters(request):

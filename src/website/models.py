@@ -60,6 +60,8 @@ class CoreMember(models.Model):
                    ('IC','Incident Convenor'),
                    ('IT','Incident Treasurer'),
                    ('ET','Engineer Treasurer'),
+                   ('EJ','Engineer Joint Convenor'),
+                   ('IJ','Incident Joint Convenor'),
                   ]
     name = models.CharField(max_length=50)
     prof_pic = models.ImageField(upload_to='member_pic_thumbnail/%Y-%m-%d/', blank=True)
@@ -87,7 +89,8 @@ class Member(models.Model):
                  (2,'Second Year'),
                  (3,'Third Year'),
                  (4,'Final Year'),
-                 (5,'PG PhD'),
+                 (5,'PG'),
+                 (6, 'PhD'),
                 ]
     name = models.CharField(max_length=50)
     branch = models.CharField(max_length=2, choices=BRANCH_LIST)
