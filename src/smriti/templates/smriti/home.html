@@ -1,0 +1,59 @@
+{% extends "smriti/base.html" %}
+{% load django_markdown %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <section class="container" style="padding-top:15px">
+        <div class="row valign-wrapper">
+        <div class="col s4">
+            <img class="circle responsive-img" src={% if profile.picture %}"/media/{{profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
+        </div>
+        <div class="col s6">
+        <div class="row">
+            <h4>{{profile.user.get_full_name}}</h4>
+        </div>
+        <div class="row">
+            <p>{{profile.bio|default:""}}</p>
+        </div>
+        </div>
+        <div class="col s2">
+            {% if user != profile.user %}
+            <a class="btn-floating btn-large waves-effect waves-light red lighten-2" href="/smriti/write/{{profile.rollno}}"><i class="material-icons">add</i></a>
+            {% else %}
+            <a class="btn-floating btn-large waves-effect waves-light teal lighten-3" href="/smriti/edit_profile/"><i class="material-icons">mode_edit</i></a>
+            {% endif %}
+        </div>
+    </section>
+    <div class="divider"></div>
+  {%for item in testimonials %}
+	<div class="row center-align" style="padding-top:10px">
+		<div class="col s12 m8 offset-m2 offset-l2">
+			<a href="/smriti/testimonial/{{item.id}}">
+				<div class="card grey lighten-3 waves-effect waves-block waves-light custom-card valign-wrapper">
+					<div class="card-content black-text">
+                        <div class="row valign-wrapper">
+                        <div class="col s4">
+                            <img class="circle responsive-img" src={% if item.created_by.profile.picture %} "/media/{{item.created_by.profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
+                        </div>
+                        <div class="col s8">
+                            <h4>{{item.created_by.get_full_name}}</h4>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="container left-align" style="padding-top:10px">
+						<p> {{item.description|markdown|truncatechars_html:200}}  </p>
+                    </div>
+                    </div>
+				</div>
+			</a>
+		</div>
+    </div>
+    {% endfor %}
+    {% if not testimonials|length %}
+        <h3 class="center-align">{% if user == profile.user %}You have{%else%}{{profile.user.get_full_name}} has{%endif%} no testimonials yet</h3>
+    {% endif %}
+ </div>
+</div>
+{% endblock content %}

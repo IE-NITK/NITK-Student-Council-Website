@@ -1,0 +1,907 @@
+{% extends "static.html" %}
+{% load staticfiles %}
+
+{% block page-info %}
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <a href="/" class="breadcrumb">Home</a>
+      <a href="#!" class="breadcrumb">NITK Life</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+  <div  id="page-tabs" class="row">
+        <div class="col s12">
+          <ul class="tabs blue-text text-darken-2" >
+
+            <li class="tab"><a href="#inside_nitk">Inside Nitk</a></li>
+            <li class="tab"><a href="#fest">Fests</a></li>
+            <li class="tab"><a href="#academics">Academics</a></li>
+            <li class="tab"><a href="#sports">Sports</a></li>
+            <li class="tab"><a href="#clublife">Club Life</a></li>
+
+          </ul>
+        </div>
+
+    </div>
+
+
+
+    <div id="inside_nitk">
+       <div id="splash-wrap">
+            <div class="main-wrap">
+                <div id="content-section">
+                    <div id='wsite-content' class='wsite-elements wsite-not-footer'>
+                        <h2 class="wsite-content-title" style="text-align:center;">&nbsp;INSIDE LIFE-FACILITIES</h2>
+
+
+
+
+                        <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="center-align"> Silver Jubilee Auditorium </h3>
+                              <div class= "row">
+                                <div class="col s12 l6">
+                                  <img src="{% static 'site/img/sja.jpg' %}" alt="sja" style="display:block;height:auto;width:100%">
+                                </div>
+                                <div class="col s12 l6">
+                                  <p> 
+                                    <span class="black-text">
+                                      SJA is a huge auditorium that regularly hosts major events of NITK. Formed to commemorate NITK's Silver Jubilee, it is the projection of NITK’s pride as one of the top engineering institutions in the country.
+                                      <br>
+                                      The SJA has a capacity of around 1000. It is fully air conditioned and also has a balcony housing. SJA is decked up for all major occasions and looks rather stunning during the nights. As a fresher one should not miss the musical nights. Those are truly performances worth cherishing (and the AC worth sitting for!). Films are regularly screened by the Films’ Club and block timings are extended during the screening of these films!
+                                      <br> 
+                                      All the fests start with their inaugural functions at the SJA, be it ENGINEER, INCIDENT or Crrescendo for that matter. The crowd particularly goes in a frenzy whenever there is an amazing performance and it is a treat to watch especially from the balcony. 
+                                      <br>  
+                                      The building is centrally located in the campus just adjacent to  Ocean Pearl and opposite to Central Computer Centre(CCC).
+                                      <br>
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="center-align"> Students' Activity Center (SAC)</h3>
+                              <div class= "row">
+                                <div class="col s12 l6">
+                                  <img src="{% static 'site/img/sac.jpg' %}" alt="sac" style="display:block;height:auto;width:100%">
+                                </div>
+                                <div class="col s12 l6">
+                                  <p> 
+                                    <span class="black-text">
+                                      Students Activity Centre is the arena  right beside the HCC and in front of the basketball court. It's quite a serene and calm place on a normal day. It is often used as a popular hangout place by most people during the evenings.
+                                      <br>
+                                      Come the fests and this place will be busy buzzing with students as all the major performances and events take place here. Every night during INCI and two of the nights during ENGINEER this place is filled with people waiting for the band events or the DJ Show. 
+                                      <br>
+                                      And that’s not it, Films and plays will be regularly screened and sometimes cricket matches are also shown. During the Indian cricket team’s matches the entire college comes over here to cheer and it provides the thrill that one experiences in a stadium. A great atmosphere makes this place awesome during the movie screenings.
+                                      <br>
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="center-align"> Library </h3>
+                              <div class= "row">
+                                <div class="col s12 l6">
+                                  <img src="{% static 'site/img/library.jpg' %}" alt="library" style="display:block;height:auto;width:100%">
+                                </div>
+                                <div class="col s12 l6">
+                                  <p> 
+                                    <span class="black-text">
+                                      The NITK Library is housed in a spacious two-storied independent building adjoining the Main building of the Institute on the Eastern side of the campus. The library is segregated into two wings.Periodicals, journals and bound volumes are accessible in the Western wing, while books are housed in the Eastern wing. 
+                                      <br>
+                                      The Reading halls provides the peaceful and friendly atmosphere for studying peacefully.There is also an AC room to find respite from the sweltering Surathkal heat. The library also has a Xerox and printing facility on the 1st floor along with a facility to read newspapers in various languages. The second floor has a Reading Room which can be used by students to study in groups or for discussing a particular project/ assignment.
+                                      <br>
+                                      A computer terminal is provided which can be used to gain information regarding availability and particulars of any book. A bar-coded system of issue and return of books is currently in use. Laptops are allowed inside the library and e-books or research papers can be downloaded from the library Wi-Fi.
+                                      <br><br>
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+
+
+                                      <table class="bordered highlight centered">
+                                       <h5> Timings </h5>
+
+                                        <tbody>
+                                          <tr>
+                                            <td>Weekdays</td>
+                                            <td>8:30 am to 8 pm</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Saturday</td>
+                                            <td>9 am to 8 pm</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Sundays and Holidays</td>
+                                            <td>9 am to 4 pm</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Exam time</td>
+                                            <td>8:30 am to 0:00 am</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Vacations</td>
+                                            <td>9 am to 5 pm</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="center-align"> Health Care Centre</h3>
+                              <div class= "row">
+                                <div class="col s12 l6">
+                                  <img src="{% static 'site/img/hcc.jpg' %}" alt="hcc" style="display:block;height:auto;width:100%">
+                                </div>
+                                <div class="col s12 l6">
+                                  <p> <span class="black-text">
+                                    The Health Care Centre also known as HCC is a unique facility. Free doctors + medicine! Many private colleges do not have such a facility. It is situated in the centre of the campus opposite the main grounds.
+                                    <br>
+                                    There are doctors available at the given timings and all you need to show is your ID Card 
+                                    to get free treatment as well as free medicines from the in-house pharmacy. Specialist 
+                                    doctors visit the campus once a week and you can book an appointment with them at the campus 
+                                    itself. NITK has recently inducted a 24-hour ambulance for emergencies.
+                                    <br>
+                                    You will also be covered under a medical insurance by HCC, NITK. It's available throughout Karnataka in almost all major hospitals :P.You can claim lakhs of money in case you undergo some medical treatment in and around Mangalore. You can even get rebate in consultancy fees of top-notch doctors in almost all the Hospitals in Mangalore.
+                                    <br>
+                                  </span></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="center-align"> Main Building</h3>
+                              <div class= "row">
+                                <div class="col s12 l6">
+                                  <img src="{% static 'site/img/mb1.jpg' %}" alt="mb1" style="display:block;height:auto;width:100%">
+                                </div>
+                                <div class="col s12 l6">
+                                  <p> <span class="black-text">
+
+                                    This is the mother of all buildings at NITK. Here lies the Administration office and all the 
+                                    officials’ office. From the Dean to the Director, everyone’s office can be found here. Visit 
+                                    this place for all official purposes. ( A word of warning, don’t enter this building in shorts 
+                                    or you are done for :P)
+                                    <br>
+                                    There are two seminar halls in this building namely - Main Seminar Hall (MSH) and the ISTE 
+                                    seminar hall. Regular seminars and (boring :P) quizzes take place here.
+                                    <br>
+                                    There are 5 classrooms on the ground floor which are often used by students for self-study or 
+                                    for clubs to hold their meetings and to conduct events for the first-years.
+                                    <br>
+                                    And then lastly there is a hotel called Samudra Darshan on the top floor where you can have 
+                                    regular breakfast/lunch. The panoramic view from there is one not to be missed.
+                                    <br>
+                                  </span></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="center-align"> Central Computer Centre</h3>
+                              <div class= "row">
+                                <div class="col s12 l6">
+                                  <img src="{% static 'site/img/CCC.jpg' %}" alt="wk1" style="display:block;height:auto;width:100%">
+                                </div>
+                                <div class="col s12 l6">
+                                  <p> <span class="black-text">
+                                   CCC (pronounced trip-see) occupies the ground and first floor of the building opposite to the 
+                                   Silver Jubilee Auditorium. CCC was established in 1995 as a service providing/supporting facility 
+                                   that augments to the computing facilities in the teaching departments. 
+                                   <br>
+                                    There is a computer lab on the ground floor which is accessed only by first years for their 
+                                    Computer Programming classes. However on the first floor there is another lab which is used by the 
+                                    students and is open to all for their personal use. CCC is also responsible for Internet connectivity throughout campus and all complaints for internet connections not working in your rooms are addressed here.
+                                   <br>
+                                   For more details check <a href="http://ccc2.nitk.ac.in/">here</a>.
+                                   <br><br>
+                                  </span></p>
+                                </div>
+                              </div>
+                              
+                              <table class="bordered highlight centered">
+                                       <h5> Timings </h5>
+                                        <tbody>
+                                          <tr>
+                                            <td>Monday - Saturday</td>
+                                            <td>8:30 am to 8 pm</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Sunday</td>
+                                            <td>Closed</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Exam time</td>
+                                            <td>8.30 am to 00:00 am</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="center-align"> Campus Map</h3>
+                              <div class= "row">
+                                <div class="col s12">
+                                  <img src="{% static 'site/img/campusmap.png' %}" alt="campusmap" style="display:block;height:auto;width:100%">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col s12">
+                                  <p> <span class="black-text">
+                                      SAC - Students' Activity Center<br>
+                                      SJA - Silver Jubilee Auditorium<br>
+                                      KREC - Karnataka Regional Engineering College (Version 1.0 of NITK)<br>
+                                      ATB - Additional Teaching Block<br>
+                                      CCC - Central Computing Center<br>
+
+                                  </span></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  <div id="fest">
+
+                       <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="center-align">Engineer</h3>
+                              <div class= "row">
+                                <div class="col s12">
+                                  <img src="{% static 'site/img/engi1.jpg' %}" alt="engi1" style="display:block;height:auto;width:100%">
+                                </div>
+
+
+                                <div class="col s12">
+                                  <p> <span class="black-text">
+                                     Engineer is the Annual Technical Symposium of NITK Surathkal and is one of the largest of its kind in India. Started in 2005 as an amalgamation of many technical fests held in NITK Surathkal by its various student clubs, Engineer has grown in leaps and bounds over the years. It is held over 4 days in the second half of the month of October and has consistently attracted participants from all over India. A Penrose Triangle is used as its logo with the tagline 'Think.Create.Engineer'.<br>
+
+                                      In its previous editions, Engineer brought organizations such as CERN, MIT Media and Bell labs while catering to a participation pool of over 6000 students from 150 colleges across 65 countries.<br>
+
+                                      Many technical and entrepreneurship events are held during the fest, including quizzes, Coding marathons, RC car racing and the like. These are broadly classified into various Branch Events. Apart from this, Workshops in a variety of fields are also held. To highlight the social responsibility of Engineers, social/environmental awareness initiatives are undertaken under the banner of SCE (Socially Conscious Engineering). Technites is another major attraction, showcasing the beauty of technology after dark.<br>
+
+                                      Guest speakers of past editions have included Richard Stallman, Sam Pitroda, Manan Shah, Dr. Devi Shetty, Sir Anthony James Leggett, Ankit Fadia and other personalities.<br>
+
+
+                                  </span></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                          <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="center-align">Incident</h3>
+                              <div class= "row">
+                                <div class="col s12">
+                                  <img src="{% static 'site/img/inci1.jpg' %}" alt="inci1" style="display:block;height:auto;width:100%">
+                                </div>
+
+
+                                <div class="col s12">
+                                  <p> <span class="black-text">
+                                    Incident is the second largest cultural festival of South India. It is now a permanent mark on the calendar, during the months of February - March and attracts over 25000 footfalls every year. This huge ingress is justified, as Incident or 'Inci' is replete with a mind-boggling array of things to do and see. It has featured amazing performances by artistes of calibre likef KK, Kunal Ganjawala, Sunidhi Chauhan, Javed Ali and Salim-Sulaiman, as well as bands such as Indian Ocean, Motherjane, Swarathma and Led Zeppelica. International performing artistes like Roy Zaltsman and The Turbans have also performed at incident in the World Fest, held for the first time in 2014.<br>
+
+                                    There are events to participate in - Haute Couture, Promenade, Slam Dunk, Centre Stage, Bandish... to name a few. There are workshops for those who want to learn, quizzes for those who already know it all and Crossfade -the DJ night- for the party freaks. And of course, there is always the beach inviting you to relax or frolic with friends or even go parasailing, if you are adventurous. Now that's something you don't find everywhere.  Incident is a terrific carnival, something no one would want to miss, because when it comes to Incident, there is something in it for everybody.
+                                    <br>
+                                  </span></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                           <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="center-align">Crrescendo</h3>
+                              <div class= "row">
+                                <div class="col s12">
+                                  <img src="{% static 'site/img/crrescendo1.jpg' %}" alt="crrescendo" style="display:block;height:auto;width:100%">
+                                </div>
+
+
+                                <div class="col s12">
+                                  <p> <span class="black-text">
+                                    NITK, National Institute of Technology Karnataka, Surathkal is a proud host of many renowned 
+                                    college fests, like Incident, Engineer, etc. One such event, that leaves first time visitors 
+                                    breathless and yearning for more is Crrescendo.
+                                    <br>
+                                    To a person with a higher observation skill than the normal teen, they would notice that 
+                                    Crrescendo is spelled incorrectly. Yet that is one of the many appeals of this Intra-college 
+                                    cultural fest. The 2 R's in Crrescendo stand for the Reading Room committee, the main organizer 
+                                    and sole group responsible for all things related to this fest.
+                                    <br>
+                                    Now to a more formal introduction to the fest, Crrescendo is the biggest Intra-Institute Cultural 
+                                    fest organized by the NITK campus residents. This fest is home to a plethora of events, namely, 
+                                    the gaming events, the beach events, the dance and inter year fashion events as well as a few 
+                                    sports events related to basketball and volleyball. The DJ night and the dance competition serve 
+                                    as wonderful memories for the outgoing batch.
+                                    <br>
+                                    For more information check the Crrescendo <a href = "https://www.facebook.com/Crrescendo/?fref=ts">Facebook page</a>
+                                    <br>
+                                  </span></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                       <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="center-align">Bharat Darshan</h3>
+                              <div class= "row">
+                                <div class="col s12">
+                                  <img src="{% static 'site/img/bharath.jpg' %}" alt="bd" style="display:block;height:auto;width:100%">
+                                </div>
+
+
+                                <div class="col s12">
+                                  <p> <span class="black-text">
+                                  Bharat Darshan, is a unique, one day cultural extravaganza that is conducted by the Dance, 
+                                  Drama and Fashion Club(DDFC) and regularly features in the Annual Calendar of the Students 
+                                  Council. It is a one-of-a-kind event which NITK hosts every year to celebrate the 
+                                  different cultures that encapsulate our nation.
+                                  <br>
+                                  This event gives students a platform to showcase the cultural diversity in their country 
+                                  while at the same time allows them to present their culture to their peers in college. 
+                                  There is often fierce competition between the students from different states to win the 
+                                  competition and bring the Bharat Darshan trophy to their state.
+                                  <br>
+                                  </span></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                       <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="center-align">NITK Film Festival</h3>
+                              <div class= "row">
+                                <div class="col s12">
+                                  <img src="{% static 'site/img/filmfestival.jpg' %}" alt="filmfestival" style="display:block;height:auto;width:75%">
+                                </div>
+
+
+                                <div class="col s12">
+                                  <p> <span class="black-text">
+                                  The year 2016, marked the inception of NITK Film Festival which was a celebration of cinema, 
+                                  art and film-making. NITK Film’s Clubs in its maiden venture attempted to bring the best of 
+                                  Indian and International Cinema to the coastal town of Surathkal. 
+                                  <br>
+                                  The NITK Film's Club has been centered at NITK, Surathkal for the past 30 years and has been 
+                                  screening the best of Indian and International Cinema in the Campus. With the NITK Film 
+                                  Festival, they have taken it to the next level. The Film Festival allows budding film-makers 
+                                  to screen their own films and interact with Filmmakers and Screenwriters from all over the 
+                                  country. For the diverse audience in campus, the best from all genres, languages, documentaries, 
+                                  short films is presented at the film festival. 
+                                  <br>
+                                  The film festival had screenings of renowned movies as well as gave a chance to young film-makers 
+                                  to showcase their talent of film-making to the general public. Quizzes on the various eras of Indian 
+                                  cinema was held and contributed to the wide spread participation for the event.
+                                  <br>
+                                  For more information, contact us at the NITK Film Festival 
+                                  <a href="https://www.facebook.com/NITKFilmFestival/"> Facebook</a> page.
+                                  <br>
+                                  </span></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+
+  </div>
+
+  <div id="academics">
+
+    <h2 class="center-align"> ACADEMICS </h2>
+    <h3 class="center-align"> (FIRST YEAR) </h3>
+
+    <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="align-left"> PHYSICS CYCLE</h3>
+
+                              <div class="row">
+                                <div class="col s12">
+                                  <h5>1. Physics - PH111 (4 credits)-</h5>
+                                  <p>
+                                    Physics cycle has two 4 credit courses. Physics course structure is the best among all first year courses. You will be introduced to the very famous Einstein’s Theory of Relativity. The course will go deeper into Quantum Mechanics and Structure of materials. Studying for physics can be challenging.
+                                    <br> 
+                                    Rote learning is minimum and decent amount of problem solving and some theoretical proofs. Questions are never by the book and for Physics class notes are a must. Arthur Bieser’s Modern Physics is the go-to book for Physics. You may refer to Ben Streetman and some other reference material for later chapters. Your week will also consist of a tutorial lecture for problem solving.
+                                    <br>
+                                  </p>
+
+                                  <h5>2. Physics Lab - PH110 (1 credit)-</h5>
+                                  <p>
+                                    As far as Physics Lab is concerned, there will be a set of 7 experiments which will carry 5 marks each. End Semester for 60 marks and 5 marks for the journal. This is not your college stuff so proper understanding of each experiment is a must. Experiments are handpicked and cover a wide range of topics.
+                                    <br>
+                                  </p>
+
+                                  <h5>3. Computer Programming - CO111 (4 credits)-</h5>
+
+                                  <p>
+                                    CO110 is the second of the 4 credit family. The course is really simple. You will be taught C programming from the archaic “Hello World”. You can refer any material for this course as it depends mostly on understanding the basics of C. Recommended books would be “Let Us C” by Yeshwant Kanetkar. Books by Gottfried and the legendary Dennis Ritchie are also good.
+                                    <br>
+                                    Quizzes are mostly MCQ’s based on a block of code which is generally tricky if you haven’t got your concepts right. Mid Sems and End Sems are based on theory and program writing (which may get a little bit clumsy if your paper is devoid of comments). 
+                                    <br>
+                                  </p>
+
+                                    <h5>4. Computer Lab - CO110 (1 credit) - </h5>
+                                   <p> 
+                                    Computer Lab likewise is decently tough. End Sems can be bad if you can’t debug your code in time. The plan of action for each lab session is teacher based and may vary. Basically you will have to code up basic programs to clear your concepts.
+                                    <br>
+                                    P.S—This is an advice from the seniors (: p ). If you have a scheduled a plan for the week for studying, use the time for CO 110 and CO 111 for studying a new language or for competitive programming.
+                                    <br> 
+                                  </p>
+
+                                    <h5>5. Mechanical Engineering - ME 110 (3 credits)-</h5>
+                                   <p> 
+                                    Elements of Mechanical Engineering is a course for which you will require the tools you used for Board Exams- Rote Learning and Speed! Chill, it’s not that bad. Mechanical Engineering is completely based on understanding of concepts. You will encounter the mechanism of Engines, Refrigeration and Boilers. The course is replete with diagrams and formulae. You may land up learning everything but not answering to the point and losing the marks hence. 
+                                    <br>
+                                    If you have understood the concepts, it will be evident in your answers. You will have 1-2 workshop sessions for lathe and drilling part. Exams are going to be well, seemingly endless. KR Gopal Krishna is enough. You may receive printed notes from your teachers too.
+                                    <br>
+                                  </p>
+
+                                    <h5>6. Electronics and Communication Engineering - ECE 110 (3 credits)-</h5>
+                                    <p>
+                                      Welcome to the world of circuits and transistors. EC is one of the toughest disciplines of engineering and its smaller version won’t disappoint you at all. It is a well-designed course to give you fundamental understanding of BJT’s and Logic. Your studies will be mostly dependent on Boylestad and Nashelky for circuits. You may also refer Albert Malvino. For Logic , class notes, if taken properly, should be enough. Exams will comprise of problems, theory and logic related sums.
+                                      <br>
+                                    </p>
+
+                                    <h5>5. Humanities - HU110 (1 credit)-</h5>
+                                   <p> 
+                                    This series of lectures will generally be small debate sessions. These can be really interesting if your class actively takes part. There is a small test in the end covering some topics. Credit for this course is not calculated for your pointer, but it is mandatory to receive
+                                    a satisfactory(S) grade here.
+                                    <br>
+                                  </p>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+                              <h3 class="align-left"> CHEMISTRY CYCLE</h3>
+
+                              <div class="row">
+                                <div class="col s12">
+
+                                  <h5>1. Chemistry –CY110 (3 credits)-</h5>
+                                  <p>
+                                    The syllabus is split into 2 parts, with 2 or sometimes 3 teachers teaching 1 section. Use the textbook Engineering Chemistry by Gadag and Shetty. For some chapters you may have to refer to other textbooks, available in the library. The problems are usually directly from Gadag and Shetty, so be sure to solve those.
+                                    <br>
+                                  </p>
+
+                                  <h5>2. Engineering Mathematics-MA110/MA111 (3 credits each)- </h5>
+                                  <p>
+                                    This is there in both cycles and the syllabus is common to both cycles. It’s only calculus, but a lot of it is really new. You should buy the book Thomas’ Calculus by Weir, Hass and Giordano or at least get the pdf. It will be used in both semesters and will quickly be out of stock in the shops in Surathkal. 
+                                    <br>
+                                    If you want to borrow it from the library you will have to wait till the mid-sems at least for the library card. The book costs around Rs.800 (first-hand). It is good for theory but the problems are very basic. Refer to your class notes and those of others.
+                                    <br>
+                                  </p>
+
+                                  <h5>3. Engineering Mechanics-AM110 (3 credits)-</h5>
+                                  <p>
+                                    ApMech covers JEE mechanics (Statics only) at a slightly higher level along with a few new chapters. You can use the textbooks Engineering Mechanics by Bhavikatti and Mechanics of Materials by Beer and Johnston. For the quizzes Bhavikatti and the notes are enough. Usually the sums done in class will be from Beer and Johnston. Go through your class notes for sure before mid-sems and end-sems, the sums will use very similar concepts.
+                                    <br>
+                                  </p>
+
+                                  <h5>4. Elements of Electrical and Electronics Engineering-EE110 (3 credits)- </h5>
+
+                                  <p>
+                                    It covers the JEE syllabus like KVL/KCL, moving on to magnetic and AC circuits, 3-phase systems, transformers and induction motors (cue 3 Idiots dialogues in your mind :P). You can refer to Electrical Technology by Edward Hughes. For some chapters the teachers may give printed notes. 
+                                    <br>
+                                    However, the best reference for this course is actually the class notes-similar sums come in tests and a wide variety of problems are covered. Remember to check the notes of your friends in other sections for more sums. 
+                                    <br>
+                                  </p>
+
+                                 <h5> 5. Engineering Graphics-ME111 (3 credits)-</h5>
+                                  <p>
+                                    EG can be regarded as a lab course. There will be one Instructions class and one drawing class on consecutive days every week. The concepts are taught in the Instructions class and drawings based on these concepts are to be drawn the following day. There is no theory test. 
+                                    <br>
+                                    You will need to buy a mini-drafter, a folder, pencils and erasers, drawing clip, large set squares (which have built-in protractors), compass and a black sheet to keep under the drawing sheets to prevent them from getting dirty (all available in the cooperative store). You can refer to the book A Textbook of Engineering Graphics by K.R. Gopalakrishna or Engineering Drawing by the same author. 
+                                    <br>
+
+                                    The teacher will give a sheet for every chapter with many problems. You only need to refer to these sheets and your homework and class work. Use the textbooks for different and difficult problems.
+                                    <br> 
+                                  </p>
+
+                                  <h5>6. Professional Communication-HU110 (3 credits)- </h5>
+                                  <p>
+                                    ProfComm teaches you the elements of organisational, oral and written communication. Each student will have to give a public speech and take part in a group discussion (G.D). Refer to the textbook Technical Communication by Raman and Sharma. Go through the book properly before exams, there is a considerable theory portion in mid-sems and end-sems. Learn letter and résumé formats properly and remember to write fast and NEATLY-this actually helps get better marks (no kidding!), they won’t cut marks for bad handwriting but they might be more lenient if your paper looks neat.
+                                    <br>
+                                  </p>
+
+                                  <h5>7. Chemistry Laboratory-CY111 (2 credits)-</h5>
+                                   <p>
+                                    Various titrations and some instrumental experiments are performed. The section is divided into 2 batches for this course and each batch has the lab on a different day of the week. A manual with information on each experiment including the theory, procedure and calculations is provided at the beginning of the semester for Rs.10. This is sufficient for the course, but bear in mind that twisted questions are asked in the theory tests for which just learning the manual by rote will not suffice.
+                                    <br>
+                                  </p>
+
+                                  <h5>8. Environmental Studies-CV110 (1 credit)-</h5>
+                                  <p>
+                                    This is a Mandatory Learning Course. You get either a Satisfactory (S) grade or an Unsatisfactory (N) grade. It doesn’t count towards your Semester Grade Point Average (SGPA). Teachers will either conduct lectures or divide the class into groups to make presentations (more likely).
+                                    <br>
+                                  <p>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+  </div>
+
+
+<div id="sports">
+
+  <h2 class="center-align"> SPORTS IN NITK </h2>
+  <div class="row">
+                          <div class="col s12">
+                            <div class="card-panel grey lighten-5">
+
+                              <div class="row">
+                                <div class="col s12">
+
+                                <p>  <br><br><br>
+                                Did you think that NITK is just a temple of nerds and extracurricular activities like sports and games are not given any kind of attention then think again.<br>
+
+                                NITK offers state of the art sports facilities.  The college sports an Olympic size swimming pool, three tennis courts, two basketball courts, two volleyball courts, full size football and cricket grounds, one hockey field, one handball court, three badminton courts, five T.T tables etc. Other games like Chess and Carrom are also encouraged.<br><br></p>
+
+                                <h5>Swimming Pool:</h5>
+                                <p>All students are welcome to register and utilize the facility. But being in a proper swimming attire is a must i.e. swimming costume/trunks + cap. Instructor and life guards are always present. But the registration process is a bit of a pain; the student has to submit a Xerox copy of his/her admission letter in order to get the registration form. <br>
+
+                                Then he/she has to get an approval from a doctor in Health Care Centre saying that he/she is fit for swimming. Swimming wear can be brought by the student or it can also be bought in the store inside the swimming pool. Advice: Maximize its use in summer.<br></p>
+
+                                <h5>Football: </h5>
+                                <p>Football is very popular in NITK. Every evening one can find at least 6-8 groups playing football in the ground apart from the college team. Footballs and practice cones can be issued from the sports complex adjacent to the ground by giving your college ID (or Library card). Again Inter collegiate and Inter year tournaments are held. Also there is a special “only freshers” tournament held in the beginning of 1st semester between the twelve 1st year classes. Five a side Beach football is organized during Incident and five a side ‘flood lit’ football tournament is held during Phoenix.
+                                  <br>
+                                 Inter NIT tournament was held last year and NITK won the Gold medal. Want to get into the college team? Just practice with the
+                                team every evening. Selections will be held in the 1st semester.<br>
+
+                                </p>
+
+                                <h5>Basketball:</h5>
+
+                                <p>Basketball: There are two basketball courts. Both of them are in a great condition. One of them is reserved for the college team and should be vacated whenever they come for practice. The other one
+                                can be made use of at any time. There are two major competitions that take place on these courts, one is the inter collegiate basketball tournament known as the “Slam dunk” which takes place during
+                                Incident, and the other one is the inter year basketball tournament which takes place during crescendo. <br>
+
+                                Inter class freshers tournament is held in the 1st and want to get into the college team just join the team in practice every evening. Selections will be held.<br></p>
+
+
+
+                                <h5>Cricket:</h5>
+
+                                <p>Cricket too is very popular in NITK. Cricket bats, balls, stumps etc. can be issued from the complex by giving your college ID. Inter Year and Inter branch tournaments are held. Last year the inter class “mixed” cricket tournament was organized (5 boys + 2 girls required in one team :P). Selections for getting into the College cricket team will be held in either the 1st or 2nd semester.
+
+                                <br></p><h5>Badminton/Table Tennis:</h5>
+                                <p>The courts and tables are located inside the sports complex. The complex is open from 6 in the morning to 8 in the evening. One can issue T.T balls and Shuttles from the complex.<br>
+
+                                But one has to bring their own T.T bats and Badminton racquets too play. Inter class badminton and T.T tournament is held at the beginning of 1st semester for the freshers by the Recreational committee.<br></p>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+</div>
+
+<div id="clublife">
+
+
+          <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+               <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+              <script>
+             $(document).ready(function(){
+
+                $("#HOBBY").hide();
+
+              $("#hobbyclubs").click(function(){
+
+                $("#HOBBY").show();
+                $("#TECH").hide();
+
+              });
+
+             $("#techclubs").click(function(){
+
+                $("#HOBBY").hide();
+                 $("#TECH").show();
+
+             });
+
+
+          });
+            </script>
+              <div class="container">
+                <div class="center-align">
+
+                <div  id="clubs" class="row">
+                  <div class="col s12">
+                    <ul class="tabs">
+                      <li class="tab col s6" id="techclubs"><a href="">TECH CLUBS</a></li>
+                      <li class="tab col s6" id="hobbyclubs"><a href="">HOBBY CLUBS</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+
+
+                  <div id="TECH" >
+                    <div class="row">
+                      <div class="col s12 m6 l6" id="column1">
+
+                          <div id="ieee" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4 left-align">IEEE</span>
+                             <p class="center-align">
+                              <a href="mailto:someone@example.com" target="_top">musicclub@nitk.edu.in</a>
+                              <br>
+                                      <a href="https://www.google.com"><i class="fa fa-chrome black-text" style="font-size:1rem;"></i></a>
+                                      <a href="https://www.google.com"><i class="fa fa-facebook-official black-text" style="font-size:1rem;"></i></a> </p>
+                            </div>
+
+                          </div>
+
+                           <div id="csi" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4 ">CSI</span>
+                             <p class="center-align">
+                              <a href="mailto:someone@example.com" target="_top">musicclub@nitk.edu.in</a>
+                              <br>
+                                     <a href="https://www.google.com"><i class="fa fa-chrome black-text" style="font-size:1rem;"></i></a>
+                                      <a href="https://www.google.com"><i class="fa fa-facebook-official black-text" style="font-size:1rem;"></i></a> </p>
+                            </div>
+
+                          </div>
+
+                          <div id="iste" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4  left-align">ISTE</span>
+                             <p class="center-align">
+                              <a href="mailto:someone@example.com" target="_top">musicclub@nitk.edu.in</a>
+                              <br>
+                                      <a href="https://www.google.com"><i class="fa fa-chrome black-text" style="font-size:1rem;"></i></a>
+                                      <a href="https://www.google.com"><i class="fa fa-facebook-official black-text" style="font-size:1rem;"></i></a> </p>
+                            </div>
+
+                          </div>
+
+
+                      </div>
+                      <div class="col s12 m6 l6" id="column2">
+
+                        <div id="ie" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4 left-align">IE</span>
+                           <p class="center-align">
+                              <a href="mailto:someone@example.com" target="_top">musicclub@nitk.edu.in</a>
+                              <br>
+                                     <a href="https://www.google.com"><i class="fa fa-chrome black-text" style="font-size:1rem;"></i></a>
+                                      <a href="https://www.google.com"><i class="fa fa-facebook-official black-text" style="font-size:1rem;"></i></a> </p>
+                            </div>
+
+                          </div>
+
+                           <div id="iet" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4 left-align">IET</span>
+                           <p class="center-align">
+                              <a href="mailto:someone@example.com" target="_top">musicclub@nitk.edu.in</a>
+                              <br>
+                                     <a href="https://www.google.com"><i class="fa fa-chrome black-text" style="font-size:1rem;"></i></a>
+                                      <a href="https://www.google.com"><i class="fa fa-facebook-official black-text" style="font-size:1rem;"></i></a> </p>
+                            </div>
+
+                          </div>
+
+                          <div id="roto" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4 left-align">ROTORACT</span>
+                               <p class="center-align">
+                              <a href="mailto:someone@example.com" target="_top">musicclub@nitk.edu.in</a>
+                              <br>
+                                     <a href="https://www.google.com"><i class="fa fa-chrome black-text" style="font-size:1rem;"></i></a>
+                                      <a href="https://www.google.com"><i class="fa fa-facebook-official black-text" style="font-size:1rem;"></i></a> </p>
+                            </div>
+
+                          </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+
+                  <div id="HOBBY">
+                     <div class="col s12 m6 l6" id="column1">
+
+                          <div id="1" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4 left-align">Music Club</span>
+                              <p class="center-align">
+                              <a href="mailto:someone@example.com" target="_top">musicclub@nitk.edu.in</a>
+                              <br>
+                                     <a href="https://www.google.com"><i class="fa fa-chrome black-text" style="font-size:1rem;"></i></a>
+                                      <a href="https://www.google.com"><i class="fa fa-facebook-official black-text" style="font-size:1rem;"></i></a> </p>
+                            </div>
+
+                          </div>
+
+                           <div id="2" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4 ">Artist forun</span>
+                              <p class="center-align">
+                              <a href="mailto:someone@example.com" target="_top">musicclub@nitk.edu.in</a>
+                              <br>
+                                     <a href="https://www.google.com"><i class="fa fa-chrome black-text" style="font-size:1rem;"></i></a>
+                                      <a href="https://www.google.com"><i class="fa fa-facebook-official black-text" style="font-size:1rem;"></i></a> </p>
+                            </div>
+
+                          </div>
+
+                          <div id="3" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4  left-align">Flying club</span>
+                              <p class="center-align">
+                              <a href="mailto:someone@example.com" target="_top">musicclub@nitk.edu.in</a>
+                              <br>
+                                     <a href="https://www.google.com"><i class="fa fa-chrome black-text" style="font-size:1rem;"></i></a>
+                                      <a href="https://www.google.com"><i class="fa fa-facebook-official black-text" style="font-size:1rem;"></i></a> </p>
+                            </div>
+
+                          </div>
+
+
+                      </div>
+                      <div class="col s12 m6 l6" id="column2">
+
+                        <div id="4" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4 left-align">E-cell</span>
+                             <p class="center-align">
+                              <a href="mailto:someone@example.com" target="_top">musicclub@nitk.edu.in</a>
+                              <br>
+                                       <a href="https://www.google.com"><i class="fa fa-chrome black-text" style="font-size:1rem;"></i></a>
+                                      <a href="https://www.google.com"><i class="fa fa-facebook-official black-text" style="font-size:1rem;"></i></a> </p>
+                            </div>
+
+                          </div>
+
+                           <div id="5" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4 left-align">flims club</span>
+                              <p class="center-align">
+                              <a href="mailto:someone@example.com" target="_top">musicclub@nitk.edu.in</a>
+                              <br>
+                                     <a href="https://www.google.com"><i class="fa fa-chrome black-text" style="font-size:1rem;"></i></a>
+                                      <a href="https://www.google.com"><i class="fa fa-facebook-official black-text" style="font-size:1rem;"></i></a> </p>
+                            </div>
+
+                          </div>
+
+                          <div id="6" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="{% static 'site/img/sample.jpg' %}">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4 left-align">ddfc</span>
+                            <p class="center-align">
+                              <a href="mailto:someone@example.com" target="_top">musicclub@nitk.edu.in</a>
+                              <br>
+                                     <a href="https://www.google.com"><i class="fa fa-chrome black-text" style="font-size:1rem;"></i></a>
+                                      <a href="https://www.google.com"><i class="fa fa-facebook-official black-text" style="font-size:1rem;"></i></a> </p>
+                            </div>
+
+                          </div>
+                      </div>
+
+
+            </div>
+</div>
+</div>
+
+
+</div>
+
+{% endblock %}

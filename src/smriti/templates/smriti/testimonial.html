@@ -1,0 +1,55 @@
+{% extends "smriti/base.html" %}
+
+{% load staticfiles %}
+{% load django_markdown %}
+
+{% block content %}
+<div class="container">
+    <section class="container" style="padding-top:15px">
+        <div class="row valign-wrapper">
+        <div class="col s4">
+            <img class="circle responsive-img" src={% if testimonial.testimonial_to.profile.picture %}"/media/{{testimonial.testimonial_to.profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
+        </div>
+        <div class="col s6">
+            <h4>{{testimonial.testimonial_to.get_full_name}}</h4>
+        </div>
+        <div class="col s2">
+            <a class="btn-floating btn-large waves-effect waves-light teal lighten-3" href="/smriti/profiles/{{testimonial.testimonial_to.profile.rollno}}"><i class="material-icons">account_circle</i></a>
+        </div>
+
+    </section>
+    <div class="divider"></div>
+    <div class="row" style="padding-top:10px">
+		<div class="col s12 m12 l12">
+				<div class="card grey lighten-3 waves-block waves-light valign-wrapper">
+                        <div class="card-content black-text container">
+                        <div class="row valign-wrapper">
+                        <div class="col s4">
+                            <img class="circle responsive-img" src={% if testimonial.created_by.profile.picture %}"/media/{{testimonial.created_by.profile.picture}}" {% else %}  "/static/site/img/presi.jpg" {% endif %}>
+                        </div>
+                        <div class="col s6">
+                            <h4>{{testimonial.created_by.get_full_name}}</h4>
+                        </div>
+
+                        <div class="col s2">
+                            {% if user == testimonial.created_by %}
+                            <a class="btn-floating btn-large waves-effect waves-light blue lighten-3" href="/smriti/write/{{testimonial.testimonial_to.profile.rollno}}"><i class="material-icons">mode_edit</i></a>
+                            <a class="btn-floating btn-large waves-effect waves-light red lighten-3" href="delete/{{testimonial.id}}"><i class="material-icons">delete</i></a>
+                            {%else%}
+                            <a class="btn-floating btn-large waves-effect waves-light blue lighten-3" href="/smriti/profiles/{{testimonial.created_by.profile.rollno}}"><i class="material-icons">account_circle</i></a>
+                            {% endif %}
+                            {% if user == testimonial.testimonial_to %}
+                            <a class="btn-floating btn-large waves-effect waves-light red lighten-3" href="delete/{{testimonial.id}}"><i class="material-icons">delete</i></a>
+                            {% endif %}
+                        </div>
+                        </div>
+                    </div>
+                    <div class="divider teal"></div>
+                    <div class="flow-text container" style="padding:20px">
+                        {{testimonial.description|markdown}}
+                    </div>
+				</div>
+		</div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+{% block html %}
+<html lang="en" class="bg-nitk">
+{% endblock html %}
+
+{% load staticfiles %}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>NITK Student Council</title>
+
+	<!-- Load Core Materialize CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="{% static 'materialize/css/materialize.min.css' %}" rel="stylesheet">
+
+	<!-- Custom styles for this site -->
+	<link href='https://fonts.googleapis.com/css?family=Signika:600' rel='stylesheet' type='text/css'>
+	<link href="{% static 'site/css/main.css' %}" rel="stylesheet">
+	{% block styles %}
+
+	{% endblock styles %}
+
+	<!-- Custom tags for the head tag -->
+	{% block extrahead %}{% endblock extrahead %}
+</head>
+<body>
+	{% block navbar %}
+	<ul id="dropdown1"class="dropdown-content center-align">
+		<li><a href="/message">Message from the President</a></li>
+		<li class="divider"></li>
+		<li><a href="/represent">Meet the Representatives</a></li>
+		<li class="divider"></li>
+		<li><a href="/announce">Announcements</a></li>
+		<li class="divider"></li>
+		<li><a href="/minutes">Minutes of Meetings</a></li>
+		<li class="divider"></li>
+		<li><a href="/letters">Letters to Admin</a></li>
+	</ul>
+	<ul id="dropdown2" class="dropdown-content center-align">
+		<li><a href="/senate">Academic Senate</a></li>
+		<li class="divider"></li>
+		<li><a href="/reports">Senate Reports</a></li>
+		<li class="divider"></li>
+		<li><a href="/mou">MoUs</a></li>
+		<li class="divider"></li>
+		<li><a href="/grants">Research Grants</a></li>
+		<li class="divider"></li>
+		<li><a href="/suggest">Suggestions</a></li>
+	</ul>
+	<ul id="dropdown3" class="dropdown-content center-align">
+		<li><a href="/news">News</a></li>
+		<li class="divider"></li>
+		<li><a href="/calendar">Calendar</a></li>
+	</ul>
+	<ul id="dropdown4" class="dropdown-content center-align">
+		<li><a href="/nitk_life">NITK Life</a></li>
+		<li><a href="/blog">Literary Archive</a></li>
+		<li><a href="/resources">Resources</a></li>
+		<li><a href="/faq">FAQs</a></li>
+	</ul>
+	<div class="navbar-fixed">
+		<nav class="black" role="navigation">
+			<div class="nav-wrapper container">
+				<a href="/" class="brand-logo">
+					<span class="pad">
+						<img src="{% static 'site/img/emblem.svg' %}" alt="NITK SC" style="height:50px;width:auto;padding-top:7px">
+					</span>
+				</a>
+				<ul class="right hide-on-med-and-down">
+					<!-- Dropdown Trigger -->
+					<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Student Council<i class="material-icons right">arrow_drop_down</i></a></li>
+					<li><a class="dropdown-button" href="#!" data-activates="dropdown2">Academics<i class="material-icons right">arrow_drop_down</i></a></li>
+					<li><a class="dropdown-button" href="#!" data-activates="dropdown3">News and Events<i class="material-icons right">arrow_drop_down</i></a></li>
+					<li><a class="dropdown-button" href="#!" data-activates="dropdown4">Students' Life<i class="material-icons right">arrow_drop_down</i></a></li>
+				<!--	<li><a href="/smriti">Smriti</a></li>  -->
+				</ul>
+				<ul id="slide-out" class="side-nav collapsible collapsible-accordion">
+					<li class="bold"><a class="collapsible-header waves-effect waves-teal">Student Council</a>
+						<div class="collapsible-body">
+							<ul>
+								<li><a href="/message">Message from the President</a></li>
+								<li class="divider"></li>
+								<li><a href="/represent">Meet the Representatives</a></li>
+								<li class="divider"></li>
+								<li><a href="/announce">Announcements</a></li>
+								<li class="divider"></li>
+								<li><a href="/minutes">Minutes of Meetings</a></li>
+								<li class="divider"></li>
+								<li><a href="/letters">Letters to Admin</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="bold"><a class="collapsible-header waves-effect waves-teal">Academics</a>
+						<div class="collapsible-body">
+							<ul>
+								<li><a href="/senate">Academic Senate</a></li>
+								<li class="divider"></li>
+								<li><a href="/reports">Senate Reports</a></li>
+								<li class="divider"></li>
+								<li><a href="/mou">MoUs</a></li>
+								<li class="divider"></li>
+								<li><a href="/grants">Research Grants</a></li>
+								<li class="divider"></li>
+								<li><a href="/suggest">Suggestions</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="bold"><a class="collapsible-header waves-effect waves-teal">News and Events</a>
+						<div class="collapsible-body">
+							<ul>
+								<li><a href="/news">News</a></li>
+								<li class="divider"></li>
+								<li><a href="/calendar">Calendar</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="bold"><a href="/nitk_life" class="collapsible-header waves-effect waves-teal">NITK Life</a></li>
+					<li class="bold"><a href="/blog" class="collapsible-header waves-effect waves-teal">Literary Archive</a></li>
+					<li class="bold"><a href="/resources" class="collapsible-header waves-effect waves-teal">Resources</a></li>
+					<li class="bold"><a href="/faq" class="collapsible-header waves-effect waves-teal">FAQs</a></li>
+					<li class="bold"><a href="/smriti" class="collapsible-header waves-effect waves-teal">Smriti</a></li>
+				</ul>
+				<a href="" id="sidenav" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+			</div>
+		</nav>
+	</div>
+	{% endblock %}
+
+	<div class="wrapper">
+		<div class="page-info">
+			{% block page-info %}
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<a href="/" class="breadcrumb">Home</a>
+						<a href="#!" class="breadcrumb">Page Info 1</a>
+						<a href="#!" class="breadcrumb">Page Info 2</a>
+					</div>
+				</div>
+			</div>
+			{% endblock %}
+		</div>
+
+		<div class="content">
+			{% block content %}
+			{% endblock %}
+		</div>
+		<div class="push"></div>
+	</div>
+
+	{% block footer %}
+	<footer class="page-footer black lighten">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 m6">
+					<h5 class="white-text">NITK Student Council</h5>
+					<p class="grey-text text-lighten-4">To know more about the Student Council</p>
+				</div>
+				<div class="col m4 offset-m2 s12">
+					<h5 class="white-text">Links</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container center">
+				Built with <i class="fa fa-heart"></i> at <a class="blue-text text-lighten-3" href="http://ienitk.in">IE-NITK</a>
+			</div>
+		</div>
+	</footer>
+	{% endblock %}
+
+	<!--  Scripts-->
+	<script src={% static 'site/js/jquery.min.js' %}></script>
+	<script src="{% static 'materialize/js/materialize.min.js' %}"></script>
+	<script src="{% static 'site/js/moment.min.js' %}"></script>
+	<script src="{% static 'site/js/fullcalendar.min.js' %}"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+		$(".dropdown-button").dropdown();
+		$(".button-collapse").sideNav({
+			menuWidth: 320, // Default is 240
+			edge: 'left',
+			closeOnClick: true
+		});
+
+	});
+	</script>
+	{% block scripts %}
+	{% endblock scripts %}
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends "static.html" %}
+{% load django_markdown %}
+
+{% block page-info %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <a href="/" class="breadcrumb">Home</a>
+            <a class="breadcrumb">News and Events</a>
+            <a href="#!" class="breadcrumb">News</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+{% load static %}
+<link href="{% static 'site/css/message.css' %}" rel="stylesheet">
+
+<div class="container">
+  <div class="row valign-wrapper">
+    <div class="col s12">
+      <img class="responsive-img" src="/media/{{news.news_pic}}">
+    </div>
+
+  </div>
+  <div class="row flow-text">
+
+    <div class="col s12">
+      <h2>{{ news.title }}</h2>
+      <article >
+          {{ news.details|markdown }}
+      </article>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

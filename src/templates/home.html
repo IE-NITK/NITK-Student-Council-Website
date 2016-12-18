@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block html %}
+<html lang="en">
+{% endblock %}
+
+{% block content %}
+
+<!-- We need a jumbotron here -->
+
+<div class="corporate-jumbo">
+	<!-- CSS for text within the jumbotron havent been defined -->
+	<div class="container">
+		<div class="row">
+			<h1>NITK<br>Students' Council</h1>
+			<!-- <a href="#more" class="btn2 btn2-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a> -->
+		</div>
+	</div>
+</div>
+<div id="more">
+<div class="bg-test2">
+	<br><br>
+</div>
+<div class="bg-nitk2">
+	<div class="container">
+		<div class="row">
+			<div class="col s12 l6">
+				<div class="grey-text">
+		          <div class="icon-block">
+		            <div class="center white-text"><i class="material-icons" style="font-size: 50px; padding-top:75px;">event</i></div>
+		            <!-- <h5 class="center"><a href="">Events</a></h5> -->
+		          </div>
+		        </div>
+				<div class="row">
+			        <div class="col s12">
+			          <div class="card grey lighten-5">
+			            <div class="card-content blue-text text-darken-4">
+			              <span class="card-title">What's happening in college?</span>
+			             		<ul>
+												{% for item in events %}
+			                      <li>
+			                      	<a href="/events/{{item.id}}" class="event_item">
+			                      		<div class="event_datetime">
+			                      			<span class="event_month">{{item.start|date:"M"}}</span>
+			                      			<span class="event_day">{{item.start|date:"d"}}</span>
+			                      			<span class="event_time">{{item.start|date:"g:i a"}}</span>
+			                      		</div>
+			                      		<div class="event_name">
+			                      			<span>{{item.title}}</span>
+			                      		</div>
+			                      	</a>
+			                      </li>
+													{% endfor %}
+			                    </ul>
+			            </div>
+			            <div class="card-action">
+			              <a href="/calendar">View All Events</a>
+			            </div>
+			          </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="col s12 l6">
+				<div class="grey-text">
+		          <div class="icon-block">
+		            <div class="center white-text"><i class="material-icons" style="font-size: 50px; padding-top:75px;">book</i></div>
+		            <!-- <h5 class="center"><a href="">Blog</a></h5> -->
+		          </div>
+		        </div>
+				<div class="row">
+			        <div class="col s12">
+			          <div class="card grey lighten-5">
+			            <div class="card-content blue-text text-darken-4">
+			              <span class="card-title">Literary Archive</span>
+			             		<ul class="collection">
+														{% for item in articles %}
+			                      <li class="collection-item"><a href="/blog/{{item.id}}">{{item.title}}</a></li>
+														{% endfor %}
+			                    </ul>
+			            </div>
+			            <div class="card-action">
+			              <a href="/blog">More Blogs</a>
+			            </div>
+			          </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="col s12 l12">
+		        <div class="grey-text">
+		          <div class="icon-block">
+		            <div class="center white-text"><i class="material-icons" style="font-size: 50px; padding-top:75px;">speaker_notes</i></div>
+		            <!-- <h5 class="center"><a href="">News</a></h5> -->
+		          </div>
+		        </div>
+				<div class="row">
+			        <div class="col s12">
+			          <div class="card grey lighten-5">
+			            <div class="card-content blue-text text-darken-4">
+			              <span class="card-title">Top Stories</span>
+			             		<ul class="collection">
+														{% for item in news %}
+			                      <li class="collection-item"><a href="/news/{{item.id}}">{{item.title}}</a></li>
+														{% endfor %}
+			                    </ul>
+			            </div>
+			            <div class="card-action">
+			              <a href="/news">More News</a>
+			            </div>
+			          </div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+</div>
+{% endblock %}

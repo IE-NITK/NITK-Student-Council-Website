@@ -1,0 +1,41 @@
+{% extends "static.html" %}
+{% load staticfiles %}
+
+{% block page-info %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <a href="/" class="breadcrumb">Home</a>
+            <a href="#!" class="breadcrumb">Contact Numbers</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<table>
+        <thead>
+          <tr style="height:">
+              <th data-field="id">Office</th>
+              <th data-field="name">Contact Number</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+          </tr>
+        </tbody>
+      </table>
+
+{% endblock %}

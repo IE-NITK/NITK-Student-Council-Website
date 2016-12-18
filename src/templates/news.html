@@ -1,0 +1,99 @@
+{% extends "static.html" %}
+{% load thumbnail %}
+
+{% block page-info %}
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<a href="/" class="breadcrumb">Home</a>
+			<a class="breadcrumb">News and Events</a>
+			<a href="#!" class="breadcrumb">News</a>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'site/css/message.css' %}" rel="stylesheet">
+	<div class="row center-align">
+		<ul class="tabs">
+			<li class="tab col s12" id="campusNews"><a href="">Campus News</a></li>
+			<li class="tab col s12" id="inTheNew"><a href="">In the News</a></li>
+			<li class="tab col s12" id="spotLights"><a href="">Spotlights</a></li>
+		</ul>
+	</div>
+<div class="row">
+	<div id="campus">
+		<div class="col s12">
+			<div class="collection">
+				{% for item in campus %}
+				<a class="collection-item avatar" href="/news/{{item.id}}" style="padding-left:80px">
+					<img class="biggercircle" src="{{ item.thumbnail.avatar.url }}" alt="" />
+					<br><span class="title">{{ item.title }}</span>
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div id="inthenews">
+		<div class="col s12">
+			<div class="collection">
+				{% for item in inthenews %}
+				<a class="collection-item avatar" href="/news/{{item.id}}" style="padding-left:80px">
+					<img class="biggercircle" src="{{ item.thumbnail.avatar.url }}" alt="" />
+					<br><span class="title">{{ item.title }}</span>
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div id="spotlight">
+		<div class="col s12">
+			<div class="collection">
+				{% for item in spotlight %}
+				<a class="collection-item avatar" href="/news/{{item.id}}" style="padding-left:80px">
+					<img class="biggercircle" src="{{ item.thumbnail.avatar.url }}" alt="" />
+					<br><span class="title">{{ item.title }}</span>
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$(".dropdown-button").dropdown();
+	$(".button-collapse").sideNav({
+		menuWidth: 320, // Default is 240
+		edge: 'left',
+		closeOnClick: true
+	});
+
+	$("#inthenews").hide();
+	$("#spotlight").hide();
+
+	$("#campusNews").click(function(){
+		$("#campus").show();
+		$("#inthenews").hide();
+		$("#spotlight").hide();
+	});
+
+	$("#inTheNew").click(function(){
+		$("#campus").hide();
+		$("#inthenews").show();
+		$("#spotlight").hide();
+	});
+
+	$("#spotLights").click(function(){
+		$("#campus").hide();
+		$("#inthenews").hide();
+		$("#spotlight").show();
+	});
+});
+
+</script>
+{% endblock scripts %}

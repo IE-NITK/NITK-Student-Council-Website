@@ -1,0 +1,44 @@
+{% extends "smriti/base.html" %}
+
+{% block extrahead %}
+    <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+{% endblock extrahead %}
+
+{% block navbar %}
+{% endblock navbar %}
+{% block content %}
+<div class="cover">
+    <div class="container">
+    <div class="row"><h1 class="center">Smriti</h1></div>
+
+        <div class="container">
+        {% if errors %}
+        <h6 class="center-align" style="color:#f00000;">{{errors}}</h6>
+        {% endif %}
+        <form action='/smriti/' method='POST' class="col s12 m12 l12"> {% csrf_token %}
+            <div class="input-field col m6 s12 l6">
+                <input placeholder="Email" id="email" name="email" type="email" class="validate">
+            </div>
+            <div class="input-field col m6 s12 l6">
+                <input placeholder="Password" id="password" name="password" type="password">
+            </div>
+            <div class="input-field col m6 s12 l6 center">
+            <button class="btn-large waves-effect waves-light green-lighten-2" type="submit" name="action">
+                Log In
+            </button>
+            </div>
+        </form>
+        </div>
+
+        <div class="container center input-field">
+                <a class="btn-large waves-effect waves-light green-lighten-2" href="/smriti/browse">
+                    Browse Testimonials
+                </a>
+        </div>
+    </div>
+</div>
+
+{%endblock %}
+
+{% block footer %}
+{% endblock footer %}

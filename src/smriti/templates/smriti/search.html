@@ -1,0 +1,50 @@
+{% extends "smriti/base.html" %}
+
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block content %}
+<div class="container">
+
+    <section>
+        <div class="card-panel">
+            <h4> Search Results for : {{key}} </h4>
+        </div>
+    </section>
+    <div class="divider"></div>
+    <section>
+    <div class="row center-align">
+      {% for item in results %}
+        <div class="col s12 m6">
+          <a href="/smriti/profiles/{{item.rollno}}"><div class="card-panel grey lighten-4 small">
+              <div class="card-image">
+                  <img title="profile picture" class="circle img-responsive" src="{% thumbnail item.picture|default:'default_profile.png' 140x140 crop %}">
+              </div>
+              <div class="card-content">
+              <h5>{{item.user.get_full_name}}</h5>
+              <h5>{{item.rollno}}</h5>
+              </div>
+          </div></a>
+        </div>
+      {% endfor %}
+ </div>
+    </section>
+    <div class="divider"></div>
+ <section>
+     <div class="row">
+ <form class="col s12" action='/smriti/search/' method='POST'> {% csrf_token %}
+   <div class="row center-align">
+
+     <div class="card white lighten-2 lighten-3 waves-effect waves-block waves-light valign-wrapper z-depth-2">
+     <div class="input-field col s12 m8 offset-l2">
+
+         <i class="material-icons prefix">search</i>
+          <input id="icon_prefix" type="text" name="search_param" class="validate">
+          <label for="icon_prefix">Search for the Name/Roll No</label>
+      </div>
+     </div>
+   </div>
+ </form>
+</div>
+ </section>
+{% endblock content %}

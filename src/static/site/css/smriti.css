@@ -1,0 +1,51 @@
+.cover {
+    width: 100vw;
+    height: 100vh;
+    background-color: #078AB5;
+    background-repeat: no-repeat;
+    background-position: 100% center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+}
+
+.cover h1 {
+    color:#f5f5f5;
+    text-shadow: 0px 0px 2px black;
+    font-size: 120px;
+    font-weight: 600;
+    font-family: 'Great Vibes', cursive;
+}
+
+.cover input{
+    font-size: 24px;
+    color: #f5f5f5;
+}
+
+.cover .btn-large {
+    min-width: 250px;
+}
+
+body {
+    background-color: #078AB5;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+  }
+.smriti {
+font-family: 'Great Vibes', cursive;
+}
+
+.custom-card div:hover {
+    background-color: rgb(176,190,197);
+}
+
+section {
+    padding-top: 10px;
+}

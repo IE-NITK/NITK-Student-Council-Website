@@ -1,0 +1,59 @@
+{% extends "static.html" %}
+{% load django_markdown %}
+
+
+{% block page-info %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <a href="/" class="breadcrumb">Home</a>
+            <a class="breadcrumb">Student Council</a>
+            <a href="#!" class="breadcrumb">Message From The President</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'site/css/message.css' %}" rel="stylesheet">
+
+<div class="row">
+
+	<div  id="page-tabs" class="row">
+        <div class="col s12">
+          <ul class="tabs blue-text text-darken-2" >
+
+            {% for item in messages %}
+            <li class="tab"><a href="#{{item.year|date:"Y"}}">{{item.year|date:"Y"}}</a></li>
+            {% endfor %}
+
+          </ul>
+        </div>
+
+    </div>
+
+    {% for item in messages %}
+    <div id="{{item.year|date:"Y"}}" class="container">
+        <div class="row valign-wrapper">
+            <div class="col s4">
+                  <img class="responsive-img" src="/media/{{item.pic}}">
+            </div>
+            <div class="col s8">
+                <h4>{{item.name}}</h4>
+            </div>
+
+        </div>
+        <div class="row flow-text">
+        <!--     <div class="row">
+            <div class="col s8 push-s2"> -->
+        <article >
+          {{item.message|markdown}}
+        </article>
+        <!--         </div>
+        </div> -->
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
