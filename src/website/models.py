@@ -106,7 +106,7 @@ class Member(models.Model):
 @python_2_unicode_compatible
 class Events(models.Model):
     title = models.CharField(max_length=200)
-    organizer = models.ForeignKey(Club, editable=False)
+    organizer = models.ForeignKey(Club)
     details = MarkdownField()
     start = models.DateTimeField()
     end = models.DateTimeField()
