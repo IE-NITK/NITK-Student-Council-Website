@@ -24,7 +24,7 @@ class FilterEventsAdmin(admin.ModelAdmin):
 class EventsAdmin(FilterEventsAdmin):
     fields = ['title','details','start','end','contact']
 
-admin.site.register(Events,EventsAdmin)
+admin.site.register(Events)
 admin.site.register(Club)
 admin.site.register(News)
 admin.site.register(Articles)
