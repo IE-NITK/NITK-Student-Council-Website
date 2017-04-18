@@ -40,7 +40,7 @@ def homePage(request):
 
 def browsePage(request):
     final_years = Profile.objects.filter(rollno__contains="12")
-    cornercase = Profile.objects.filter(rollno="11IT26")
+    #cornercase = Profile.objects.filter(rollno="11IT26")
     ch = sort_by_rollno(final_years.filter(branch='CH'))
     co = sort_by_rollno(final_years.filter(branch='CO'))
     cv = sort_by_rollno(final_years.filter(branch='CV'))
@@ -64,7 +64,7 @@ def browsePage(request):
 def searchPage(request):
     if request.method == 'POST':
         search_param = request.POST.get('search_param','')
-        final_years = Profile.objects.filter(rollno__contains="12")
+        final_years = Profile.objects.filter(rollno__contains="13")
         name_result = final_years.filter(user__name__icontains=search_param)
         roll_result = final_years.filter(rollno__icontains=search_param)
         results = name_result | roll_result
@@ -93,7 +93,7 @@ def send_new_testimonial_mail(to, writer, id):
     <br><br>You can view it at """+ link + """.<br><br>
 
     Regards,<br>
-    Smriti 2016 Team, IE-NITK
+    Smriti 2017 Team, IE-NITK
     <br><br>
     <%asm_group_unsubscribe_url%>
     """
