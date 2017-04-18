@@ -39,7 +39,7 @@ def homePage(request):
     return render(request,"smriti/home.html",{'testimonials':testimonials,'profile':profile})
 
 def browsePage(request):
-    final_years = Profile.objects.filter(rollno__contains="12")
+    final_years = Profile.objects.filter(rollno__contains="13")
     #cornercase = Profile.objects.filter(rollno="11IT26")
     ch = sort_by_rollno(final_years.filter(branch='CH'))
     co = sort_by_rollno(final_years.filter(branch='CO'))
