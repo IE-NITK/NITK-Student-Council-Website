@@ -122,8 +122,10 @@ def writeTestimonial(request, rollno):
         test.description = content.strip()
         test.save()
         if created:
-            django_rq.enqueue(send_new_testimonial_mail, testimonial_to.user, request.user, test.id)
-        return redirect("/smriti/profiles/"+testimonial_to.rollno)
+            #django_rq.enqueue(send_new_testimonial_mail, testimonial_to.user, request.user, test.id)
+            return redirect("/smriti/profiles/"+testimonial_to.rollno)
+        else:
+            return render(request, "smriti/generic.html", {"content":"Oops! Something went wrong. Please try again!"})
 
 class EditProfile(LoginRequiredMixin, generic.TemplateView):
     template_name = "smriti/edit_profile.html"
