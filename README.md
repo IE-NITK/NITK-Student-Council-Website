@@ -19,9 +19,20 @@ comes with virtualenv built-in. So create a virtual env by:
     1. `$ python3 -m venv Student_Council_Website`
     2. `$ . Student_Council_Website/bin/activate`
 
+virtual SCWebsite
+source SCWebsite/bin/activate
+cd SCWebsite
+
 Install all dependencies:
 
     pip install -r requirements.txt
+
+pip install easy-thumbnails
+pip install sendgrid
+cd NITK-Student-Council-Website/src/
+python manage.py makemigrations website
+python manage.py migrate
+python manage.py runserver
 
 Run migrations:
 
