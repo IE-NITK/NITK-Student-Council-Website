@@ -26,13 +26,12 @@ cd SCWebsite
 Install all dependencies:
 
     pip install -r requirements.txt
-
-pip install easy-thumbnails
-pip install sendgrid
-cd NITK-Student-Council-Website/src/
-python manage.py makemigrations website
-python manage.py migrate
-python manage.py runserver
+    pip install easy-thumbnails
+    pip install sendgrid
+    cd NITK-Student-Council-Website/src/
+    python manage.py makemigrations website
+    python manage.py migrate
+    python manage.py runserver
 
 Run migrations:
 
