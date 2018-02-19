@@ -176,3 +176,19 @@ def suggest(request):
 def messagePage(request):
     messages = MessageFromPresident.objects.all().order_by('-year')
     return render(request,'message.html',{'messages':messages})
+
+class ClubView(generic.ListView):
+    template_name='clubs.html'
+    context_object_name = 'all_clubs'
+
+    def get_queryset(self):
+        return Club.objects.all()
+
+class ClubEventView(generic.DetailView):
+    model = Club
+    template_name ='club-events.html'
+    
+class EventView(generic.DetailView):
+    model = Events
+    template_name ='events.html'
+    

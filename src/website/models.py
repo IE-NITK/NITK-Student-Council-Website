@@ -36,11 +36,18 @@ class Announcements(models.Model):
 
 @python_2_unicode_compatible
 class Club(models.Model):
+    Types =  [('TECH','Technical'),
+            ('HOBBY','Hobbies'),
+            ('START','Startup'),
+            ('SC','Student Council')
+            ]
     user = models.OneToOneField(settings.AUTH_USER_MODEL)
     name = models.CharField(max_length=300)
     convenor = models.CharField(max_length=100)
+    description = models.CharField(max_length=1000)
+    logo = models.CharField(max_length=500)
     strength = models.IntegerField()
-
+    type=models.CharField(max_length=5,choices=Types)
     def __str__(self):
         return self.name
 

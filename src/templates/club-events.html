@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block html %}
+<html lang="en">
+{% endblock %}
+
+{% block content %}
+	<img src="{{ club.logo }}">
+    <h1>{{ club.name }}</h1>
+    <h5>Convenor: {{ club.convenor }}</h5>
+    <h6>Strength: {{ club.strength }}</h6>
+    <p>{{ club.description}}</p>
+
+    {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+    {%  endif %}
+
+    {%  for event in club.events_set.all %}
+            <label for="event{{ forloop.counter }}">
+            <a href="{%  url 'website:events' event.id %}"><h3>{{ event.title }}</h3></a>
+            </label>
+            <br>
+    {%  endfor %}
+{% endblock %}

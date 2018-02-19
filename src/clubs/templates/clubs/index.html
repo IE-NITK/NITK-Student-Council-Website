@@ -1,0 +1,18 @@
+{%  extends 'clubs/base.html' %}
+
+{% block body %}
+
+    {% if all_clubs %}
+        <h2>Here are the clubs</h2>
+        <ul>
+            {%  for club in all_clubs %}
+                <li><a href="{%  url 'clubs:detail' club.id %}">
+                    <div> {{ club.club_name }}<div>
+                </a>
+               </li>
+            {%  endfor %}
+        </ul>
+    {% else %}
+        <h3>No albums</h3>
+    {%  endif %}
+{% endblock %}

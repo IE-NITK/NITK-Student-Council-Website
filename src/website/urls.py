@@ -23,4 +23,7 @@ urlpatterns = [
     url(r'^resources/',views.resources,name='resources'),
     url(r'^letters/',views.letters,name='letters'),
     url(r'^suggest/',views.suggest,name='suggestions'),
+    url(r'^clubs/$',views.ClubView.as_view(),name='clubs'),
+    url(r'^clubs/(?P<pk>[0-9]+)/$',views.ClubEventView.as_view(),name='club-events'),
+    url(r'^events/(?P<pk>[0-9]+)/$',views.EventView.as_view(),name='events'),
 ]
