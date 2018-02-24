@@ -1,10 +1,19 @@
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, get_object_or_404
 from .models import *
+from .forms import  EventsForm
+from django.http import HttpResponseRedirect
 from django.views import generic
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from django.core import serializers
 from django.core.mail import send_mail
 import json
 from django.conf import settings
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse_lazy
+
 # Create your views here.
 
 class AboutPage(generic.TemplateView):
@@ -187,7 +196,97 @@ class ClubView(generic.ListView):
 class ClubEventView(generic.DetailView):
     model = Club
     template_name ='club-events.html'
+
+def logout_user(request):
+    logout(request)
     
+    return redirect('website:clubs')
+
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                club = Club.objects.filter(user=request.user)[0]
+                return redirect('/clubs/'+str(club.id)+'/edit')
+            else:
+                return render(request, 'login.html', {'error_message': 'Your account has been disabled'})
+        else:
+            return render(request, 'login.html', {'error_message': 'Invalid login'})
+    return render(request, 'login.html')
+
+
+@login_required(login_url='/login/')
+def clubEventEditView(request,pk):
+    club=get_object_or_404(Club,pk=pk)
+    if request.user.email != club.user.email:
+        return redirect('/login-user/')
+    return render(request,'club-events-edit.html',{'club':club})
+ 
+
+@login_required(login_url='/login/')
+def addEvent(request,pk):
+    club=get_object_or_404(Club,pk=pk)
+    if request.user.email != club.user.email:
+        return redirect('/login-user/')
+    
+    form = EventsForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        club_events = club.events_set.all()
+        for event in club_events:
+            if event.title == form.cleaned_data.get("title"):
+                context = {
+                    'club': club,
+                    'form': form,
+                    'error_message': 'You already added that song',
+                }
+                return render(request, 'create-event.html', context)
+        event = form.save(commit=False)
+        event.organizer = club
+        event.save()
+        return redirect('/clubs/'+str(club.id)+'/edit')
+
+    context = {
+        'club': club,
+        'form': form,
+    }
+    return render(request, 'create-event.html', context)
+
+class EditEventView(LoginRequiredMixin,UpdateView):
+    model = Events
+    fields = ['title','details','start','end','contact']
+    login_url = '/login-user/'
+    
+    def form_valid(self,form):
+        club=Club.objects.get(pk=self.kwargs['id'])
+        if self.request.user.email != club.user.email:
+            return redirect('/login-user/')
+        if form.is_valid():
+            form.save()
+            return redirect('/clubs/'+str(club.id)+'/edit')
+
+class DeleteEventView(LoginRequiredMixin,DeleteView):
+    model = Events
+
+    login_url = '/login-user/'
+    
+
+    def dispatch(self,request,id,pk):
+        club=Club.objects.get(pk=self.kwargs['id'])
+        print(club)
+        self.success_url= redirect('/clubs/'+str(club.id)+'/edit/')
+        if request.user.email != club.user.email:
+            print(self.request.user.email,club.user.email)
+            return redirect('/login-user/')
+        else:
+            self.delete(request)
+            return redirect('/clubs/'+str(club.id)+'/edit/')
+    
+    
+
 class EventView(generic.DetailView):
     model = Events
     template_name ='events.html'

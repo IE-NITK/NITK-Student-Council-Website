@@ -1,0 +1,32 @@
+{% extends "club-events.html" %}
+{% block add %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+	
+
+</script>
+<a href="{% url 'website:events-add' club.id %}">
+<button class="btn add">Add Event</button></a>
+{% endblock %}
+
+{%  for event in club.events_set.all %}
+{% block options %}
+<a href="{% url 'website:events-delete'  club.id event.id %}"><button type="submit" class="btn edit" >Delete</button></a>
+<a href="{% url 'website:events-edit'  club.id event.id %}"><button type="submit" class="btn edit" >Edit</button></a>
+{% endblock %}
+{%  endfor %}
+{% block login %}
+<div class="container">
+<a href="{% url 'website:logout_user' %}">
+<button class="btn">Logout</button></a>
+</div>  
+<style>
+.edit{
+    float:right;
+    width: 15%;
+    padding: 0;
+    margin: 5px;
+}
+</style>
+
+{% endblock %}

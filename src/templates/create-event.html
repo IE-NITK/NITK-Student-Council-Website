@@ -1,0 +1,21 @@
+{% extends "club-events.html" %}
+{% block content %}
+<div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Add a New Event</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="hidden" name="organizer" value="{{ club }}">
+                        {% include 'website/form-template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+{% endblock %}

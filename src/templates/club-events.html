@@ -1,24 +1,54 @@
-{% extends "base.html" %}
+{% extends "static.html" %}
 
-{% block html %}
-<html lang="en">
+{% block page-info %}
+  <div class="row">
+    <div class="container">
+    <div class="col s12">
+      <a href="/" class="breadcrumb">Home</a>
+      <a href="/clubs" class="breadcrumb">Clubs</a>
+      <a href="" class="breadcrumb">{{ club.name }}</a>
+    </div>
+    </div>
+  </div>
 {% endblock %}
 
+
 {% block content %}
-	<img src="{{ club.logo }}">
-    <h1>{{ club.name }}</h1>
-    <h5>Convenor: {{ club.convenor }}</h5>
-    <h6>Strength: {{ club.strength }}</h6>
-    <p>{{ club.description}}</p>
+	<div class="container container-table" >
+        <div class="container center" style="background-color: ">
+            <img src="{{ club.logo }}">
+            <h1>{{ club.name }}</h1>
+            <h5>Convenor: {{ club.convenor }}</h5>
+            <h6>Strength: {{ club.strength }}</h6>
+            <p>{{ club.description}}</p>
+        </div>
+        
+        {% block add %}
+        {% endblock %}
+            {% if error_message %}
+                <p><strong>{{ error_message }}</strong></p>
+            {% else %}
+                <h3><strong>Event List</strong></h3>
+            {%  endif %}
 
-    {% if error_message %}
-        <p><strong>{{ error_message }}</strong></p>
-    {%  endif %}
+        <div class='container'>
 
-    {%  for event in club.events_set.all %}
-            <label for="event{{ forloop.counter }}">
-            <a href="{%  url 'website:events' event.id %}"><h3>{{ event.title }}</h3></a>
-            </label>
-            <br>
-    {%  endfor %}
+            {%  for event in club.events_set.all %}
+                <div >
+                    <label for="event{{ forloop.counter }}">
+                    <a href="{%  url 'website:events' event.id %}"><h3 style="display: inline;">{{ event.title }}</h3></a>
+                    </label>
+                    {% block options %}
+                    {% endblock %}
+                </div>
+                <br>
+
+            {%  endfor %}
+        </div>
+
+        
+    </div>
+
+{% block login %}
+{% endblock %}
 {% endblock %}

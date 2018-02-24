@@ -25,5 +25,11 @@ urlpatterns = [
     url(r'^suggest/',views.suggest,name='suggestions'),
     url(r'^clubs/$',views.ClubView.as_view(),name='clubs'),
     url(r'^clubs/(?P<pk>[0-9]+)/$',views.ClubEventView.as_view(),name='club-events'),
+    url(r'^clubs/(?P<pk>[0-9]+)/edit/$',views.clubEventEditView,name='club-events-edit'),
     url(r'^events/(?P<pk>[0-9]+)/$',views.EventView.as_view(),name='events'),
+    url(r'^events/(?P<pk>[0-9]+)/add/$',views.addEvent,name='events-add'),
+    url(r'^events/(?P<id>[0-9]+)/edit/(?P<pk>[0-9]+)/$',views.EditEventView.as_view(),name='events-edit'),
+    url(r'^events/(?P<id>[0-9]+)/delete/(?P<pk>[0-9]+)/$',views.DeleteEventView.as_view(),name='events-delete'),
+    url(r'^login-user/$',views.login_user,name='login_user'),
+    url(r'^logout-user/$',views.logout_user,name='logout_user'),
 ]

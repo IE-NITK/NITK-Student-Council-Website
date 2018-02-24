@@ -17,6 +17,11 @@
 	{% block styles %}
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
 	<link href="{% static 'site/css/main.css' %}" rel="stylesheet">
+	<style>
+	@media only screen and (max-width : 1100px) {
+  	.hide-on-med-and-down {
+    display: none !important; } }
+	</style>
 	{% endblock styles %}
 
 	<!-- Custom tags for the head tag -->
@@ -71,7 +76,7 @@
 					<li><a class="dropdown-button" href="#!" data-activates="dropdown2">Academics<i class="material-icons right">arrow_drop_down</i></a></li>
 					<li><a class="dropdown-button" href="#!" data-activates="dropdown3">News and Events<i class="material-icons right">arrow_drop_down</i></a></li>
 					<li><a class="dropdown-button" href="#!" data-activates="dropdown4">Students' Life<i class="material-icons right">arrow_drop_down</i></a></li>
-					<li><a href="{%  url 'website:clubs' %}">Clubs<i class="material-icons right"></i></a></li>
+					<li><a class="dropdown-button" href="{%  url 'website:clubs' %}">Clubs</a></li>
 
 				<!--	<li><a href="/smriti">Smriti</a></li>  -->
 					
@@ -121,6 +126,7 @@
 					<li class="bold"><a href="/blog" class="collapsible-header waves-effect waves-teal">Literary Archive</a></li>
 					<li class="bold"><a href="/resources" class="collapsible-header waves-effect waves-teal">Resources</a></li>
 					<li class="bold"><a href="/faq" class="collapsible-header waves-effect waves-teal">FAQs</a></li>
+					<li class="bold"><a class="collapsible-header waves-effect waves-teal"  href="{%  url 'website:clubs' %}">Clubs</a></li>
 
 				<!--	<li><a href="/smriti">Smriti</a></li>   -->
 
