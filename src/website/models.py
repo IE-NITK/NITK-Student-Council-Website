@@ -5,6 +5,7 @@ from django.core.validators import RegexValidator
 from django_markdown.models import MarkdownField
 from django.conf import settings
 from easy_thumbnails.fields import ThumbnailerImageField
+from django.core.urlresolvers import reverse
 
 @python_2_unicode_compatible
 class News(models.Model):
@@ -36,10 +37,21 @@ class Announcements(models.Model):
 
 @python_2_unicode_compatible
 class Club(models.Model):
+    Types =  [('TECH','Technical'),
+            ('HOBBY','Hobbies'),
+            ('START','Startup'),
+            ('SC','Student Council')
+            ]
     user = models.OneToOneField(settings.AUTH_USER_MODEL)
     name = models.CharField(max_length=300)
     convenor = models.CharField(max_length=100)
+    description = models.CharField(max_length=1000)
+    logo = models.CharField(max_length=500)
     strength = models.IntegerField()
+    type=models.CharField(max_length=5,choices=Types)
+    
+    def get_absolute_url(self):
+        return reverse('website:club-events-edit',kwargs={'pk':self.pk})
 
     def __str__(self):
         return self.name

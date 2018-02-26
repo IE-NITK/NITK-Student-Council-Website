@@ -1,0 +1,19 @@
+{% extends "static.html" %}
+
+
+
+{% block content %}
+<div class="container">
+	<h1>{{ events.title }}</h1>
+    <h4>{{ events.details }}</h4>
+    <h3>Organised by : {{ events.organizer.name }}</h3>
+    <h6>Start time: {{ events.start }}</h6>
+    <h6>End time: {{ events.end }}</h6>
+	<h5>Contact: {{ events.contact }} </h5>
+	<p>{{ event.pk }}</p>
+    {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+    {%  endif %}
+</div>
+
+{% endblock %}

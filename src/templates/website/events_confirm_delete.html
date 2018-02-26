@@ -1,0 +1,10 @@
+{% extends "static.html" %}
+{% block page-info %}
+  <br>
+{% endblock %}
+{% block content %}
+<form class="container" action="" method="post">{% csrf_token %}
+    <p >Are you sure you want to delete the event:"{{ object }}"?</p>
+    <input class="btn" 	type="submit" value="Confirm" />
+</form>
+{% endblock %}

@@ -12,14 +12,18 @@
 	<!-- Load Core Materialize CSS  -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="{% static 'materialize/css/materialize.min.css' %}" rel="stylesheet">
-
+	
 	<!-- Custom styles for this site -->
 	<link href='https://fonts.googleapis.com/css?family=Signika:600' rel='stylesheet' type='text/css'>
 	<link href="{% static 'site/css/main.css' %}" rel="stylesheet">
 	{% block styles %}
 
 	{% endblock styles %}
-
+	<style>
+	@media only screen and (max-width : 1060px) {
+  	.hide-on-med-and-down {
+    display: none !important; } }
+	</style>
 	<!-- Custom tags for the head tag -->
 	{% block extrahead %}{% endblock extrahead %}
 </head>
@@ -72,7 +76,7 @@
 					<li><a class="dropdown-button" href="#!" data-activates="dropdown2">Academics<i class="material-icons right">arrow_drop_down</i></a></li>
 					<li><a class="dropdown-button" href="#!" data-activates="dropdown3">News and Events<i class="material-icons right">arrow_drop_down</i></a></li>
 					<li><a class="dropdown-button" href="#!" data-activates="dropdown4">Students' Life<i class="material-icons right">arrow_drop_down</i></a></li>
-
+					<li><a class="dropdown-button" href="{%  url 'website:clubs' %}">Clubs</a></li>
 				<!--	<li><a href="/smriti">Smriti</a></li>  -->
 
 				</ul>
@@ -121,6 +125,7 @@
 					<li class="bold"><a href="/resources" class="collapsible-header waves-effect waves-teal">Resources</a></li>
 					<li class="bold"><a href="/faq" class="collapsible-header waves-effect waves-teal">FAQs</a></li>
 					<li class="bold"><a href="/smriti" class="collapsible-header waves-effect waves-teal">Smriti</a></li>
+					<li class="bold"><a class="collapsible-header waves-effect waves-teal"  href="{%  url 'website:clubs' %}">Clubs</a></li>
 				</ul>
 				<a href="" id="sidenav" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 			</div>

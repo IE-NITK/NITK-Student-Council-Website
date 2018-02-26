@@ -1,0 +1,62 @@
+{% extends "static.html" %}
+
+{% block page-info %}
+  <div class="row">
+    <div class="container">
+    <div class="col s12">
+      <a href="/" class="breadcrumb">Home</a>
+      <a href="/clubs" class="breadcrumb">Clubs</a>
+      <a href="" class="breadcrumb">{{ club.name }}</a>
+    </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block content %}
+	<div class="container container-table" >
+        <div class="container center" style="background-color: ">
+            <img src="{{ club.logo }}">
+            <h1>{{ club.name }}</h1>
+            <h5>Convenor: {{ club.convenor }}</h5>
+            <h6>Strength: {{ club.strength }}</h6>
+            <p>{{ club.description}}</p>
+        </div>
+        
+        {% block add %}
+        {% if error_login %}
+                <h4 class="center red-text"><strong>{{ error_login }}</strong></h4>
+        {% endif %}
+        {% endblock %}
+            {% if error_message %}
+                <p><strong>{{ error_message }}</strong></p>
+            {% else %}
+                <h3><strong>Event List</strong></h3>
+            {%  endif %}
+        
+
+        <div class='container'>
+
+            {%  for event in club.events_set.all %}
+                <div >
+                    <label for="event{{ forloop.counter }}">
+                    <a href="{%  url 'website:events' event.id %}"><h3 style="display: inline;">{{ event.title }}</h3></a>
+                    </label>
+                    {% block options %}
+                    {% endblock %}
+                </div>
+                <br>
+
+            {%  endfor %}
+        </div>
+
+        
+    </div>
+
+{% block login %}
+<div class="container">
+<a href="{% url 'website:club-events-edit' club.id %}">
+<button class="btn add">{% if error_login %}Login with Different Account{% else %}Enter The Club-Edit Page{% endif %}</button></a>
+</div>
+{% endblock %}
+{% endblock %}
