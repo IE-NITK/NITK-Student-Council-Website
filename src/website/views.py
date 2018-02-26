@@ -197,33 +197,14 @@ class ClubEventView(generic.DetailView):
     model = Club
     template_name ='club-events.html'
 
-def logout_user(request):
-    logout(request)
-    
-    return redirect('website:clubs')
-
-def login_user(request):
-    if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            if user.is_active:
-                login(request, user)
-                club = Club.objects.filter(user=request.user)[0]
-                return redirect('/clubs/'+str(club.id)+'/edit')
-            else:
-                return render(request, 'login.html', {'error_message': 'Your account has been disabled'})
-        else:
-            return render(request, 'login.html', {'error_message': 'Invalid login'})
-    return render(request, 'login.html')
 
 
 @login_required(login_url='/login/')
 def clubEventEditView(request,pk):
     club=get_object_or_404(Club,pk=pk)
     if request.user.email != club.user.email:
-        return redirect('/login-user/')
+        logout(request)
+        return render(request,'club-events.html',{'club':club, 'error_login':'Sorry you dont have access to the Club.'})
     return render(request,'club-events-edit.html',{'club':club})
  
 
@@ -231,7 +212,9 @@ def clubEventEditView(request,pk):
 def addEvent(request,pk):
     club=get_object_or_404(Club,pk=pk)
     if request.user.email != club.user.email:
-        return redirect('/login-user/')
+        # return redirect('/login/')
+        logout(request)
+        return render(request,'club-events.html',{'club':club, 'error_login':'Sorry you dont have access to the Club.'})
     
     form = EventsForm(request.POST or None, request.FILES or None)
     if form.is_valid():
@@ -258,33 +241,35 @@ def addEvent(request,pk):
 class EditEventView(LoginRequiredMixin,UpdateView):
     model = Events
     fields = ['title','details','start','end','contact']
-    login_url = '/login-user/'
+    login_url = '/login/'
     
     def form_valid(self,form):
         club=Club.objects.get(pk=self.kwargs['id'])
         if self.request.user.email != club.user.email:
-            return redirect('/login-user/')
+            logout(self.request)
+            return render(self.request,'club-events.html',{'club':club, 'error_login':'Sorry you dont have access to the Club.'})
         if form.is_valid():
             form.save()
             return redirect('/clubs/'+str(club.id)+'/edit')
 
 class DeleteEventView(LoginRequiredMixin,DeleteView):
     model = Events
-
-    login_url = '/login-user/'
+    login_url = '/login/'
     
+    def get_success_url(self):
+        id=self.kwargs['id']
+        return '/clubs/'+str(id)+'/edit/'
 
-    def dispatch(self,request,id,pk):
+    def get(self,request,id,pk):
         club=Club.objects.get(pk=self.kwargs['id'])
-        print(club)
-        self.success_url= redirect('/clubs/'+str(club.id)+'/edit/')
-        if request.user.email != club.user.email:
-            print(self.request.user.email,club.user.email)
-            return redirect('/login-user/')
+        if request.user.email == club.user.email:
+            self.object = self.get_object()
+            context = self.get_context_data(object=self.object)
+            return self.render_to_response(context)
         else:
-            self.delete(request)
-            return redirect('/clubs/'+str(club.id)+'/edit/')
-    
+            logout(self.request)
+            return render(self.request,'club-events.html',{'club':club, 'error_login':'Sorry you dont have access to the Club.'})
+        
     
 
 class EventView(generic.DetailView):

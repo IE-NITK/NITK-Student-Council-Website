@@ -24,12 +24,16 @@
         </div>
         
         {% block add %}
+        {% if error_login %}
+                <h4 class="center red-text"><strong>{{ error_login }}</strong></h4>
+        {% endif %}
         {% endblock %}
             {% if error_message %}
                 <p><strong>{{ error_message }}</strong></p>
             {% else %}
                 <h3><strong>Event List</strong></h3>
             {%  endif %}
+        
 
         <div class='container'>
 
@@ -50,5 +54,9 @@
     </div>
 
 {% block login %}
+<div class="container">
+<a href="{% url 'website:club-events-edit' club.id %}">
+<button class="btn add">{% if error_login %}Login with Different Account{% else %}Enter The Club-Edit Page{% endif %}</button></a>
+</div>
 {% endblock %}
 {% endblock %}
