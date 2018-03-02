@@ -5,6 +5,7 @@ from django.core import serializers
 from django.core.mail import send_mail
 import json
 from django.conf import settings
+from django.core.urlresolvers import reverse
 # Create your views here.
 
 class AboutPage(generic.TemplateView):
@@ -48,14 +49,27 @@ def announcement(request, id):
     announcement = get_object_or_404(Announcements, id=id)
     return render(request,'announce_ind.html',{'announcement':announcement})
 
-def blogPage(request, num=0):
-    if num:
-        article = Articles.objects.get(id=num)
-        return render(request,'article.html',{'article':article})
-    else:
-        articles = Articles.objects.all().order_by('-published')
-        return render(request,'blog.html',{'article':articles})
+def blogPage(request,pagename="blog"):
+	blogtype = pagename
+	if pagename=="travel":
+		article = Articles.objects.filter(page=1)
+		return render(request,'blog.html',{'article':article , 'blogtype' : blogtype})
+	if pagename=="fineprint":
+		article = Articles.objects.filter(page=2)
+		return render(request,'blog.html',{'article':article , 'blogtype' : blogtype})
+	if pagename=="literarypage":
+		article = Articles.objects.filter(page=3)
+		return render(request,'blog.html',{'article':article , 'blogtype' : blogtype})
+	if pagename=="techpost":
+		article = Articles.objects.filter(page=4)
+		return render(request,'blog.html',{'article':article , 'blogtype' : blogtype})
+	if pagename=="blog":
+		articles = Articles.objects.all().order_by('-published')
+		return render(request,'blog.html',{'article':articles , 'blogtype' : blogtype})
 
+def blogIndex(request,num):
+    article=Articles.objects.get(id=num)
+    return render(request,'article.html',{'article':article})
 def newsPage(request, num=0):
     if num:
         news = News.objects.get(id=num)
