@@ -127,14 +127,15 @@ class Author(models.Model):
 
 @python_2_unicode_compatible
 class Articles(models.Model):
-    page=models.IntegerField(default=0)
-    title = models.CharField(max_length=200)
-    author = models.ForeignKey(Author)
-    article_pic = models.ImageField(upload_to='article_pics/%Y-%m-%d/',null=True,blank=True)
-    content = MarkdownField()
-    published = models.DateTimeField(auto_now_add=True)
-    def __str__(self):
-    	return self.title
+	TYPE_OF_BLOG=[(1,'travel'),(2,'fineprint'),(3,'literarypage'),(4,'techpost')]
+	page=models.IntegerField(default=0)
+	title = models.CharField(max_length=200)
+	author = models.ForeignKey(Author)
+	article_pic = models.ImageField(upload_to='article_pics/%Y-%m-%d/',null=True,blank=True)
+	content = MarkdownField()
+	published = models.DateTimeField(auto_now_add=True)
+	def __str__(self):
+		return self.title
 
 @python_2_unicode_compatible
 class Complaint(models.Model):
